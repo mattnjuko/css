@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/* Born Survivor Cheshire 2027 - njuko select-competition CSS (preview v2 - updated for the 8-ticket layout). Styled after the client's booking-page mockup, within what njuko's ticket markup allows. */
+
+:root {
+  --bs-green: #006c3b;
+  --bs-slate: #3e4b55;
+  --bs-yellow: #ffc526;
+  --bs-yellow-d: #f0b000;
+  --bs-ink: #142025;
+  --bs-mute: #55636a;
+  --bs-line: #dce2e0;
+  --bs-bg: #f3f5f4;
+}
+
+/* Page: njuko's own background image is kept; green header bar */
+
+#basic-theme .mat-toolbar.mat-primary { background: linear-gradient(102deg, #008a4e, #00ac67) !important; color: #fff !important; }
+#basic-theme .mat-toolbar .mat-icon { color: #fff !important; }
+
+/* Fonts: Anton for display (titles, prices), Arial for text */
+#basic-theme, #basic-theme *:not(.mat-icon):not(.material-icons):not([class*="material-icons"]):not(.fa):not([class*="fa-"]):not(i) {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+#basic-theme#basic-theme .cardLeft h1,
+#basic-theme#basic-theme .price-bloc, #basic-theme#basic-theme .price-bloc * {
+  font-family: 'Anton', Impact, 'Arial Narrow', sans-serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
+}
+
+/* Intro text */
+#basic-theme app-message.cardWrap { background: transparent !important; box-shadow: none !important; padding: 6px 0 8px !important; }
+#basic-theme app-message.cardWrap, #basic-theme app-message.cardWrap * { color: var(--bs-mute) !important; font-size: 15px !important; line-height: 1.55 !important; }
+#basic-theme#basic-theme app-message.cardWrap h1, #basic-theme#basic-theme app-message.cardWrap h2 { color: var(--bs-ink) !important; font-family: 'Anton', Impact, sans-serif !important; font-weight: 400 !important; font-size: 40px !important; line-height: 1.05 !important; text-transform: uppercase !important; }
+
+/* Ticket cards: one white rounded card per ticket; header band takes the ticket colour */
+#basic-theme .competitions-list > .cardWrap { --acc: #70411e; --acc-text: #ffc526; --pale: #fbf3e9; }
+/* Rookie tickets: slate grey band, yellow text */
+#basic-theme .competitions-list > div.flip-card:nth-of-type(7),
+#basic-theme .competitions-list > div.flip-card:nth-of-type(8) { --acc: var(--bs-slate); --acc-text: #ffc526; --pale: #f0f3f5; }
+/* Elite Squadron: green band, brown text */
+#basic-theme .competitions-list > div.flip-card:nth-of-type(5) { --acc: #3fbf7a; --acc-text: #3b2410; --pale: #eef9f2; }
+#basic-theme .flip-card-front, #basic-theme .flip-card-back {
+  background: #fff !important;
+  border: 1px solid var(--bs-line) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 6px 20px rgba(11, 27, 26, 0.07) !important;
+  overflow: hidden !important;
+  margin-bottom: 18px !important;
+}
+#basic-theme#basic-theme .cardLeft, #basic-theme#basic-theme .cardRight { border: none !important; border-radius: 0 !important; box-shadow: none !important; background: #fff !important; }
+#basic-theme#basic-theme .cardLeft { border-right: 1px solid var(--bs-line) !important; padding: 0 0 14px !important; }
+#basic-theme .cardLeft .block-cut, #basic-theme .cardLeft .cut, #basic-theme .competitions-list .cut { display: none !important; }
+#basic-theme .cardLeft > * { margin-left: 22px; margin-right: 22px; }
+
+/* Header band */
+#basic-theme#basic-theme .cardLeft > h1 {
+  margin: 0 0 14px !important;
+  padding: 16px 22px !important;
+  background: var(--acc) !important;
+  color: var(--acc-text) !important;
+  font-size: 26px !important;
+  line-height: 1.1 !important;
+}
+#basic-theme#basic-theme .cardLeft > h1 *, #basic-theme#basic-theme .cardLeft > h1 .mat-icon { color: var(--acc-text) !important; }
+#basic-theme .cardLeft > h1 .mat-icon { margin-right: 10px !important; }
+
+/* Ticket details */
+#basic-theme .cardLeft .seat span, #basic-theme .cardLeft .time span, #basic-theme .cardLeft .title span, #basic-theme .cardLeft .name span {
+  color: var(--bs-mute) !important; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 1px !important; text-transform: uppercase !important;
+}
+#basic-theme .cardLeft h2 { color: var(--bs-ink) !important; font-size: 15px !important; font-weight: 700 !important; margin: 2px 0 10px !important; }
+
+/* Price panel */
+#basic-theme#basic-theme .cardRight { padding: 20px 18px !important; justify-content: center !important; }
+#basic-theme#basic-theme .cardRight .number span { color: var(--bs-mute) !important; font-size: 10px !important; font-weight: 700 !important; letter-spacing: 1px !important; text-transform: uppercase !important; }
+#basic-theme#basic-theme .price-bloc, #basic-theme#basic-theme .price-bloc * { color: var(--bs-ink) !important; font-size: 44px !important; line-height: 1 !important; }
+#basic-theme .booking-fee-front-container, #basic-theme .booking-fee-front-container * { font-size: 13px !important; color: #425157 !important; }
+
+/* Buttons: yellow, black text (as the client mockup) */
+#basic-theme#basic-theme a.button.mat-raised-button,
+#basic-theme#basic-theme .mat-raised-button.mat-accent,
+#basic-theme#basic-theme .mat-raised-button.mat-primary {
+  background: var(--bs-yellow) !important;
+  color: #111 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
+  padding: 9px 22px !important;
+  min-width: 150px !important;
+  line-height: 1.3 !important;
+}
+#basic-theme#basic-theme a.button.mat-raised-button *, #basic-theme#basic-theme .mat-raised-button * { color: #111 !important; }
+#basic-theme#basic-theme a.button.mat-raised-button:hover, #basic-theme#basic-theme .mat-raised-button.mat-accent:hover, #basic-theme#basic-theme .mat-raised-button.mat-primary:hover { background: var(--bs-yellow-d) !important; }
+#basic-theme .cardRight .text-center { display: flex !important; flex-direction: column !important; gap: 10px !important; align-items: center !important; }
+
+@media (max-width: 768px) {
+  #basic-theme#basic-theme .cardLeft { border-right: none !important; border-bottom: 1px solid var(--bs-line) !important; }
+}
+
+/* Hide empty hook / message slots at the top of each ticket so the coloured header band sits flush at the top */
+#basic-theme .cardLeft > app-message:empty, #basic-theme .cardLeft > hook:not(:has(img,p,a,mat-icon,span)) { display: none !important; }
+/* Keep the detail rows aligned with the header text */
+#basic-theme#basic-theme .cardLeft > .seat, #basic-theme#basic-theme .cardLeft > .title, #basic-theme#basic-theme .cardLeft > .name { margin-left: 22px !important; }
+
+/* Ticket message: shown as a pale strapline strip under the header band */
+#basic-theme .cardLeft > app-message.message-in-ticket:not(:empty) { margin: 0 !important; display: block !important; }
+#basic-theme .cardLeft .message-in-ticket .message-content { background: var(--pale) !important; padding: 14px 22px 10px !important; margin: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+#basic-theme .cardLeft .message-in-ticket p { margin: 0 0 8px !important; font-size: 13px !important; line-height: 1.45 !important; color: var(--bs-mute) !important; font-weight: 400 !important; text-transform: none !important; }
+#basic-theme#basic-theme .cardLeft .message-in-ticket p:first-child { font-size: 14px !important; font-weight: 700 !important; color: var(--bs-ink) !important; text-transform: uppercase !important; letter-spacing: 0.15px !important; }
+#basic-theme .cardLeft .message-in-ticket p strong, #basic-theme .cardLeft .message-in-ticket p b { color: var(--bs-ink) !important; }
+#basic-theme .cardLeft .break { display: none !important; }
+#basic-theme#basic-theme .cardLeft > h1 { font-size: 22px !important; }
+#basic-theme .cardLeft .message-in-ticket, #basic-theme .cardLeft .message-in-ticket * { text-align: left !important; }
+#basic-theme#basic-theme .cardRight { padding: 14px 18px !important; }
+#basic-theme#basic-theme .cardLeft .message-in-ticket p:first-child { font-size: 13.5px !important; line-height: 1.4 !important; letter-spacing: 0 !important; }
+
+/* SPLIT THE COST - icon + label below the price, with small Klarna and Clearpay badges underneath */
+#basic-theme .cardRight .number h3::after {
+  content: 'Split the cost';
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+  padding: 28px 0 30px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: none;
+  color: #142025;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23142025' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='5' width='20' height='14' rx='2.5'/%3E%3Cpath d='M2 10h20M6 15h4'/%3E%3C/svg%3E"), url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAoBAMAAADzveIKAAAAMFBMVEWgco3+zORsTGUqGzJKM0vPk7KEXni5hKL9u948KUH+sNH6rc4EARX//f4SCiImGC+AGkALAAAAEHRSTlP/////////////////////zSGylAAAAuxJREFUeNqVlU1oU2kUhp9zE1NbAvniQsTaEv+gipQKCkVECqKoMDIbg5bRUYogIv6AaMEsiohuxNa0lOrG6sIRXMhsdOiARB1mRAqGAf/QSExR1JjeLxCjVHM/F0kvaVz05sD94fK+95z35ZzzSQoKXY0DeIgvsQRIisLWq3gL05NAUmy4oj0SJLAKi4JnPGaqC4ttnvFghrAKV6gjprqsRuoLae6vC//FqjOB8pefYWxEYYexZyvppnHJOt0xOVtGVQbIXzEVzvYO6+6Y8pJBWOzLyttVxffXTn9Ce8hAB2BZDmmZTbW/LKFrENPCnIoBaGUErbQygtEQxkjFDr9LdX5Jb+8D8gaULQZsZYtBlFY2Mu2N64rkOkgChAK9f+eit65Hw7uz0ccPex/nRe8cuXV9twLQbgYzFn9+FSC3YxGd4/tfjm+8PzZ+/Hz31yKXHlE8+N8npaszZFOtxwB48j+8ReHLfVvMHqy2geyHJTTNk5qSzsUnlocAEq3zeyYimpYkWO3/tmdOHYm/jiYHCjUE1Vq8p4FcfOLEqT6A4p9QXHCDbzec5gMBakQXlmZMv4KCIf9AzUsDv6/FWSGvYDSybvXcwzWE4BanrQ/gO8sH8psAPoRBEYEIu4xStbY2jTKcB/xkCNU21AVxG8a1tbEzE7y8F6YomckziWp4Gr2kePfzjF4CGtojbzTB5sNt734bnfH/O5lnmxe5osv2JiC0N3MOMMnM+oc+VFXBfqfl0OjR4AwNSZCVTtOdiGHIgR1pTRqMo8Fh8I80xclSFcGw7iJm2XC0cSzOwrMnj8eiLzZHfzWlyxHmRPdL58iBLU+7y7qrRhTAsRADSksJnwFQSTrQ4JRraaismTC22/VhI5VBEGW0KGxROlSZh4aKrbZ7A1tM5dXY05fSta0xY4P+/GkaL999/5S+1rMoj9W7+bCC++qBBxIWt1UdFR3CIrjPM0MCCSRF4aNXwrtYAknBmkvejoaj48APKFseh/QZeYIAAAAASUVORK5CYII="), url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAoBAMAAAAoBkgoAAAAMFBMVEUICwql4tRQbWZwmY/E//uGtqwAAAA4TUiPxriq+elfg3qx++UvQTyz/ObM//+y++UnihQpAAAAEHRSTlP///////8A//8S/2j/hwX+7oFZHgAAAs5JREFUeNqllr9vG2Ucxj/3OkejBKw7G9EF8V4SwsAvX3wu6mY3GYrEYBN1YWonJJhSlIUpRlTqVKVbV4O6MeQfYHCnSKiVglBnTvyYEOA3Z2O1iDwMsS9J2yE6f4fT+727j/R873n13Ot9Gj++1qJAff9d/EMp+ePzD4rAXHx377+55KV3CsEsvpWM+UyF68kN788KRevoV7NfGGZ8YBaL04t4Kk7jDLNUIbryPB3OnRfO/v5yuszd65rz+hzBkiRpUED5YQo/t1409yi/TKrzIn4n5kErV+7qK1Zd47T59nVJmythYpOPvw2TsL4qabTcrK59fVkaJVaS7dZchJE0QJJiWFDX6HW4YHURDA3gEhHclOtD5HeQAqwkta3cFs3J3MMD+GcV1n+DJ7/wCRxNJKawi21ByoBWFJRiOEwGKe//RGuiPGCpynxg1qm5rYUN/DCigXFVTNjhfsRXFfwNdhzesVAr3aY2UR6b9nBzNTABoQ0Yc01XaeBpg219iIfXFr5jfp096TawpwrYCR35x34HAATIZTTwXEbTCo8da3u+YhNgVYEVtjOYf97vhw/3v8ib8lmb0qPApMO/8N9g9xVK46ljJ8rbQxeOuaV1GnjK2NYVHuBJ+O4QPPUoSYCxmjoW8E2V+cBcZclFZgPfRRPa2A73I2wF3zmoOYyVOlywyukM4M2uuQJ9PPWBCQ2gAMCXIqzDa0tu+bpOaMVg1DXqnt4tnjK24KYcEPlSz0iwJ73a1mna1Vesqpeler5Td5OmMtbqq5Ky5WZ1TQ5PCqDpjofO6byGZ7qMhtp595Sa5CJeDqlN6blncu6Z3IvSfP0aAyj/WEvPn0ynXr1rUqD8GLhxHvrss4Pj9F3IKG1N7xVI5MPyLIlcnjGRT+j+DHDfjIrDI2b7A5eyjwrT/26buFeY7sVzj0qXih1cRr8/emp4716xz75/J+Z/5XL8MLZmb3UAAAAASUVORK5CYII=");
+  background-size: 20px 20px, auto 20px, auto 20px;
+  background-position: center 0, calc(50% - 34px) calc(100% - 2px), calc(50% + 28px) calc(100% - 2px);
+}
+
+/* SOLO / TEAM ICONS - bold person (solo) or group (team) icon in each ticket header.
+   Team tickets are picked out by ticket id; add a new team ticket's id to the team list below. (njuko's own icon slot in the title is empty on this page, so the icon is drawn with ::before.) */
+#basic-theme#basic-theme .cardLeft > h1::before {
+  content: '' !important;
+  display: inline-block !important; width: 26px !important; height: 24px !important;
+  margin-right: 12px !important; flex: 0 0 auto;
+  background: currentColor !important; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='6.5' r='4.2' fill='%23fff'/%3E%3Cpath d='M3.5 21.5v-2.8c0-4.6 3.8-8.2 8.5-8.2s8.5 3.6 8.5 8.2v2.8Z' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='6.5' r='4.2' fill='%23fff'/%3E%3Cpath d='M3.5 21.5v-2.8c0-4.6 3.8-8.2 8.5-8.2s8.5 3.6 8.5 8.2v2.8Z' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1::before {
+  width: 32px !important;
+  background: currentColor !important; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 24'%3E%3Ccircle cx='16' cy='6' r='4.2' fill='%23fff'/%3E%3Ccircle cx='5.5' cy='9' r='3.5' fill='%23fff'/%3E%3Ccircle cx='26.5' cy='9' r='3.5' fill='%23fff'/%3E%3Cpath d='M9 22v-5c0-4.1 3-6.9 7-6.9s7 2.8 7 6.9v5Z' fill='%23fff'/%3E%3Cpath d='M1 22v-6c0-2.7 1.7-4.4 4.5-4.4 1.3 0 2.3.35 3.2 1.2C7.6 15 7.3 17.1 7.3 19.4V22Zm24 0v-2.6c0-2.3-.4-4.5-1.4-6.6a5 5 0 0 1 2.9-1.2c2.8 0 4.5 1.7 4.5 4.4v6Z' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 24'%3E%3Ccircle cx='16' cy='6' r='4.2' fill='%23fff'/%3E%3Ccircle cx='5.5' cy='9' r='3.5' fill='%23fff'/%3E%3Ccircle cx='26.5' cy='9' r='3.5' fill='%23fff'/%3E%3Cpath d='M9 22v-5c0-4.1 3-6.9 7-6.9s7 2.8 7 6.9v5Z' fill='%23fff'/%3E%3Cpath d='M1 22v-6c0-2.7 1.7-4.4 4.5-4.4 1.3 0 2.3.35 3.2 1.2C7.6 15 7.3 17.1 7.3 19.4V22Zm24 0v-2.6c0-2.3-.4-4.5-1.4-6.6a5 5 0 0 1 2.9-1.2c2.8 0 4.5 1.7 4.5 4.4v6Z' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* TICKET SPACING - tighter, even 12px gap between tickets (njuko default was ~48px) */
+#basic-theme .competitions-list > .cardWrap.flip-card { margin: 0 auto 12px !important; } /* auto side margins keep the tickets centred */
+#basic-theme .flip-card-front, #basic-theme .flip-card-back { margin-bottom: 0 !important; }
+
+/* INTRO MESSAGE BLOCK ("Text here" at the top of the entry page) - white rounded callout with a green tick badge.
+   Write the message in njuko as: first paragraph = short bold heading line, following paragraphs = detail.
+   Bold text inside a paragraph is highlighted. A heading (H1/H2) at the top is shown in the big Anton title style. */
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap { padding: 0 !important; margin: 15px auto 16px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) {
+  position: relative !important; background: #fff !important; border: 1px solid var(--bs-line) !important; border-radius: 14px !important;
+  box-shadow: 0 6px 20px rgba(11, 27, 26, 0.07) !important; margin: 0 !important; padding: 16px 20px 12px 68px !important; min-height: 64px;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent)::before {
+  content: '\2713'; position: absolute; left: 20px; top: 16px; width: 34px; height: 34px; border-radius: 10px;
+  background: #f0f5f1; color: var(--bs-green); font: 700 19px/34px Arial, sans-serif; text-align: center;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) p {
+  margin: 0 0 6px !important; font-size: 13px !important; line-height: 1.5 !important; color: var(--bs-mute) !important;
+  font-weight: 400 !important; text-transform: none !important; text-align: left !important;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) p:first-child { font-weight: 700 !important; color: var(--bs-ink) !important; text-transform: uppercase !important; letter-spacing: 0.2px; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) strong,
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) b { color: var(--bs-ink) !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) strong,
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) b,
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) p * { font-size: inherit !important; line-height: inherit !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) h1,
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) h2 {
+  font-family: 'Anton', Impact, sans-serif !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.05 !important;
+  text-transform: uppercase !important; color: var(--bs-ink) !important; margin: 0 0 8px !important;
+}
+
+/* Client intro block (message with logo, eyebrow, title, lede and a "Booking with friends?" callout).
+   Built for this order of paragraphs: 1 logo, 2 blank, 3 eyebrow, 4 title, 5 intro text, 6 callout (first line = callout heading). */
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent { border: 0 !important; margin: 0 !important; padding: 22px 24px 14px !important; background: rgba(16, 28, 24, 0.78) !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important; border-radius: 14px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent > div { padding: 0; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p { margin: 0 0 10px !important; text-align: left !important; color: #fff !important; font-size: 15px !important; line-height: 1.55 !important; font-weight: 400 !important; text-transform: none !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:has(img) { margin: 0 0 6px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent img { max-height: 150px !important; width: auto !important; display: block; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:has(> br:only-child) { display: none !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(3) { font-size: 11px !important; font-weight: 800 !important; letter-spacing: 2px !important; color: var(--bs-yellow) !important; text-transform: uppercase !important; margin-bottom: 4px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(4) { font-family: 'Anton', Impact, sans-serif !important; font-size: clamp(30px, 4.2vw, 46px) !important; line-height: 1.02 !important; letter-spacing: 0.5px; text-transform: uppercase !important; color: #fff !important; margin-bottom: 10px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(5) { max-width: 760px; color: #fff !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6) {
+  position: relative; background: #fff; border: 1px solid var(--bs-line); border-radius: 14px; box-shadow: 0 6px 20px rgba(11, 27, 26, 0.07);
+  padding: 16px 20px 12px 68px; margin: 14px 0 0 !important; font-size: 13px !important; line-height: 1.5 !important; color: var(--bs-mute) !important;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6)::first-line { font-weight: 800; color: var(--bs-ink); text-transform: uppercase; letter-spacing: 0.2px; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6)::before { content: '\2713'; position: absolute; left: 20px; top: 16px; width: 34px; height: 34px; border-radius: 10px; background: #f0f5f1; color: var(--bs-green); font: 700 19px/34px Arial, sans-serif; text-align: center; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6) strong, #basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6) b { color: var(--bs-ink) !important; font-size: inherit !important; }
+
+/* ===== v8: HEADER, SPLIT-THE-COST PANEL AND OBSTACLE-RACE THEMING ===== */
+
+/* HEADER - Born Survivor logo (white PNG) on the left, menu on the right (as the client's own page) */
+#basic-theme .mat-toolbar.mat-primary { height: 58px !important; justify-content: flex-start !important; }
+#basic-theme .mat-toolbar.mat-primary > div:nth-of-type(1) { flex: 1 1 auto !important; display: flex !important; align-items: center !important; justify-content: flex-start !important; }
+#basic-theme .mat-toolbar.mat-primary > div:nth-of-type(1)::before {
+  content: ''; display: block; width: 73px; height: 40px; margin-left: 6px;
+  background: url("data:image/png;base64,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") left center / contain no-repeat;
+}
+#basic-theme .mat-toolbar.mat-primary > div:nth-of-type(1)::after { content: none; display: none; }
+#basic-theme .mat-toolbar .nav-button, #basic-theme .mat-toolbar .nav-button * { font-size: 12px !important; font-weight: 700 !important; letter-spacing: 1.4px !important; text-transform: uppercase !important; }
+
+/* SPLIT THE COST - moved out of the price panel into the bottom of the ticket (fills the empty space) */
+#basic-theme .cardRight .number h3::after { content: none !important; display: none !important; background: none !important; padding: 0 !important; margin: 0 !important; }
+#basic-theme#basic-theme .cardLeft { display: flex !important; flex-direction: column !important; }
+#basic-theme#basic-theme .cardLeft > .block-cut {
+  display: flex !important; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+  margin: auto 22px 0 !important; padding: 12px 0 0 !important; border-top: 1px dashed #c4cfca; position: relative; background: none !important;
+}
+#basic-theme#basic-theme .cardLeft > .block-cut::before {
+  content: 'Split the cost'; padding-left: 28px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23142025' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='5' width='20' height='14' rx='2.5'/%3E%3Cpath d='M2 10h20M6 15h4'/%3E%3C/svg%3E") left center / 20px 20px no-repeat;
+  font: 700 12px/20px Arial, Helvetica, sans-serif; color: var(--bs-ink); text-transform: uppercase; letter-spacing: 0.4px; white-space: nowrap;
+}
+#basic-theme#basic-theme .cardLeft > .block-cut .cut {
+  display: block !important; position: static !important; width: auto !important; height: auto !important; flex: 1 1 150px;
+  background: none !important; border-radius: 0 !important; box-shadow: none !important; transform: none !important;
+  font-size: 11px; line-height: 1.3; color: var(--bs-mute);
+}
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::before { content: 'Enter now with easy instalments at checkout.'; }
+#basic-theme#basic-theme .cardLeft > .block-cut::after {
+  content: ''; width: 134px; height: 24px; flex: 0 0 auto;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAoBAMAAADzveIKAAAAMFBMVEWgco3+zORsTGUqGzJKM0vPk7KEXni5hKL9u948KUH+sNH6rc4EARX//f4SCiImGC+AGkALAAAAEHRSTlP/////////////////////zSGylAAAAuxJREFUeNqVlU1oU2kUhp9zE1NbAvniQsTaEv+gipQKCkVECqKoMDIbg5bRUYogIv6AaMEsiohuxNa0lOrG6sIRXMhsdOiARB1mRAqGAf/QSExR1JjeLxCjVHM/F0kvaVz05sD94fK+95z35ZzzSQoKXY0DeIgvsQRIisLWq3gL05NAUmy4oj0SJLAKi4JnPGaqC4ttnvFghrAKV6gjprqsRuoLae6vC//FqjOB8pefYWxEYYexZyvppnHJOt0xOVtGVQbIXzEVzvYO6+6Y8pJBWOzLyttVxffXTn9Ce8hAB2BZDmmZTbW/LKFrENPCnIoBaGUErbQygtEQxkjFDr9LdX5Jb+8D8gaULQZsZYtBlFY2Mu2N64rkOkgChAK9f+eit65Hw7uz0ccPex/nRe8cuXV9twLQbgYzFn9+FSC3YxGd4/tfjm+8PzZ+/Hz31yKXHlE8+N8npaszZFOtxwB48j+8ReHLfVvMHqy2geyHJTTNk5qSzsUnlocAEq3zeyYimpYkWO3/tmdOHYm/jiYHCjUE1Vq8p4FcfOLEqT6A4p9QXHCDbzec5gMBakQXlmZMv4KCIf9AzUsDv6/FWSGvYDSybvXcwzWE4BanrQ/gO8sH8psAPoRBEYEIu4xStbY2jTKcB/xkCNU21AVxG8a1tbEzE7y8F6YomckziWp4Gr2kePfzjF4CGtojbzTB5sNt734bnfH/O5lnmxe5osv2JiC0N3MOMMnM+oc+VFXBfqfl0OjR4AwNSZCVTtOdiGHIgR1pTRqMo8Fh8I80xclSFcGw7iJm2XC0cSzOwrMnj8eiLzZHfzWlyxHmRPdL58iBLU+7y7qrRhTAsRADSksJnwFQSTrQ4JRraaismTC22/VhI5VBEGW0KGxROlSZh4aKrbZ7A1tM5dXY05fSta0xY4P+/GkaL999/5S+1rMoj9W7+bCC++qBBxIWt1UdFR3CIrjPM0MCCSRF4aNXwrtYAknBmkvejoaj48APKFseh/QZeYIAAAAASUVORK5CYII=") left center / auto 22px no-repeat, url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAoBAMAAAAoBkgoAAAAMFBMVEUICwql4tRQbWZwmY/E//uGtqwAAAA4TUiPxriq+elfg3qx++UvQTyz/ObM//+y++UnihQpAAAAEHRSTlP///////8A//8S/2j/hwX+7oFZHgAAAs5JREFUeNqllr9vG2Ucxj/3OkejBKw7G9EF8V4SwsAvX3wu6mY3GYrEYBN1YWonJJhSlIUpRlTqVKVbV4O6MeQfYHCnSKiVglBnTvyYEOA3Z2O1iDwMsS9J2yE6f4fT+727j/R873n13Ot9Gj++1qJAff9d/EMp+ePzD4rAXHx377+55KV3CsEsvpWM+UyF68kN788KRevoV7NfGGZ8YBaL04t4Kk7jDLNUIbryPB3OnRfO/v5yuszd65rz+hzBkiRpUED5YQo/t1409yi/TKrzIn4n5kErV+7qK1Zd47T59nVJmythYpOPvw2TsL4qabTcrK59fVkaJVaS7dZchJE0QJJiWFDX6HW4YHURDA3gEhHclOtD5HeQAqwkta3cFs3J3MMD+GcV1n+DJ7/wCRxNJKawi21ByoBWFJRiOEwGKe//RGuiPGCpynxg1qm5rYUN/DCigXFVTNjhfsRXFfwNdhzesVAr3aY2UR6b9nBzNTABoQ0Yc01XaeBpg219iIfXFr5jfp096TawpwrYCR35x34HAATIZTTwXEbTCo8da3u+YhNgVYEVtjOYf97vhw/3v8ib8lmb0qPApMO/8N9g9xVK46ljJ8rbQxeOuaV1GnjK2NYVHuBJ+O4QPPUoSYCxmjoW8E2V+cBcZclFZgPfRRPa2A73I2wF3zmoOYyVOlywyukM4M2uuQJ9PPWBCQ2gAMCXIqzDa0tu+bpOaMVg1DXqnt4tnjK24KYcEPlSz0iwJ73a1mna1Vesqpeler5Td5OmMtbqq5Ky5WZ1TQ5PCqDpjofO6byGZ7qMhtp595Sa5CJeDqlN6blncu6Z3IvSfP0aAyj/WEvPn0ynXr1rUqD8GLhxHvrss4Pj9F3IKG1N7xVI5MPyLIlcnjGRT+j+DHDfjIrDI2b7A5eyjwrT/26buFeY7sVzj0qXih1cRr8/emp4716xz75/J+Z/5XL8MLZmb3UAAAAASUVORK5CYII=") right center / auto 22px no-repeat;
+}
+
+/* OBSTACLE-RACE THEMING - hazard-tape edge under each header band and a faint  */
+#basic-theme#basic-theme .cardLeft > h1 {
+  border-bottom: 6px solid transparent !important;
+  border-image: repeating-linear-gradient(-45deg, #ffc526 0 10px, #142025 10px 20px) 6 !important;
+}
+/* Split-the-cost panel layout fixes (njuko gives .block-cut a fixed 32px width and rotates the .cut notch, so both are reset) */
+#basic-theme#basic-theme .cardLeft > .block-cut { display: grid !important; grid-template-columns: 1fr auto; align-items: center; gap: 4px 12px; width: auto !important; height: auto !important; left: auto !important; right: auto !important; top: auto !important; bottom: auto !important; overflow: visible !important; align-self: stretch; flex: 0 0 auto !important; }
+#basic-theme#basic-theme .cardLeft > .block-cut::before { grid-column: 1; grid-row: 1; min-width: 0; }
+#basic-theme#basic-theme .cardLeft > .block-cut::after { grid-column: 2; grid-row: 1; }
+#basic-theme#basic-theme .cardLeft > .block-cut .cut { grid-column: 1 / -1; grid-row: 2; flex: none; }
+#basic-theme#basic-theme .cardLeft > .block-cut .cut,
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::before,
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::after { transform: none !important; position: static !important; width: auto !important; height: auto !important; top: auto !important; left: auto !important; right: auto !important; bottom: auto !important; border-radius: 0 !important; background: none !important; box-shadow: none !important; margin: 0 !important; overflow: visible !important; }
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::after { content: none !important; }
+
+/* ===== v9: EASIER NAVIGATION ===== */
+
+/* 1. Tickets are grouped: solo entries first, then team entries, each under a section heading.
+   (Order and headings are set by ticket id - if you add a ticket in njuko, give it an order number below.) */
+#basic-theme .competitions-list > app-message.cardWrap:first-child { order: 0; }
+#basic-theme .competitions-list > app-message.cardWrap:last-child { order: 99; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(5) { order: 1; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(1) { order: 2; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(2) { order: 3; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(3) { order: 4; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(7) { order: 5; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(4) { order: 6; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(6) { order: 7; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(8) { order: 8; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(5)::before,
+#basic-theme .competitions-list > div.flip-card:nth-of-type(4)::before {
+  display: block; margin: 8px 0 12px; padding: 9px 16px 8px; border-left: 6px solid var(--bs-yellow); border-radius: 4px 12px 12px 4px;
+  background: rgba(16, 28, 24, 0.82); color: #fff; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  font: 400 24px/1.1 'Anton', Impact, sans-serif; letter-spacing: 0.8px; text-transform: uppercase;
+}
+#basic-theme .competitions-list > div.flip-card:nth-of-type(5)::before { content: 'Solo entries'; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(4)::before { content: 'Team entries - captain books first, members join by link'; font-size: 20px; }
+
+/* 2. Smooth scrolling, and tickets stop below the fixed header when jumped to */
+html, body, #basic-theme .mat-sidenav-content, #basic-theme .wrapper { scroll-behavior: smooth; }
+#basic-theme .competitions-list > .cardWrap { scroll-margin-top: 78px; }
+
+/* 3. Tickets respond to the pointer: lift on hover, clear yellow focus ring for keyboard users */
+#basic-theme .flip-card-front { transition: transform 0.18s ease, box-shadow 0.18s ease !important; }
+#basic-theme .flip-card-front:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(11, 27, 26, 0.22) !important; }
+#basic-theme#basic-theme a.button.mat-raised-button { transition: background 0.16s ease, transform 0.16s ease !important; }
+#basic-theme#basic-theme a.button.mat-raised-button:hover { transform: translateY(-1px); }
+#basic-theme#basic-theme a.button.mat-raised-button .mat-button-wrapper::after { content: ' \2192'; display: inline-block; width: 0; overflow: hidden; vertical-align: bottom; transition: width 0.16s ease; }
+#basic-theme#basic-theme a.button.mat-raised-button:hover .mat-button-wrapper::after { width: 1.2em; }
+#basic-theme a.button:focus-visible, #basic-theme .nav-button:focus-visible, #basic-theme button:focus-visible { outline: 3px solid var(--bs-yellow) !important; outline-offset: 2px; }
+
+/* 4. Header menu: clearer hover and a yellow underline on the item you are over */
+#basic-theme .mat-toolbar .nav-button { position: relative; transition: background 0.16s ease; }
+#basic-theme .mat-toolbar .nav-button::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 3px; background: var(--bs-yellow); transform: scaleX(0); transition: transform 0.18s ease; }
+#basic-theme .mat-toolbar .nav-button:hover::after { transform: scaleX(1); }
+
+/* 5. "Scroll for more" pill - bounces at the bottom of the screen and fades away at the end of the page (browsers that support scroll-driven animation) */
+@supports (animation-timeline: scroll()) {
+  @keyframes bs-bounce { 0%, 100% { translate: 0 0; } 50% { translate: 0 5px; } }
+  @keyframes bs-cue-hide { to { opacity: 0; visibility: hidden; } }
+  #basic-theme .wrapper::after {
+    content: 'Scroll for more \2193'; position: sticky; bottom: 16px; display: block; width: max-content; margin: -36px auto 0; z-index: 50; pointer-events: none; white-space: nowrap;
+    background: var(--bs-yellow); color: #111; font: 700 12px/1 Arial, sans-serif; letter-spacing: 0.6px; text-transform: uppercase; padding: 10px 16px; border-radius: 999px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    animation: bs-bounce 1.6s ease-in-out infinite, bs-cue-hide 1s linear both; animation-timeline: auto, scroll(nearest block); animation-range: normal, 80% 100%;
+  }
+  #basic-theme .wrapper:not(:has(.competitions-list))::after { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html, body, #basic-theme .mat-sidenav-content, #basic-theme .wrapper { scroll-behavior: auto; }
+  #basic-theme .flip-card-front, #basic-theme .wrapper::after { animation: none !important; transition: none !important; }
+}
+
+/* ===== v10 FIXES ===== */
+/* Button: keep label on one line, centred (the hover arrow was wrapping and adding empty space above the text) */
+#basic-theme#basic-theme a.button.mat-raised-button, #basic-theme#basic-theme .cardRight button.mat-raised-button { min-height: 0 !important; height: auto !important; line-height: 1.3 !important; }
+#basic-theme#basic-theme a.button.mat-raised-button .mat-button-wrapper, #basic-theme#basic-theme button.mat-raised-button .mat-button-wrapper { display: inline-flex !important; align-items: center; justify-content: center; white-space: nowrap !important; line-height: 1.3 !important; }
+#basic-theme#basic-theme a.button.mat-raised-button .mat-button-wrapper::after, #basic-theme#basic-theme button.mat-raised-button .mat-button-wrapper::after { vertical-align: baseline !important; display: inline-block; height: 1.3em; line-height: 1.3; }
+
+/* Header: gift button reads "GIFT ENTRY", dark text on yellow, same height as the other menu items */
+#basic-theme .mat-toolbar .gift-menu .nav-button { background: var(--bs-yellow) !important; color: #111 !important; border-radius: 6px !important; min-width: 0 !important; width: auto !important; height: 36px !important; line-height: 36px !important; padding: 0 14px !important; margin-left: 6px; }
+#basic-theme .mat-toolbar .gift-menu .nav-button:hover { background: var(--bs-yellow-d) !important; }
+#basic-theme .mat-toolbar .gift-menu .nav-button .mat-icon { display: none !important; }
+#basic-theme .mat-toolbar .gift-menu .nav-button .mat-button-wrapper::before { content: 'Gift entry'; color: #111; font: 700 12px/36px Arial, Helvetica, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; }
+#basic-theme .mat-toolbar .gift-menu .nav-button::after { display: none !important; }
+
+/* ===== v10: TEAMS PAGE (join a team) ===== */
+#basic-theme .teams-list { max-width: 1000px; margin: 0 auto; padding: 24px 16px 32px !important; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap { float: none; display: block; max-width: 100% !important; flex: none; width: 100% !important; margin: 0 0 16px !important; padding: 0 !important; background: #fff !important; border: 1px solid var(--bs-line) !important; border-left: 6px solid var(--bs-yellow) !important; border-radius: 6px 14px 14px 6px !important; box-shadow: 0 6px 20px rgba(11,27,26,.18) !important; }
+#basic-theme#basic-theme .teams-list > app-message .message-content { padding: 0 !important; border: none !important; background: none !important; }
+#basic-theme#basic-theme .teams-list > app-message .message-content > div { padding: 18px 22px !important; }
+#basic-theme#basic-theme .teams-list > app-message .message-content, #basic-theme#basic-theme .teams-list > app-message .message-content * { color: var(--bs-mute) !important; font-size: 15px !important; line-height: 1.55 !important; }
+#basic-theme#basic-theme .teams-list > app-message p:first-child { color: var(--bs-ink) !important; font: 400 26px/1.1 Anton, Impact, sans-serif !important; letter-spacing: .6px; text-transform: uppercase; margin: 0 0 8px !important; }
+#basic-theme#basic-theme .teams-list > .search-team { background: #fff; border-radius: 14px 14px 0 0; padding: 20px 20px 0 !important; margin: 0 !important; box-shadow: 0 6px 20px rgba(11,27,26,.18); }
+#basic-theme .teams-list > mat-divider { display: none !important; }
+#basic-theme#basic-theme .teams-list > data-table { display: block; background: #fff; border-radius: 0 0 14px 14px; padding: 0 20px 14px; box-shadow: 0 10px 20px rgba(11,27,26,.18); }
+#basic-theme .teams-list .mat-form-field-appearance-outline .mat-form-field-outline-thick { color: var(--bs-green) !important; }
+#basic-theme .teams-list mat-header-row { border-bottom: 3px solid var(--bs-yellow) !important; min-height: 44px; }
+#basic-theme#basic-theme .teams-list mat-header-cell, #basic-theme#basic-theme .teams-list mat-header-cell * { color: var(--bs-green) !important; font: 400 17px/1 Anton, Impact, sans-serif !important; letter-spacing: .8px; text-transform: uppercase; }
+#basic-theme .teams-list mat-row { border-bottom: 1px solid var(--bs-line) !important; transition: background .15s ease; }
+#basic-theme .teams-list mat-row:hover { background: #eff8f2 !important; }
+#basic-theme#basic-theme .teams-list mat-cell, #basic-theme#basic-theme .teams-list mat-cell * { color: var(--bs-ink) !important; font-size: 15px !important; }
+#basic-theme#basic-theme .teams-list mat-cell.mat-column-name { font-weight: 700 !important; }
+#basic-theme#basic-theme .teams-list mat-cell button.mat-button, #basic-theme#basic-theme .teams-list mat-cell button.mat-raised-button, #basic-theme#basic-theme .teams-list mat-cell button.mat-flat-button, #basic-theme#basic-theme .teams-list mat-cell button.mat-stroked-button { background: var(--bs-yellow) !important; color: #111 !important; border: none !important; border-radius: 6px !important; font-weight: 700 !important; font-size: 12px !important; letter-spacing: .4px; text-transform: uppercase; }
+
+/* Remove njuko's grey notch (drawn with borders on .cut pseudo-elements) behind the split-the-cost text */
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::before,
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::after { border: 0 !important; }
+
+/* ===== v13: DISCOUNT CODE BOX IN THE BASKET - bigger, voucher-style, impossible to miss ===== */
+#basic-theme#basic-theme .registration-cart-reservation-discount-code { margin: 18px 0 10px !important; width: 100%; }
+#basic-theme#basic-theme .registration-cart-reservation-discount-code .discount-code-applied-container > div { justify-content: stretch !important; }
+/* closed state: full-width dashed "voucher" button */
+#basic-theme#basic-theme .discount-code-button { width: 100% !important; min-height: 54px !important; padding: 10px 16px !important; background: #fff8dc !important; color: var(--bs-ink) !important; border: 2px dashed var(--bs-yellow-d) !important; border-radius: 12px !important; box-shadow: 0 3px 10px rgba(240, 176, 0, 0.25) !important; transition: background 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease; }
+#basic-theme#basic-theme .discount-code-button, #basic-theme#basic-theme .discount-code-button * { font-family: Arial, Helvetica, sans-serif !important; font-size: 16px !important; font-weight: 700 !important; letter-spacing: 0.5px; text-transform: uppercase; color: var(--bs-ink) !important; line-height: 1.2 !important; }
+#basic-theme#basic-theme .discount-code-button .mat-icon { font-family: 'Material Icons' !important; text-transform: none !important; letter-spacing: normal !important; font-weight: 400 !important; color: var(--bs-green) !important; font-size: 28px !important; width: 28px !important; height: 28px !important; margin-right: 10px !important; }
+#basic-theme#basic-theme .discount-code-button:hover { background: #ffefb0 !important; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(240, 176, 0, 0.35) !important; }
+/* open state: boxed panel with a large input and button */
+#basic-theme#basic-theme .discount-code-applied-container .use-code { display: flex !important; flex-direction: column !important; gap: 10px; align-items: stretch !important; padding: 16px 18px !important; background: #fff8dc !important; border: 2px dashed var(--bs-yellow-d) !important; border-radius: 12px !important; }
+#basic-theme#basic-theme .use-code .use-code-text, #basic-theme#basic-theme .use-code-text { color: var(--bs-ink) !important; font: 400 24px/1.1 'Anton', Impact, sans-serif !important; font-style: normal !important; letter-spacing: 0.6px; text-transform: uppercase; }
+#basic-theme#basic-theme .use-code form { display: flex !important; flex-wrap: wrap; gap: 10px; align-items: center; }
+#basic-theme#basic-theme .use-code mat-form-field { flex: 1 1 200px; }
+#basic-theme#basic-theme .use-code input { font-size: 18px !important; font-weight: 700 !important; letter-spacing: 1px; text-transform: uppercase; }
+#basic-theme#basic-theme .use-code .mat-form-field-outline { background: #fff; border-radius: 10px; }
+#basic-theme#basic-theme .use-code .mat-form-field-outline-thick { color: var(--bs-yellow-d) !important; }
+#basic-theme#basic-theme .use-code button { min-height: 50px !important; padding: 0 26px !important; font-size: 15px !important; }
+
+/* ===== v16: TEAMS PAGE - clearer search and team code fields ===== */
+/* Search box: label reads "Search your team name here..." (njuko's own text is hidden and replaced) */
+#basic-theme#basic-theme .teams-list .search-team label.mat-form-field-label mat-label,
+#basic-theme#basic-theme .teams-list mat-cell label.mat-form-field-label mat-label { font-size: 0 !important; }
+#basic-theme#basic-theme .teams-list .search-team label.mat-form-field-label mat-label::after { content: 'Search your team name here...'; font-size: 17px; font-weight: 700; color: var(--bs-mute); }
+#basic-theme#basic-theme .teams-list mat-cell label.mat-form-field-label mat-label::after { content: 'Enter the team code'; font-size: 15px; font-weight: 700; color: var(--bs-mute); }
+/* the label is hidden once the field is used, so the outline never shows a mismatched notch */
+#basic-theme#basic-theme .teams-list .mat-form-field-should-float label.mat-form-field-label { opacity: 0 !important; }
+#basic-theme#basic-theme .teams-list .mat-form-field-appearance-outline.mat-form-field-should-float .mat-form-field-outline-gap { border-top-color: currentColor !important; }
+/* bigger, bolder fields with a green outline so they read as "type here" */
+#basic-theme#basic-theme .teams-list .search-team input { font-size: 18px !important; font-weight: 700 !important; }
+#basic-theme#basic-theme .teams-list mat-cell input { font-size: 16px !important; font-weight: 700 !important; letter-spacing: 1px; }
+#basic-theme#basic-theme .teams-list .search-team .mat-form-field-outline-thick,
+#basic-theme#basic-theme .teams-list mat-cell .mat-form-field-outline-thick { color: var(--bs-green) !important; }
+#basic-theme#basic-theme .teams-list .search-team .mat-form-field-outline,
+#basic-theme#basic-theme .teams-list mat-cell .mat-form-field-outline { color: #9db3a8; background: #fff; border-radius: 10px; }
+/* Join buttons: solid yellow when ready, clearly greyed until a code is entered */
+#basic-theme#basic-theme .teams-list mat-cell button:disabled { background: #e6ebe8 !important; color: #8a979d !important; opacity: 1 !important; }
+
+/* ===== v17: TEAMS PAGE INTRO BANNER - bold dark panel, hazard-tape edge, two "step" cards ===== */
+#basic-theme#basic-theme .teams-list > app-message.cardWrap { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(16, 26, 30, 0.95), rgba(28, 44, 38, 0.95)) !important; border: 0 !important; border-radius: 16px !important; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4) !important; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 8px; background: repeating-linear-gradient(-45deg, #ffc526 0 10px, #142025 10px 20px); }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div { padding: 34px 32px 28px !important; }
+/* eyebrow + big Anton heading */
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:first-child { margin: 0 0 12px !important; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:first-child::before { content: 'Team members'; display: block; margin-bottom: 6px; color: #ffc526; font: 700 13px/1 Arial, Helvetica, sans-serif; letter-spacing: 3px; text-transform: uppercase; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:first-child,
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:first-child strong { color: #fff !important; font: 400 44px/1.05 'Anton', Impact, sans-serif !important; letter-spacing: 0.6px !important; text-transform: uppercase; }
+/* lead paragraph */
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:nth-child(2) { margin: 0 0 18px !important; color: rgba(255, 255, 255, 0.9) !important; font-size: 17px !important; line-height: 1.55 !important; max-width: 760px; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:nth-child(2) strong { color: #ffc526 !important; }
+/* the two options become numbered white cards */
+#basic-theme#basic-theme .teams-list > app-message.cardWrap ol { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 0 0 18px !important; padding: 0 !important; list-style: none !important; counter-reset: step; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap ol li { position: relative; counter-increment: step; margin: 0 !important; padding: 18px 18px 18px 76px !important; background: #fff; border-radius: 12px; border-bottom: 5px solid #ffc526; color: #3e4b55 !important; font-size: 15px !important; line-height: 1.45 !important; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap ol li::before { content: counter(step); position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: #ffc526; color: #142025; font: 400 26px/44px 'Anton', Impact, sans-serif; text-align: center; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap ol li strong:first-child { display: block; margin-bottom: 3px; color: #006c3b !important; font: 400 21px/1.1 'Anton', Impact, sans-serif !important; letter-spacing: 0.5px; text-transform: uppercase; }
+/* closing line as a yellow callout */
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:last-child { margin: 0 !important; padding: 12px 16px; background: rgba(255, 197, 38, 0.14); border-left: 4px solid #ffc526; border-radius: 4px 10px 10px 4px; color: #ffe08a !important; font-size: 16px !important; font-weight: 700; }
+@media (max-width: 700px) {
+  #basic-theme#basic-theme .teams-list > app-message.cardWrap ol { grid-template-columns: 1fr; }
+  #basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div { padding: 28px 20px 22px !important; }
+  #basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:first-child, #basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:first-child strong { font-size: 34px !important; }
+}
