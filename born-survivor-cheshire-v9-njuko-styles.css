@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+/* Born Survivor Cheshire 2027 - njuko select-competition CSS (preview v2 - updated for the 8-ticket layout). Styled after the client's booking-page mockup, within what njuko's ticket markup allows. */
+
+:root {
+  --bs-green: #006c3b;
+  --bs-slate: #3e4b55;
+  --bs-yellow: #ffc526;
+  --bs-yellow-d: #f0b000;
+  --bs-ink: #142025;
+  --bs-mute: #55636a;
+  --bs-line: #dce2e0;
+  --bs-bg: #f3f5f4;
+}
+
+/* Page: njuko's own background image is kept; green header bar */
+
+#basic-theme .mat-toolbar.mat-primary { background: linear-gradient(102deg, #008a4e, #00ac67) !important; color: #fff !important; }
+#basic-theme .mat-toolbar .mat-icon { color: #fff !important; }
+
+/* Fonts: Anton for display (titles, prices), Arial for text */
+#basic-theme, #basic-theme *:not(.mat-icon):not(.material-icons):not([class*="material-icons"]):not(.fa):not([class*="fa-"]):not(i) {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+#basic-theme#basic-theme .cardLeft h1,
+#basic-theme#basic-theme .price-bloc, #basic-theme#basic-theme .price-bloc * {
+  font-family: 'Anton', Impact, 'Arial Narrow', sans-serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
+}
+
+/* Intro text */
+#basic-theme app-message.cardWrap { background: transparent !important; box-shadow: none !important; padding: 6px 0 8px !important; }
+#basic-theme app-message.cardWrap, #basic-theme app-message.cardWrap * { color: var(--bs-mute) !important; font-size: 15px !important; line-height: 1.55 !important; }
+#basic-theme#basic-theme app-message.cardWrap h1, #basic-theme#basic-theme app-message.cardWrap h2 { color: var(--bs-ink) !important; font-family: 'Anton', Impact, sans-serif !important; font-weight: 400 !important; font-size: 40px !important; line-height: 1.05 !important; text-transform: uppercase !important; }
+
+/* Ticket cards: one white rounded card per ticket; header band takes the ticket colour */
+#basic-theme .competitions-list > .cardWrap { --acc: var(--bs-green); --pale: #eff8f2; }
+#basic-theme #competition_6acbcf2de59e53d6349eb474,
+#basic-theme #competition_6acbcf2de59e53d6349eb478 { --acc: var(--bs-slate); --pale: #f0f3f5; }
+#basic-theme #competition_6ae59a87a5f40044aad113a5 { --acc: #70411e; --pale: #fbf3e9; }
+#basic-theme .flip-card-front, #basic-theme .flip-card-back {
+  background: #fff !important;
+  border: 1px solid var(--bs-line) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 6px 20px rgba(11, 27, 26, 0.07) !important;
+  overflow: hidden !important;
+  margin-bottom: 18px !important;
+}
+#basic-theme#basic-theme .cardLeft, #basic-theme#basic-theme .cardRight { border: none !important; border-radius: 0 !important; box-shadow: none !important; background: #fff !important; }
+#basic-theme#basic-theme .cardLeft { border-right: 1px solid var(--bs-line) !important; padding: 0 0 14px !important; }
+#basic-theme .cardLeft .block-cut, #basic-theme .cardLeft .cut, #basic-theme .competitions-list .cut { display: none !important; }
+#basic-theme .cardLeft > * { margin-left: 22px; margin-right: 22px; }
+
+/* Header band */
+#basic-theme#basic-theme .cardLeft > h1 {
+  margin: 0 0 14px !important;
+  padding: 16px 22px !important;
+  background: var(--acc) !important;
+  color: #fff !important;
+  font-size: 26px !important;
+  line-height: 1.1 !important;
+}
+#basic-theme#basic-theme .cardLeft > h1 *, #basic-theme#basic-theme .cardLeft > h1 .mat-icon { color: #fff !important; }
+#basic-theme .cardLeft > h1 .mat-icon { margin-right: 10px !important; }
+
+/* Ticket details */
+#basic-theme .cardLeft .seat span, #basic-theme .cardLeft .time span, #basic-theme .cardLeft .title span, #basic-theme .cardLeft .name span {
+  color: var(--bs-mute) !important; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 1px !important; text-transform: uppercase !important;
+}
+#basic-theme .cardLeft h2 { color: var(--bs-ink) !important; font-size: 15px !important; font-weight: 700 !important; margin: 2px 0 10px !important; }
+
+/* Price panel */
+#basic-theme#basic-theme .cardRight { padding: 20px 18px !important; justify-content: center !important; }
+#basic-theme#basic-theme .cardRight .number span { color: var(--bs-mute) !important; font-size: 10px !important; font-weight: 700 !important; letter-spacing: 1px !important; text-transform: uppercase !important; }
+#basic-theme#basic-theme .price-bloc, #basic-theme#basic-theme .price-bloc * { color: var(--bs-ink) !important; font-size: 44px !important; line-height: 1 !important; }
+#basic-theme .booking-fee-front-container, #basic-theme .booking-fee-front-container * { font-size: 13px !important; color: #425157 !important; }
+
+/* Buttons: yellow, black text (as the client mockup) */
+#basic-theme#basic-theme a.button.mat-raised-button,
+#basic-theme#basic-theme .mat-raised-button.mat-accent,
+#basic-theme#basic-theme .mat-raised-button.mat-primary {
+  background: var(--bs-yellow) !important;
+  color: #111 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
+  padding: 9px 22px !important;
+  min-width: 150px !important;
+  line-height: 1.3 !important;
+}
+#basic-theme#basic-theme a.button.mat-raised-button *, #basic-theme#basic-theme .mat-raised-button * { color: #111 !important; }
+#basic-theme#basic-theme a.button.mat-raised-button:hover, #basic-theme#basic-theme .mat-raised-button.mat-accent:hover, #basic-theme#basic-theme .mat-raised-button.mat-primary:hover { background: var(--bs-yellow-d) !important; }
+#basic-theme .cardRight .text-center { display: flex !important; flex-direction: column !important; gap: 10px !important; align-items: center !important; }
+
+@media (max-width: 768px) {
+  #basic-theme#basic-theme .cardLeft { border-right: none !important; border-bottom: 1px solid var(--bs-line) !important; }
+}
+
+/* Hide empty hook / message slots at the top of each ticket so the coloured header band sits flush at the top */
+#basic-theme .cardLeft > app-message:empty, #basic-theme .cardLeft > hook:not(:has(img,p,a,mat-icon,span)) { display: none !important; }
+/* Keep the detail rows aligned with the header text */
+#basic-theme#basic-theme .cardLeft > .seat, #basic-theme#basic-theme .cardLeft > .title, #basic-theme#basic-theme .cardLeft > .name { margin-left: 22px !important; }
+
+/* Ticket message: shown as a pale strapline strip under the header band */
+#basic-theme .cardLeft > app-message.message-in-ticket:not(:empty) { margin: 0 !important; display: block !important; }
+#basic-theme .cardLeft .message-in-ticket .message-content { background: var(--pale) !important; padding: 14px 22px 10px !important; margin: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+#basic-theme .cardLeft .message-in-ticket p { margin: 0 0 8px !important; font-size: 13px !important; line-height: 1.45 !important; color: var(--bs-mute) !important; font-weight: 400 !important; text-transform: none !important; }
+#basic-theme#basic-theme .cardLeft .message-in-ticket p:first-child { font-size: 14px !important; font-weight: 700 !important; color: var(--bs-ink) !important; text-transform: uppercase !important; letter-spacing: 0.15px !important; }
+#basic-theme .cardLeft .message-in-ticket p strong, #basic-theme .cardLeft .message-in-ticket p b { color: var(--bs-ink) !important; }
+#basic-theme .cardLeft .break { display: none !important; }
+#basic-theme#basic-theme .cardLeft > h1 { font-size: 22px !important; }
+#basic-theme .cardLeft .message-in-ticket, #basic-theme .cardLeft .message-in-ticket * { text-align: left !important; }
+#basic-theme#basic-theme .cardRight { padding: 14px 18px !important; }
+#basic-theme#basic-theme .cardLeft .message-in-ticket p:first-child { font-size: 13.5px !important; line-height: 1.4 !important; letter-spacing: 0 !important; }
+
+/* SPLIT THE COST - icon + label below the price, with small Klarna and Clearpay badges underneath */
+#basic-theme .cardRight .number h3::after {
+  content: 'Split the cost';
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+  padding: 28px 0 30px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: none;
+  color: #142025;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23142025' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='5' width='20' height='14' rx='2.5'/%3E%3Cpath d='M2 10h20M6 15h4'/%3E%3C/svg%3E"), url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAoBAMAAADzveIKAAAAMFBMVEWgco3+zORsTGUqGzJKM0vPk7KEXni5hKL9u948KUH+sNH6rc4EARX//f4SCiImGC+AGkALAAAAEHRSTlP/////////////////////zSGylAAAAuxJREFUeNqVlU1oU2kUhp9zE1NbAvniQsTaEv+gipQKCkVECqKoMDIbg5bRUYogIv6AaMEsiohuxNa0lOrG6sIRXMhsdOiARB1mRAqGAf/QSExR1JjeLxCjVHM/F0kvaVz05sD94fK+95z35ZzzSQoKXY0DeIgvsQRIisLWq3gL05NAUmy4oj0SJLAKi4JnPGaqC4ttnvFghrAKV6gjprqsRuoLae6vC//FqjOB8pefYWxEYYexZyvppnHJOt0xOVtGVQbIXzEVzvYO6+6Y8pJBWOzLyttVxffXTn9Ce8hAB2BZDmmZTbW/LKFrENPCnIoBaGUErbQygtEQxkjFDr9LdX5Jb+8D8gaULQZsZYtBlFY2Mu2N64rkOkgChAK9f+eit65Hw7uz0ccPex/nRe8cuXV9twLQbgYzFn9+FSC3YxGd4/tfjm+8PzZ+/Hz31yKXHlE8+N8npaszZFOtxwB48j+8ReHLfVvMHqy2geyHJTTNk5qSzsUnlocAEq3zeyYimpYkWO3/tmdOHYm/jiYHCjUE1Vq8p4FcfOLEqT6A4p9QXHCDbzec5gMBakQXlmZMv4KCIf9AzUsDv6/FWSGvYDSybvXcwzWE4BanrQ/gO8sH8psAPoRBEYEIu4xStbY2jTKcB/xkCNU21AVxG8a1tbEzE7y8F6YomckziWp4Gr2kePfzjF4CGtojbzTB5sNt734bnfH/O5lnmxe5osv2JiC0N3MOMMnM+oc+VFXBfqfl0OjR4AwNSZCVTtOdiGHIgR1pTRqMo8Fh8I80xclSFcGw7iJm2XC0cSzOwrMnj8eiLzZHfzWlyxHmRPdL58iBLU+7y7qrRhTAsRADSksJnwFQSTrQ4JRraaismTC22/VhI5VBEGW0KGxROlSZh4aKrbZ7A1tM5dXY05fSta0xY4P+/GkaL999/5S+1rMoj9W7+bCC++qBBxIWt1UdFR3CIrjPM0MCCSRF4aNXwrtYAknBmkvejoaj48APKFseh/QZeYIAAAAASUVORK5CYII="), url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAoBAMAAAAoBkgoAAAAMFBMVEUICwql4tRQbWZwmY/E//uGtqwAAAA4TUiPxriq+elfg3qx++UvQTyz/ObM//+y++UnihQpAAAAEHRSTlP///////8A//8S/2j/hwX+7oFZHgAAAs5JREFUeNqllr9vG2Ucxj/3OkejBKw7G9EF8V4SwsAvX3wu6mY3GYrEYBN1YWonJJhSlIUpRlTqVKVbV4O6MeQfYHCnSKiVglBnTvyYEOA3Z2O1iDwMsS9J2yE6f4fT+727j/R873n13Ot9Gj++1qJAff9d/EMp+ePzD4rAXHx377+55KV3CsEsvpWM+UyF68kN788KRevoV7NfGGZ8YBaL04t4Kk7jDLNUIbryPB3OnRfO/v5yuszd65rz+hzBkiRpUED5YQo/t1409yi/TKrzIn4n5kErV+7qK1Zd47T59nVJmythYpOPvw2TsL4qabTcrK59fVkaJVaS7dZchJE0QJJiWFDX6HW4YHURDA3gEhHclOtD5HeQAqwkta3cFs3J3MMD+GcV1n+DJ7/wCRxNJKawi21ByoBWFJRiOEwGKe//RGuiPGCpynxg1qm5rYUN/DCigXFVTNjhfsRXFfwNdhzesVAr3aY2UR6b9nBzNTABoQ0Yc01XaeBpg219iIfXFr5jfp096TawpwrYCR35x34HAATIZTTwXEbTCo8da3u+YhNgVYEVtjOYf97vhw/3v8ib8lmb0qPApMO/8N9g9xVK46ljJ8rbQxeOuaV1GnjK2NYVHuBJ+O4QPPUoSYCxmjoW8E2V+cBcZclFZgPfRRPa2A73I2wF3zmoOYyVOlywyukM4M2uuQJ9PPWBCQ2gAMCXIqzDa0tu+bpOaMVg1DXqnt4tnjK24KYcEPlSz0iwJ73a1mna1Vesqpeler5Td5OmMtbqq5Ky5WZ1TQ5PCqDpjofO6byGZ7qMhtp595Sa5CJeDqlN6blncu6Z3IvSfP0aAyj/WEvPn0ynXr1rUqD8GLhxHvrss4Pj9F3IKG1N7xVI5MPyLIlcnjGRT+j+DHDfjIrDI2b7A5eyjwrT/26buFeY7sVzj0qXih1cRr8/emp4716xz75/J+Z/5XL8MLZmb3UAAAAASUVORK5CYII=");
+  background-size: 20px 20px, auto 20px, auto 20px;
+  background-position: center 0, calc(50% - 34px) calc(100% - 2px), calc(50% + 28px) calc(100% - 2px);
+}
+
+/* SOLO / TEAM ICONS - bold person (solo) or group (team) icon in each ticket header.
+   Team tickets are picked out by ticket id; add a new team ticket's id to the team list below. (njuko's own icon slot in the title is empty on this page, so the icon is drawn with ::before.) */
+#basic-theme#basic-theme .cardLeft > h1::before {
+  content: '' !important;
+  display: inline-block !important; width: 26px !important; height: 24px !important;
+  margin-right: 12px !important; flex: 0 0 auto;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='6.5' r='4.2' fill='%23fff'/%3E%3Cpath d='M3.5 21.5v-2.8c0-4.6 3.8-8.2 8.5-8.2s8.5 3.6 8.5 8.2v2.8Z' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat !important;
+}
+#basic-theme#basic-theme #competition_6acbcf2de59e53d6349eb476 .cardLeft > h1::before,
+#basic-theme#basic-theme #competition_6acbcf2de59e53d6349eb478 .cardLeft > h1::before,
+#basic-theme#basic-theme #competition_6ae1ad545019f05e9bc3c04d .cardLeft > h1::before {
+  width: 32px !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 24'%3E%3Ccircle cx='16' cy='6' r='4.2' fill='%23fff'/%3E%3Ccircle cx='5.5' cy='9' r='3.5' fill='%23fff'/%3E%3Ccircle cx='26.5' cy='9' r='3.5' fill='%23fff'/%3E%3Cpath d='M9 22v-5c0-4.1 3-6.9 7-6.9s7 2.8 7 6.9v5Z' fill='%23fff'/%3E%3Cpath d='M1 22v-6c0-2.7 1.7-4.4 4.5-4.4 1.3 0 2.3.35 3.2 1.2C7.6 15 7.3 17.1 7.3 19.4V22Zm24 0v-2.6c0-2.3-.4-4.5-1.4-6.6a5 5 0 0 1 2.9-1.2c2.8 0 4.5 1.7 4.5 4.4v6Z' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat !important;
+}
+
+/* TICKET SPACING - tighter, even 12px gap between tickets (njuko default was ~48px) */
+#basic-theme .competitions-list > .cardWrap.flip-card { margin: 0 auto 12px !important; } /* auto side margins keep the tickets centred */
+#basic-theme .flip-card-front, #basic-theme .flip-card-back { margin-bottom: 0 !important; }
+
+/* INTRO MESSAGE BLOCK ("Text here" at the top of the entry page) - white rounded callout with a green tick badge.
+   Write the message in njuko as: first paragraph = short bold heading line, following paragraphs = detail.
+   Bold text inside a paragraph is highlighted. A heading (H1/H2) at the top is shown in the big Anton title style. */
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap { padding: 0 !important; margin: 15px auto 16px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) {
+  position: relative !important; background: #fff !important; border: 1px solid var(--bs-line) !important; border-radius: 14px !important;
+  box-shadow: 0 6px 20px rgba(11, 27, 26, 0.07) !important; margin: 0 !important; padding: 16px 20px 12px 68px !important; min-height: 64px;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent)::before {
+  content: '\2713'; position: absolute; left: 20px; top: 16px; width: 34px; height: 34px; border-radius: 10px;
+  background: #f0f5f1; color: var(--bs-green); font: 700 19px/34px Arial, sans-serif; text-align: center;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) p {
+  margin: 0 0 6px !important; font-size: 13px !important; line-height: 1.5 !important; color: var(--bs-mute) !important;
+  font-weight: 400 !important; text-transform: none !important; text-align: left !important;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) p:first-child { font-weight: 700 !important; color: var(--bs-ink) !important; text-transform: uppercase !important; letter-spacing: 0.2px; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) strong,
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) b { color: var(--bs-ink) !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) strong,
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) b,
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) p * { font-size: inherit !important; line-height: inherit !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) h1,
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) h2 {
+  font-family: 'Anton', Impact, sans-serif !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.05 !important;
+  text-transform: uppercase !important; color: var(--bs-ink) !important; margin: 0 0 8px !important;
+}
+
+/* Client intro block (message with logo, eyebrow, title, lede and a "Booking with friends?" callout).
+   Built for this order of paragraphs: 1 logo, 2 blank, 3 eyebrow, 4 title, 5 intro text, 6 callout (first line = callout heading). */
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent { border: 0 !important; margin: 0 !important; padding: 22px 24px 14px !important; background: rgba(16, 28, 24, 0.78) !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important; border-radius: 14px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent > div { padding: 0; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p { margin: 0 0 10px !important; text-align: left !important; color: #fff !important; font-size: 15px !important; line-height: 1.55 !important; font-weight: 400 !important; text-transform: none !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:has(img) { margin: 0 0 6px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent img { max-height: 150px !important; width: auto !important; display: block; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:has(> br:only-child) { display: none !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(3) { font-size: 11px !important; font-weight: 800 !important; letter-spacing: 2px !important; color: var(--bs-yellow) !important; text-transform: uppercase !important; margin-bottom: 4px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(4) { font-family: 'Anton', Impact, sans-serif !important; font-size: clamp(30px, 4.2vw, 46px) !important; line-height: 1.02 !important; letter-spacing: 0.5px; text-transform: uppercase !important; color: #fff !important; margin-bottom: 10px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(5) { max-width: 760px; color: #fff !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6) {
+  position: relative; background: #fff; border: 1px solid var(--bs-line); border-radius: 14px; box-shadow: 0 6px 20px rgba(11, 27, 26, 0.07);
+  padding: 16px 20px 12px 68px; margin: 14px 0 0 !important; font-size: 13px !important; line-height: 1.5 !important; color: var(--bs-mute) !important;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6)::first-line { font-weight: 800; color: var(--bs-ink); text-transform: uppercase; letter-spacing: 0.2px; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6)::before { content: '\2713'; position: absolute; left: 20px; top: 16px; width: 34px; height: 34px; border-radius: 10px; background: #f0f5f1; color: var(--bs-green); font: 700 19px/34px Arial, sans-serif; text-align: center; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6) strong, #basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6) b { color: var(--bs-ink) !important; font-size: inherit !important; }
+
+/* ===== v8: HEADER, SPLIT-THE-COST PANEL AND OBSTACLE-RACE THEMING ===== */
+
+/* HEADER - Born Survivor wordmark on the left, menu on the right (as the client's own page) */
+#basic-theme .mat-toolbar.mat-primary { height: 58px !important; justify-content: flex-start !important; }
+#basic-theme .mat-toolbar.mat-primary > div:nth-of-type(1) { flex: 1 1 auto !important; display: flex !important; align-items: center !important; justify-content: flex-start !important; }
+#basic-theme .mat-toolbar.mat-primary > div:nth-of-type(1)::before {
+  content: 'B'; font: 400 27px/1 Anton, Impact, sans-serif; letter-spacing: 1px; color: #fff; padding-left: 4px;
+}
+#basic-theme .mat-toolbar.mat-primary > div:nth-of-type(1)::after {
+  content: 'RN SURVIVOR'; font: 400 27px/1 Anton, Impact, sans-serif; letter-spacing: 1px; color: #fff;
+  padding-left: 31px; margin-left: 1px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='11' fill='%23111'/%3E%3Cpolygon points='12,5.5 13.9,10 18.7,10.4 15.1,13.5 16.2,18.2 12,15.7 7.8,18.2 8.9,13.5 5.3,10.4 10.1,10' fill='%23fff'/%3E%3C/svg%3E") 3px center / 26px 26px no-repeat;
+}
+#basic-theme .mat-toolbar .nav-button, #basic-theme .mat-toolbar .nav-button * { font-size: 12px !important; font-weight: 700 !important; letter-spacing: 1.4px !important; text-transform: uppercase !important; }
+
+/* SPLIT THE COST - moved out of the price panel into the bottom of the ticket (fills the empty space) */
+#basic-theme .cardRight .number h3::after { content: none !important; display: none !important; background: none !important; padding: 0 !important; margin: 0 !important; }
+#basic-theme#basic-theme .cardLeft { display: flex !important; flex-direction: column !important; }
+#basic-theme#basic-theme .cardLeft > .block-cut {
+  display: flex !important; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+  margin: auto 22px 0 !important; padding: 12px 0 0 !important; border-top: 1px dashed #c4cfca; position: relative; background: none !important;
+}
+#basic-theme#basic-theme .cardLeft > .block-cut::before {
+  content: 'Split the cost'; padding-left: 28px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23142025' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='5' width='20' height='14' rx='2.5'/%3E%3Cpath d='M2 10h20M6 15h4'/%3E%3C/svg%3E") left center / 20px 20px no-repeat;
+  font: 700 12px/20px Arial, Helvetica, sans-serif; color: var(--bs-ink); text-transform: uppercase; letter-spacing: 0.4px; white-space: nowrap;
+}
+#basic-theme#basic-theme .cardLeft > .block-cut .cut {
+  display: block !important; position: static !important; width: auto !important; height: auto !important; flex: 1 1 150px;
+  background: none !important; border-radius: 0 !important; box-shadow: none !important; transform: none !important;
+  font-size: 11px; line-height: 1.3; color: var(--bs-mute);
+}
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::before { content: 'Enter now with easy instalments at checkout.'; }
+#basic-theme#basic-theme .cardLeft > .block-cut::after {
+  content: ''; width: 134px; height: 24px; flex: 0 0 auto;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAAAoBAMAAADzveIKAAAAMFBMVEWgco3+zORsTGUqGzJKM0vPk7KEXni5hKL9u948KUH+sNH6rc4EARX//f4SCiImGC+AGkALAAAAEHRSTlP/////////////////////zSGylAAAAuxJREFUeNqVlU1oU2kUhp9zE1NbAvniQsTaEv+gipQKCkVECqKoMDIbg5bRUYogIv6AaMEsiohuxNa0lOrG6sIRXMhsdOiARB1mRAqGAf/QSExR1JjeLxCjVHM/F0kvaVz05sD94fK+95z35ZzzSQoKXY0DeIgvsQRIisLWq3gL05NAUmy4oj0SJLAKi4JnPGaqC4ttnvFghrAKV6gjprqsRuoLae6vC//FqjOB8pefYWxEYYexZyvppnHJOt0xOVtGVQbIXzEVzvYO6+6Y8pJBWOzLyttVxffXTn9Ce8hAB2BZDmmZTbW/LKFrENPCnIoBaGUErbQygtEQxkjFDr9LdX5Jb+8D8gaULQZsZYtBlFY2Mu2N64rkOkgChAK9f+eit65Hw7uz0ccPex/nRe8cuXV9twLQbgYzFn9+FSC3YxGd4/tfjm+8PzZ+/Hz31yKXHlE8+N8npaszZFOtxwB48j+8ReHLfVvMHqy2geyHJTTNk5qSzsUnlocAEq3zeyYimpYkWO3/tmdOHYm/jiYHCjUE1Vq8p4FcfOLEqT6A4p9QXHCDbzec5gMBakQXlmZMv4KCIf9AzUsDv6/FWSGvYDSybvXcwzWE4BanrQ/gO8sH8psAPoRBEYEIu4xStbY2jTKcB/xkCNU21AVxG8a1tbEzE7y8F6YomckziWp4Gr2kePfzjF4CGtojbzTB5sNt734bnfH/O5lnmxe5osv2JiC0N3MOMMnM+oc+VFXBfqfl0OjR4AwNSZCVTtOdiGHIgR1pTRqMo8Fh8I80xclSFcGw7iJm2XC0cSzOwrMnj8eiLzZHfzWlyxHmRPdL58iBLU+7y7qrRhTAsRADSksJnwFQSTrQ4JRraaismTC22/VhI5VBEGW0KGxROlSZh4aKrbZ7A1tM5dXY05fSta0xY4P+/GkaL999/5S+1rMoj9W7+bCC++qBBxIWt1UdFR3CIrjPM0MCCSRF4aNXwrtYAknBmkvejoaj48APKFseh/QZeYIAAAAASUVORK5CYII=") left center / auto 22px no-repeat, url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAoBAMAAAAoBkgoAAAAMFBMVEUICwql4tRQbWZwmY/E//uGtqwAAAA4TUiPxriq+elfg3qx++UvQTyz/ObM//+y++UnihQpAAAAEHRSTlP///////8A//8S/2j/hwX+7oFZHgAAAs5JREFUeNqllr9vG2Ucxj/3OkejBKw7G9EF8V4SwsAvX3wu6mY3GYrEYBN1YWonJJhSlIUpRlTqVKVbV4O6MeQfYHCnSKiVglBnTvyYEOA3Z2O1iDwMsS9J2yE6f4fT+727j/R873n13Ot9Gj++1qJAff9d/EMp+ePzD4rAXHx377+55KV3CsEsvpWM+UyF68kN788KRevoV7NfGGZ8YBaL04t4Kk7jDLNUIbryPB3OnRfO/v5yuszd65rz+hzBkiRpUED5YQo/t1409yi/TKrzIn4n5kErV+7qK1Zd47T59nVJmythYpOPvw2TsL4qabTcrK59fVkaJVaS7dZchJE0QJJiWFDX6HW4YHURDA3gEhHclOtD5HeQAqwkta3cFs3J3MMD+GcV1n+DJ7/wCRxNJKawi21ByoBWFJRiOEwGKe//RGuiPGCpynxg1qm5rYUN/DCigXFVTNjhfsRXFfwNdhzesVAr3aY2UR6b9nBzNTABoQ0Yc01XaeBpg219iIfXFr5jfp096TawpwrYCR35x34HAATIZTTwXEbTCo8da3u+YhNgVYEVtjOYf97vhw/3v8ib8lmb0qPApMO/8N9g9xVK46ljJ8rbQxeOuaV1GnjK2NYVHuBJ+O4QPPUoSYCxmjoW8E2V+cBcZclFZgPfRRPa2A73I2wF3zmoOYyVOlywyukM4M2uuQJ9PPWBCQ2gAMCXIqzDa0tu+bpOaMVg1DXqnt4tnjK24KYcEPlSz0iwJ73a1mna1Vesqpeler5Td5OmMtbqq5Ky5WZ1TQ5PCqDpjofO6byGZ7qMhtp595Sa5CJeDqlN6blncu6Z3IvSfP0aAyj/WEvPn0ynXr1rUqD8GLhxHvrss4Pj9F3IKG1N7xVI5MPyLIlcnjGRT+j+DHDfjIrDI2b7A5eyjwrT/26buFeY7sVzj0qXih1cRr8/emp4716xz75/J+Z/5XL8MLZmb3UAAAAASUVORK5CYII=") right center / auto 22px no-repeat;
+}
+
+/* OBSTACLE-RACE THEMING - hazard-tape edge under each header band and a faint obstacle-course skyline in the ticket */
+#basic-theme#basic-theme .cardLeft > h1 {
+  border-bottom: 6px solid transparent !important;
+  border-image: repeating-linear-gradient(-45deg, #ffc526 0 10px, #142025 10px 20px) 6 !important;
+}
+#basic-theme#basic-theme .cardLeft {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 360 90'%3E%3Cg fill='%23142025' fill-opacity='.1'%3E%3Crect x='0' y='84' width='360' height='6' rx='3'/%3E%3Cpath d='M14 84 L46 26 L78 84 Z'/%3E%3Cpath d='M44 26 L52 26 L52 84 L44 84 Z' fill-opacity='.1'/%3E%3Crect x='104' y='36' width='22' height='48'/%3E%3Crect x='98' y='32' width='34' height='7' rx='2'/%3E%3Crect x='108' y='46' width='14' height='3' fill='%23fff'/%3E%3Crect x='108' y='58' width='14' height='3' fill='%23fff'/%3E%3Crect x='108' y='70' width='14' height='3' fill='%23fff'/%3E%3Crect x='150' y='64' width='64' height='13' rx='6.5'/%3E%3Crect x='158' y='76' width='6' height='8'/%3E%3Crect x='200' y='76' width='6' height='8'/%3E%3Cpath fill-rule='evenodd' d='M238 84a13 13 0 1 1 26 0zM244 84a7 7 0 0 1 14 0z'/%3E%3Cpath fill-rule='evenodd' d='M238 71a13 13 0 1 1 26 0zM244 71a7 7 0 0 1 14 0z' transform='translate%280 -2%29'/%3E%3Crect x='284' y='28' width='5' height='56'/%3E%3Crect x='338' y='28' width='5' height='56'/%3E%3Crect x='284' y='28' width='59' height='5' rx='2'/%3E%3Ccircle cx='304' cy='44' r='4'/%3E%3Ccircle cx='318' cy='44' r='4'/%3E%3Ccircle cx='332' cy='44' r='4'/%3E%3Crect x='352' y='6' width='3' height='78'/%3E%3Cpath d='M355 6 L372 13 L355 20 Z' transform='translate%28-12 0%29'/%3E%3C/g%3E%3C/svg%3E") !important; background-repeat: no-repeat !important;
+  background-position: right 16px bottom 88px !important; background-size: 330px auto !important;
+}
+
+/* Split-the-cost panel layout fixes (njuko gives .block-cut a fixed 32px width and rotates the .cut notch, so both are reset) */
+#basic-theme#basic-theme .cardLeft > .block-cut { display: grid !important; grid-template-columns: 1fr auto; align-items: center; gap: 4px 12px; width: auto !important; height: auto !important; left: auto !important; right: auto !important; top: auto !important; bottom: auto !important; overflow: visible !important; align-self: stretch; flex: 0 0 auto !important; }
+#basic-theme#basic-theme .cardLeft > .block-cut::before { grid-column: 1; grid-row: 1; min-width: 0; }
+#basic-theme#basic-theme .cardLeft > .block-cut::after { grid-column: 2; grid-row: 1; }
+#basic-theme#basic-theme .cardLeft > .block-cut .cut { grid-column: 1 / -1; grid-row: 2; flex: none; }
+#basic-theme#basic-theme .cardLeft > .block-cut .cut,
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::before,
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::after { transform: none !important; position: static !important; width: auto !important; height: auto !important; top: auto !important; left: auto !important; right: auto !important; bottom: auto !important; border-radius: 0 !important; background: none !important; box-shadow: none !important; margin: 0 !important; overflow: visible !important; }
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::after { content: none !important; }
+
+/* ===== v9: EASIER NAVIGATION ===== */
+
+/* 1. Tickets are grouped: solo entries first, then team entries, each under a section heading.
+   (Order and headings are set by ticket id - if you add a ticket in njuko, give it an order number below.) */
+#basic-theme .competitions-list > app-message.cardWrap:first-child { order: 0; }
+#basic-theme .competitions-list > app-message.cardWrap:last-child { order: 99; }
+#basic-theme .competitions-list > #competition_6ae59a87a5f40044aad113a5 { order: 1; }
+#basic-theme .competitions-list > #competition_6ae59a459bc33ac42d945e40 { order: 2; }
+#basic-theme .competitions-list > #competition_6ae59a670e2ab3fbec97c8c3 { order: 3; }
+#basic-theme .competitions-list > #competition_6acbcf2de59e53d6349eb472 { order: 4; }
+#basic-theme .competitions-list > #competition_6acbcf2de59e53d6349eb474 { order: 5; }
+#basic-theme .competitions-list > #competition_6acbcf2de59e53d6349eb476 { order: 6; }
+#basic-theme .competitions-list > #competition_6ae1ad545019f05e9bc3c04d { order: 7; }
+#basic-theme .competitions-list > #competition_6acbcf2de59e53d6349eb478 { order: 8; }
+#basic-theme .competitions-list > #competition_6ae59a87a5f40044aad113a5::before,
+#basic-theme .competitions-list > #competition_6acbcf2de59e53d6349eb476::before {
+  display: block; margin: 8px 0 12px; padding: 9px 16px 8px; border-left: 6px solid var(--bs-yellow); border-radius: 4px 12px 12px 4px;
+  background: rgba(16, 28, 24, 0.82); color: #fff; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  font: 400 24px/1.1 'Anton', Impact, sans-serif; letter-spacing: 0.8px; text-transform: uppercase;
+}
+#basic-theme .competitions-list > #competition_6ae59a87a5f40044aad113a5::before { content: 'Solo entries'; }
+#basic-theme .competitions-list > #competition_6acbcf2de59e53d6349eb476::before { content: 'Team entries - captain books first, members join by link'; font-size: 20px; }
+
+/* 2. Smooth scrolling, and tickets stop below the fixed header when jumped to */
+html, body, #basic-theme .mat-sidenav-content, #basic-theme .wrapper { scroll-behavior: smooth; }
+#basic-theme .competitions-list > .cardWrap { scroll-margin-top: 78px; }
+
+/* 3. Tickets respond to the pointer: lift on hover, clear yellow focus ring for keyboard users */
+#basic-theme .flip-card-front { transition: transform 0.18s ease, box-shadow 0.18s ease !important; }
+#basic-theme .flip-card-front:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(11, 27, 26, 0.22) !important; }
+#basic-theme#basic-theme a.button.mat-raised-button { transition: background 0.16s ease, transform 0.16s ease !important; }
+#basic-theme#basic-theme a.button.mat-raised-button:hover { transform: translateY(-1px); }
+#basic-theme#basic-theme a.button.mat-raised-button .mat-button-wrapper::after { content: ' \2192'; display: inline-block; width: 0; overflow: hidden; vertical-align: bottom; transition: width 0.16s ease; }
+#basic-theme#basic-theme a.button.mat-raised-button:hover .mat-button-wrapper::after { width: 1.2em; }
+#basic-theme a.button:focus-visible, #basic-theme .nav-button:focus-visible, #basic-theme button:focus-visible { outline: 3px solid var(--bs-yellow) !important; outline-offset: 2px; }
+
+/* 4. Header menu: clearer hover and a yellow underline on the item you are over */
+#basic-theme .mat-toolbar .nav-button { position: relative; transition: background 0.16s ease; }
+#basic-theme .mat-toolbar .nav-button::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 3px; background: var(--bs-yellow); transform: scaleX(0); transition: transform 0.18s ease; }
+#basic-theme .mat-toolbar .nav-button:hover::after { transform: scaleX(1); }
+
+/* 5. "Scroll for more" pill - bounces at the bottom of the screen and fades away at the end of the page (browsers that support scroll-driven animation) */
+@supports (animation-timeline: scroll()) {
+  @keyframes bs-bounce { 0%, 100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(5px); } }
+  @keyframes bs-cue-hide { to { opacity: 0; visibility: hidden; } }
+  body::before {
+    content: 'Scroll for more \2193'; position: fixed; left: 50%; bottom: 16px; transform: translateX(-50%); z-index: 2147483001; pointer-events: none; white-space: nowrap;
+    background: var(--bs-yellow); color: #111; font: 700 12px/1 Arial, sans-serif; letter-spacing: 0.6px; text-transform: uppercase; padding: 10px 16px; border-radius: 999px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    animation: bs-bounce 1.6s ease-in-out infinite, bs-cue-hide linear both; animation-timeline: auto, scroll(root block); animation-range: normal, 80% 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html, body, #basic-theme .mat-sidenav-content, #basic-theme .wrapper { scroll-behavior: auto; }
+  #basic-theme .flip-card-front, body::before { animation: none !important; transition: none !important; }
+}
