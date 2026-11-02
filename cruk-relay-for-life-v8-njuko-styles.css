@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+/* Cancer Research UK - Relay For Life - njuko custom CSS (v8: Poppins, black ticket text, no dots) */
+
+:root {
+  --cr-pink:   #e60079;
+  --cr-pink-d: #c00068;
+  --cr-navy:   #2e0087;
+  --cr-ink:    #2b2b2b;
+  --cr-base:   #fafafa;
+}
+
+/* 1. FONT - Poppins (brand font), sentence case */
+#basic-theme,
+#basic-theme *:not(.mat-icon):not(.material-icons):not([class*="material-icons"]):not(.fa):not([class*="fa-"]):not(i) {
+  font-family: 'Poppins', 'Titillium Web', Arial, sans-serif !important;
+}
+#basic-theme#basic-theme h1, #basic-theme#basic-theme h2, #basic-theme#basic-theme h3,
+#basic-theme#basic-theme .group-competitions-title, #basic-theme#basic-theme .section-title,
+#basic-theme#basic-theme .offer-title, #basic-theme#basic-theme .offer-title *,
+#basic-theme#basic-theme .cardLeft h1, #basic-theme#basic-theme .competition-title,
+#basic-theme#basic-theme .competitions-list .button, #basic-theme#basic-theme .competitions-list .button *,
+#basic-theme#basic-theme .mat-raised-button, #basic-theme#basic-theme .mat-raised-button * {
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+}
+#basic-theme#basic-theme .offer-title, #basic-theme#basic-theme .offer-title * { color: var(--cr-navy) !important; font-weight: 700 !important; }
+#basic-theme#basic-theme .cardLeft h1, #basic-theme#basic-theme .competition-title { font-weight: 700 !important; }
+
+/* 2. TICKETS - standard njuko ticket size and shape (no size overrides); only text colours matched to brand */
+#basic-theme#basic-theme .cardRight .number, #basic-theme#basic-theme .cardRight h3,
+#basic-theme#basic-theme .offer-price, #basic-theme#basic-theme .offer-right-part .number { color: var(--cr-navy) !important; font-weight: 700 !important; }
+
+/* 3. BUTTONS - CRUK pink, sharp, sentence case */
+#basic-theme .mat-raised-button.mat-accent,
+#basic-theme .mat-flat-button.mat-accent,
+#basic-theme .competitions-list .button,
+#basic-theme .offer-button button.mat-raised-button.mat-accent,
+#basic-theme .form-page .cardBottom button.mat-raised-button.mat-accent {
+  background: var(--cr-pink) !important;
+  color: #fff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+  padding: 10px 24px !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  white-space: normal !important;
+  overflow-wrap: break-word !important;
+  line-height: 1.2 !important;
+  height: auto !important;
+  min-height: 0 !important;
+  box-shadow: none !important;
+  transition: background 0.16s ease !important;
+}
+#basic-theme#basic-theme .competitions-list .button,
+#basic-theme#basic-theme .competitions-list .button *,
+#basic-theme#basic-theme .offer-button button.mat-raised-button.mat-accent,
+#basic-theme#basic-theme .offer-button button.mat-raised-button.mat-accent * { color: #fff !important; }
+#basic-theme .mat-raised-button.mat-accent:hover,
+#basic-theme .competitions-list .button:hover,
+#basic-theme .offer-button button.mat-raised-button.mat-accent:hover { background: var(--cr-pink-d) !important; }
+
+/* 4. HEADER */
+#basic-theme .mat-toolbar.mat-primary { background: var(--cr-navy) !important; }
+
+/* 5. TEXT BACKINGS */
+#basic-theme app-message.cardWrap { background: var(--cr-base) !important; border-radius: 14px !important; padding: 6px 20px 10px !important; }
+#basic-theme#basic-theme .group-competitions-title,
+#basic-theme#basic-theme .preview-offers-panel .section-title {
+  background: var(--cr-navy) !important;
+  color: #fff !important;
+  border-radius: 8px !important;
+  padding: 12px 20px !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px !important;
+  box-shadow: 0 4px 14px rgba(46, 0, 135, 0.2) !important;
+}
+
+/* 6. BACKGROUND - plain off-white, no dots */
+#basic-theme .mat-sidenav-container::before, #basic-theme .mat-sidenav-container::after { content: none !important; display: none !important; background: none !important; }
+#basic-theme, #basic-theme .mat-sidenav-container, #basic-theme .mat-sidenav-content { background: var(--cr-base) !important; background-image: none !important; }
+
+/* 7. SCROLL CUE - pink, sentence case; auto-hides at the bottom */
+:root { timeline-scope: --nj-scroll; }
+.wrapper { scroll-timeline-name: --nj-scroll; scroll-timeline-axis: block; }
+@keyframes nj-cue-hide { to { opacity: 0; } }
+body::before {
+  content: "Scroll for more \2193";
+  position: fixed;
+  left: 50%; bottom: 16px;
+  transform: translateX(-50%);
+  background: var(--cr-pink);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600; font-size: 13px; letter-spacing: 0.01em;
+  padding: 9px 18px;
+  border-radius: 0;
+  box-shadow: 0 6px 18px rgba(46, 0, 135, 0.3);
+  z-index: 2147483001;
+  pointer-events: none;
+  white-space: nowrap;
+  animation: cr-cue 1.6s ease-in-out infinite, nj-cue-hide linear both;
+  animation-timeline: auto, --nj-scroll;
+  animation-range: normal, 85% 100%;
+}
+@keyframes cr-cue {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%      { transform: translateX(-50%) translateY(5px); }
+}
+
+/* 8. TICKET TEXT - Poppins is wider than njuko's default font, so ticket body text is kept slightly trimmed to keep tickets the standard njuko height */
+#basic-theme .cardLeft p, #basic-theme .cardLeft p *, #basic-theme .cardLeft .message-in-ticket li { font-size: 15px !important; line-height: 1.45 !important; }
+#basic-theme .cardLeft p { margin: 0 0 10px !important; }
+
+/* 9. TICKET TEXT COLOUR - all text on the left of each ticket (title, date, labels, description) is black.
+   The blue section bands and the Tested badge / buttons on the right are unchanged. */
+#basic-theme#basic-theme .cardLeft, #basic-theme#basic-theme .cardLeft h1, #basic-theme#basic-theme .cardLeft h2, #basic-theme#basic-theme .cardLeft h3,
+#basic-theme#basic-theme .cardLeft span, #basic-theme#basic-theme .cardLeft p, #basic-theme#basic-theme .cardLeft p *, #basic-theme#basic-theme .cardLeft li,
+#basic-theme#basic-theme .cardLeft div, #basic-theme#basic-theme .competition-title { color: #000 !important; }
