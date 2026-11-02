@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600;700;900&display=swap');
+/* Swimathon 2027 - njuko entry page CSS (v1): conversion-focused. One big hero card, one unmissable call-to-action, trust points, clean glass header. */
+
+:root {
+  --sw-navy: #0b2a4a;
+  --sw-blue: #20558c;
+  --sw-royal: #1d63e5;
+  --sw-aqua: #2cb4e6;
+  --sw-sky: #e8f6fd;
+  --sw-cta: #ffb81c;
+  --sw-cta-d: #f5a300;
+  --sw-ink: #10233a;
+  --sw-mute: #52667d;
+  --sw-line: #d7e6f2;
+}
+
+/* ---------- FONT ---------- */
+#basic-theme, #basic-theme *:not(.mat-icon):not(.material-icons):not([class*="material-icons"]) { font-family: 'Titillium Web', Arial, sans-serif; }
+
+/* ---------- HEADER: frosted white bar, navy text ---------- */
+.mat-toolbar.mat-primary { height: 66px !important; background: rgba(255, 255, 255, 0.93) !important; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); color: var(--sw-navy) !important; box-shadow: 0 2px 20px rgba(11, 42, 74, 0.22) !important; border-bottom: 3px solid var(--sw-aqua); }
+.mat-toolbar .mat-icon { color: var(--sw-navy) !important; }
+.mat-toolbar .nav-button, .mat-toolbar .nav-button * { color: var(--sw-navy) !important; font-size: 13px !important; font-weight: 700 !important; letter-spacing: 1.2px; text-transform: uppercase; }
+.mat-toolbar .nav-button { position: relative; transition: background 0.16s ease; }
+.mat-toolbar .nav-button::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 6px; height: 3px; background: var(--sw-aqua); transform: scaleX(0); transition: transform 0.18s ease; }
+.mat-toolbar .nav-button:hover::after { transform: scaleX(1); }
+.mat-toolbar .sign-in-button { border: 2px solid var(--sw-blue) !important; border-radius: 999px !important; padding: 0 16px !important; }
+.mat-toolbar .sign-in-button:hover { background: var(--sw-sky) !important; }
+
+/* ---------- LOGO on a white plate so it reads over the pool photo ---------- */
+#basic-theme .competitions-list > app-message.cardWrap:first-child { background: none !important; box-shadow: none !important; padding: 0 !important; margin: 18px auto 6px !important; }
+#basic-theme .competitions-list > app-message.cardWrap:first-child .message-content { background: none !important; border: 0 !important; box-shadow: none !important; padding: 0 !important; }
+#basic-theme .competitions-list > app-message.cardWrap:first-child p { margin: 0 !important; text-align: center !important; }
+#basic-theme .competitions-list > app-message.cardWrap:first-child img { max-width: min(300px, 80vw) !important; height: auto !important; padding: 14px 28px; background: #fff; border-radius: 18px; box-shadow: 0 14px 34px rgba(8, 34, 64, 0.35); }
+
+/* ---------- HERO TICKET ---------- */
+#basic-theme .competitions-list > .cardWrap.flip-card { flex: 0 0 100% !important; width: calc(100% - 32px) !important; max-width: 880px !important; margin: 14px auto 22px !important; padding: 0 !important; }
+#basic-theme .flip-card-front { display: flex !important; background: #fff !important; border: 0 !important; border-radius: 24px !important; overflow: hidden !important; box-shadow: 0 28px 70px rgba(8, 34, 64, 0.5) !important; }
+#basic-theme#basic-theme .cardLeft, #basic-theme#basic-theme .cardRight { border: 0 !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; }
+#basic-theme .cardLeft .block-cut, #basic-theme .cardLeft .cut, #basic-theme .cardLeft .break, #basic-theme .cardRight .eye { display: none !important; }
+
+/* left: what you are entering + why */
+#basic-theme#basic-theme .cardLeft { flex: 1 1 60% !important; width: auto !important; padding: 36px 38px 34px !important; background: #fff !important; position: relative; display: block !important; }
+#basic-theme#basic-theme .cardLeft > h1 { margin: 0 0 6px !important; padding: 0 !important; color: var(--sw-navy) !important; font: 900 clamp(34px, 5vw, 52px)/0.98 'Titillium Web', sans-serif !important; letter-spacing: -0.5px; text-transform: uppercase; }
+#basic-theme#basic-theme .cardLeft > h1 .mat-icon, #basic-theme#basic-theme .cardLeft > h1 hook { display: none !important; }
+#basic-theme#basic-theme .cardLeft > h1 { display: block !important; }
+#basic-theme#basic-theme .cardLeft > h1::before { content: '16 - 18 April 2027'; display: block; white-space: nowrap; width: max-content; margin-bottom: 14px; padding: 7px 14px; background: var(--sw-sky); border-radius: 999px; color: var(--sw-royal); font: 700 13px/1 'Titillium Web', sans-serif; letter-spacing: 2px; text-transform: uppercase; }
+#basic-theme#basic-theme .cardLeft::after { content: '\2713  Open to all ages and abilities\A \2713  Swim at one of 450+ pools across the UK\A \2713  Raise vital funds for Cancer Research UK, Marie Curie and Swimathon Foundation'; display: block; margin-top: 20px; padding-top: 18px; border-top: 2px solid var(--sw-line); color: var(--sw-ink); font: 600 16.5px/1.85 'Titillium Web', sans-serif; white-space: pre-line; }
+/* anything added in the njuko ticket text (price details, description) stays readable */
+#basic-theme .cardLeft p, #basic-theme .cardLeft li, #basic-theme .cardLeft p * { color: var(--sw-mute) !important; font-size: 16px !important; line-height: 1.5 !important; }
+#basic-theme .cardLeft h2 { color: var(--sw-ink) !important; }
+
+/* right: the call to action */
+#basic-theme#basic-theme .cardRight { flex: 0 0 38% !important; width: auto !important; display: flex !important; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 34px 28px !important; background: radial-gradient(circle at 20% 0%, #2f7bc4 0%, var(--sw-blue) 45%, var(--sw-navy) 100%) !important; text-align: center; }
+#basic-theme#basic-theme .cardRight::before { content: 'Ready to dive in?'; color: #fff; font: 900 26px/1.05 'Titillium Web', sans-serif; letter-spacing: 0.3px; text-transform: uppercase; }
+#basic-theme#basic-theme .cardRight::after { content: 'Secure online entry \B7  Every length you swim raises vital funds'; color: #cfe6f7; font: 600 13.5px/1.45 'Titillium Web', sans-serif; }
+#basic-theme#basic-theme .cardRight .text-center { display: flex !important; flex-direction: column; gap: 12px; width: 100%; order: 2; }
+#basic-theme#basic-theme .cardRight::before { order: 1; }
+#basic-theme#basic-theme .cardRight::after { order: 3; }
+/* price, if shown */
+#basic-theme .cardRight .price-bloc, #basic-theme .cardRight .price-bloc *, #basic-theme .cardRight h3, #basic-theme .cardRight .number, #basic-theme .cardRight .number * { color: #fff !important; font-weight: 900 !important; }
+#basic-theme .cardRight .price-bloc, #basic-theme .cardRight .price-bloc * { font-size: 44px !important; line-height: 1 !important; }
+
+/* the button: big, bright, impossible to miss */
+#basic-theme#basic-theme a.button.mat-raised-button, #basic-theme#basic-theme .cardRight .mat-raised-button.mat-accent {
+  display: flex !important; align-items: center; justify-content: center; width: 100%; min-height: 64px; padding: 0 20px !important;
+  background: var(--sw-cta) !important; color: var(--sw-navy) !important; border: 0 !important; border-radius: 14px !important;
+  font: 900 21px/1.1 'Titillium Web', sans-serif !important; letter-spacing: 0.4px; text-transform: uppercase !important;
+  box-shadow: 0 10px 26px rgba(255, 184, 28, 0.5), inset 0 -4px 0 rgba(0, 0, 0, 0.12) !important;
+  transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease;
+  animation: sw-pulse 2.4s ease-in-out infinite;
+}
+#basic-theme#basic-theme a.button.mat-raised-button *, #basic-theme#basic-theme .cardRight .mat-raised-button.mat-accent * { color: var(--sw-navy) !important; font: inherit !important; text-transform: inherit !important; }
+#basic-theme#basic-theme a.button.mat-raised-button::after { content: '\2192'; margin-left: 12px; font-size: 26px; line-height: 1; transition: transform 0.16s ease; }
+#basic-theme#basic-theme a.button.mat-raised-button:hover { transform: translateY(-2px); background: #ffc94d !important; animation: none; box-shadow: 0 16px 34px rgba(255, 184, 28, 0.6), inset 0 -4px 0 rgba(0, 0, 0, 0.12) !important; }
+#basic-theme#basic-theme a.button.mat-raised-button:hover::after { transform: translateX(5px); }
+@keyframes sw-pulse { 0%, 100% { box-shadow: 0 10px 26px rgba(255, 184, 28, 0.5), 0 0 0 0 rgba(255, 184, 28, 0.55), inset 0 -4px 0 rgba(0, 0, 0, 0.12); } 60% { box-shadow: 0 10px 26px rgba(255, 184, 28, 0.5), 0 0 0 14px rgba(255, 184, 28, 0), inset 0 -4px 0 rgba(0, 0, 0, 0.12); } }
+#basic-theme a.button:focus-visible { outline: 3px solid #fff; outline-offset: 3px; }
+
+/* ---------- REST OF THE JOURNEY: same look for forms, basket and buttons ---------- */
+#basic-theme .mat-raised-button.mat-accent:not(.button) { background: var(--sw-cta) !important; color: var(--sw-navy) !important; font-weight: 900 !important; text-transform: uppercase; border-radius: 12px !important; }
+#basic-theme .mat-raised-button.mat-primary { background: var(--sw-blue) !important; color: #fff !important; font-weight: 700 !important; border-radius: 12px !important; }
+#basic-theme .cardWrap .card, #basic-theme .form-page .card { border-radius: 18px !important; }
+#basic-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick { color: var(--sw-aqua) !important; }
+#basic-theme .mat-form-field.mat-focused .mat-form-field-label { color: var(--sw-blue) !important; }
+
+/* ---------- FOOTER ---------- */
+footer .footer-container, footer { background: var(--sw-navy) !important; }
+footer, footer * { color: #cfe6f7 !important; }
+
+/* ---------- MOBILE: stack, CTA full width ---------- */
+@media (max-width: 768px) {
+  #basic-theme .flip-card-front { flex-direction: column !important; border-radius: 20px !important; }
+  #basic-theme#basic-theme .cardLeft { padding: 28px 22px 24px !important; }
+  #basic-theme#basic-theme .cardRight { flex: 0 0 auto !important; padding: 26px 22px 28px !important; }
+  #basic-theme#basic-theme .cardRight::before { font-size: 22px; }
+  .mat-toolbar.mat-primary { height: 58px !important; }
+}
+@media (prefers-reduced-motion: reduce) { #basic-theme a.button.mat-raised-button { animation: none !important; } }
+
+/* v2: content images/logos never exceed their container */
+#basic-theme#basic-theme app-message img,
+#basic-theme#basic-theme .message-content img,
+#basic-theme#basic-theme .cardWrap img,
+#basic-theme#basic-theme .mat-card img,
+#basic-theme#basic-theme .wrapper img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+  box-sizing: border-box !important;
+}
+#basic-theme#basic-theme app-message,
+#basic-theme#basic-theme app-message p,
+#basic-theme#basic-theme .message-content { max-width: 100% !important; overflow-x: hidden !important; box-sizing: border-box !important; }
+
+/* v3: section headings in forms and checkout become designed banners */
+#basic-theme#basic-theme app-field p:has(> strong > span[style*="0, 193, 255"]),
+#basic-theme#basic-theme app-field p:has(> span[style*="0, 193, 255"] > strong),
+#basic-theme#basic-theme app-message p:has(> strong > span[style*="0, 193, 255"]) {
+  display: flex !important;
+  align-items: center;
+  gap: 12px;
+  margin: 30px 0 16px !important;
+  padding: 14px 20px !important;
+  background: linear-gradient(100deg, #0b2a4a 0%, #20558c 70%, #2cb4e6 100%) !important;
+  border-left: 6px solid #ffb81c !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 20px rgba(11, 42, 74, 0.22) !important;
+  text-align: left !important;
+}
+#basic-theme#basic-theme app-field p:has(> strong > span[style*="0, 193, 255"])::before,
+#basic-theme#basic-theme app-field p:has(> span[style*="0, 193, 255"] > strong)::before {
+  content: '';
+  flex: 0 0 10px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #2cb4e6;
+  box-shadow: 0 0 0 4px rgba(44, 180, 230, 0.35);
+}
+#basic-theme#basic-theme app-field p:has(> strong > span[style*="0, 193, 255"]) *,
+#basic-theme#basic-theme app-field p:has(> span[style*="0, 193, 255"] > strong) *,
+#basic-theme#basic-theme app-message p:has(> strong > span[style*="0, 193, 255"]) * {
+  color: #fff !important;
+  font-size: 19px !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+@media (max-width: 768px) {
+  #basic-theme#basic-theme app-field p:has(> strong > span[style*="0, 193, 255"]) *,
+  #basic-theme#basic-theme app-field p:has(> span[style*="0, 193, 255"] > strong) * { font-size: 16px !important; }
+}
+
+/* v4: Swimathon logo moves into the nav bar (top left); page-top logo hidden */
+#basic-theme#basic-theme .mat-toolbar.mat-primary { position: relative !important; }
+#basic-theme#basic-theme .mat-toolbar.mat-primary::before {
+  content: '';
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  width: 190px;
+  height: 46px;
+  transform: translateY(-50%);
+  background: url("https://s3-eu-central-1.amazonaws.com/production-njuko-v2-file-manager/6696dca6744835b7e01b4a4f%2F1727788846646-Swimathon-Primary-Logo%282-Colour%29.png") left center / contain no-repeat;
+  pointer-events: none;
+}
+#basic-theme#basic-theme app-message p:has(> img[src*="Swimathon-Primary-Logo"]),
+#basic-theme#basic-theme app-message:has(> * img[src*="Swimathon-Primary-Logo"]):not(:has(strong)) { display: none !important; }
+#basic-theme#basic-theme app-field p:has(> img[src*="Swimathon-NoYear"]),
+#basic-theme#basic-theme app-field p:has(> img[src*="Swimathon-Primary-Logo"]) { display: none !important; }
+@media (max-width: 768px) {
+  #basic-theme#basic-theme .mat-toolbar.mat-primary::before { left: 66px; width: 150px; height: 38px; }
+}
+
+/* v5: "Our partners" section (from swimathon.org) at the bottom of every page */
+#basic-theme#basic-theme footer { display: flex !important; flex-direction: column; background: #fff !important; padding: 0 !important; }
+#basic-theme#basic-theme footer .footer-container { display: contents !important; }
+#basic-theme#basic-theme footer app-message.footer-message { display: block !important; order: 1; width: 100%; padding: 0 !important; background: none !important; box-shadow: none !important; }
+#basic-theme#basic-theme footer app-message.footer-message::before {
+  content: 'OUR PARTNERS';
+  display: block;
+  padding: 46px 16px 8px;
+  text-align: center;
+  color: #0b2a4a;
+  font: 900 clamp(28px, 4vw, 40px)/1.1 'Titillium Web', Arial, sans-serif;
+  letter-spacing: 1px;
+  border-top: 6px solid #2cb4e6;
+}
+#basic-theme#basic-theme footer::before,
+#basic-theme#basic-theme footer::after {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding-top: 26px;
+  color: #52667d;
+  font: 600 14px/1.2 'Titillium Web', Arial, sans-serif;
+  letter-spacing: 1.6px;
+  background-repeat: no-repeat;
+  background-color: #fff;
+}
+#basic-theme#basic-theme footer::before {
+  content: 'CHARITY BENEFICIARIES';
+  order: 2;
+  height: 190px;
+  background-image:
+    url("https://images.squarespace-cdn.com/content/v1/616460a14335755190c95f3b/af03bea2-0719-4333-8fa6-06931fd17fcf/MC_Logo_2023_Landscape_CMYK.png?format=500w"),
+    url("https://images.squarespace-cdn.com/content/v1/616460a14335755190c95f3b/00659ca7-c2aa-484a-b974-6ce926085d85/CRUK_logo-light-background-primary-RGB.jpg?format=500w"),
+    url("https://images.squarespace-cdn.com/content/v1/616460a14335755190c95f3b/872d132f-7a60-4646-b7a3-304bb3ea57da/Foundation+logo+lo-res.jpg?format=500w");
+  background-size: 230px auto, 230px auto, 220px auto;
+  background-position: 16% 90px, 50% 90px, 84% 90px;
+}
+#basic-theme#basic-theme footer::after {
+  content: 'EVENT AND FUNDRAISING PARTNERS';
+  order: 3;
+  height: 230px;
+  background-image:
+    url("https://images.squarespace-cdn.com/content/v1/616460a14335755190c95f3b/1635778317166-V811HLVXT7SL1YYKB3J9/EDIT-SWIM.png?format=500w"),
+    url("https://images.squarespace-cdn.com/content/v1/616460a14335755190c95f3b/1635778379771-H27AGQJRNHTN0RBAB2U3/SCOTTISH-SWIM-05.png?format=500w"),
+    url("https://images.squarespace-cdn.com/content/v1/616460a14335755190c95f3b/1635778211408-698LSN3DUGKEK1W55BMS/EDIT-logos-05.png?format=500w"),
+    url("https://images.squarespace-cdn.com/content/v1/616460a14335755190c95f3b/2531c818-0cdb-4b39-9526-d510a2dbbf7c/justgivinglogowebsite.png?format=500w");
+  background-size: 250px auto, 280px auto, 180px auto, 220px auto;
+  background-position: 12% 100px, 37% 100px, 63% 100px, 88% 100px;
+}
+#basic-theme#basic-theme footer .terms { order: 4; width: 100%; box-sizing: border-box; background: #0b2a4a !important; padding: 12px 8px !important; }
+@media (max-width: 768px) {
+  #basic-theme#basic-theme footer::before { height: 560px; background-position: 50% 60px, 50% 220px, 50% 380px; }
+  #basic-theme#basic-theme footer::after { height: 820px; background-position: 50% 80px, 50% 250px, 50% 450px, 50% 660px; background-size: 220px auto, 240px auto, 160px auto, 200px auto; }
+}
