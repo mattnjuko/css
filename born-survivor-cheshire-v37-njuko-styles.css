@@ -1,0 +1,869 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto+Condensed:wght@700;800&family=Inter:wght@400;500;700;800&display=swap');
+/* Born Survivor Cheshire 2027 - njuko select-competition CSS (preview v2 - updated for the 8-ticket layout). Styled after the client's booking-page mockup, within what njuko's ticket markup allows. */
+
+:root {
+  --bs-green: #006c3b;
+  --bs-slate: #3e4b55;
+  --bs-yellow: #ffc526;
+  --bs-yellow-d: #f0b000;
+  --bs-ink: #142025;
+  --bs-mute: #55636a;
+  --bs-line: #dce2e0;
+  --bs-bg: #f3f5f4;
+}
+
+/* Page: njuko's own background image is kept; green header bar */
+
+#basic-theme .mat-toolbar.mat-primary { background: linear-gradient(102deg, #008a4e, #00ac67) !important; color: #fff !important; }
+#basic-theme .mat-toolbar .mat-icon { color: #fff !important; }
+
+/* Fonts: Anton for display (titles, prices), Arial for text */
+#basic-theme, #basic-theme *:not(.mat-icon):not(.material-icons):not([class*="material-icons"]):not(.fa):not([class*="fa-"]):not(i) {
+  font-family: Arial, Helvetica, sans-serif !important;
+}
+#basic-theme#basic-theme .cardLeft h1,
+#basic-theme#basic-theme .price-bloc, #basic-theme#basic-theme .price-bloc * {
+  font-family: 'Anton', Impact, 'Arial Narrow', sans-serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
+}
+
+/* Intro text */
+#basic-theme app-message.cardWrap { background: transparent !important; box-shadow: none !important; padding: 6px 0 8px !important; }
+#basic-theme app-message.cardWrap, #basic-theme app-message.cardWrap * { color: var(--bs-mute) !important; font-size: 15px !important; line-height: 1.55 !important; }
+#basic-theme#basic-theme app-message.cardWrap h1, #basic-theme#basic-theme app-message.cardWrap h2 { color: var(--bs-ink) !important; font-family: 'Anton', Impact, sans-serif !important; font-weight: 400 !important; font-size: 40px !important; line-height: 1.05 !important; text-transform: uppercase !important; }
+
+/* Ticket cards: one white rounded card per ticket; header band takes the ticket colour */
+#basic-theme .competitions-list > .cardWrap { --acc: #70411e; --acc-text: #ffc526; --pale: #fbf3e9; }
+/* Rookie tickets: slate grey band, yellow text */
+#basic-theme .competitions-list > div.flip-card:nth-of-type(5),
+#basic-theme .competitions-list > div.flip-card:nth-of-type(6) { --acc: var(--bs-slate); --acc-text: #ffc526; --pale: #f0f3f5; }
+/* Elite Squadron: green band, brown text */
+#basic-theme .competitions-list > div.flip-card:nth-of-type(3) { --acc: #3fbf7a; --acc-text: #3b2410; --pale: #eef9f2; }
+#basic-theme .flip-card-front, #basic-theme .flip-card-back {
+  background: #fff !important;
+  border: 1px solid var(--bs-line) !important;
+  border-radius: 14px !important;
+  box-shadow: 0 6px 20px rgba(11, 27, 26, 0.07) !important;
+  overflow: hidden !important;
+  margin-bottom: 18px !important;
+}
+#basic-theme#basic-theme .cardLeft, #basic-theme#basic-theme .cardRight { border: none !important; border-radius: 0 !important; box-shadow: none !important; background: #fff !important; }
+#basic-theme#basic-theme .cardLeft { border-right: 1px solid var(--bs-line) !important; padding: 0 0 14px !important; }
+#basic-theme .cardLeft .block-cut, #basic-theme .cardLeft .cut, #basic-theme .competitions-list .cut { display: none !important; }
+#basic-theme .cardLeft > * { margin-left: 22px; margin-right: 22px; }
+
+/* Header band */
+#basic-theme#basic-theme .cardLeft > h1 {
+  margin: 0 0 14px !important;
+  padding: 16px 22px !important;
+  background: var(--acc) !important;
+  color: var(--acc-text) !important;
+  font-size: 26px !important;
+  line-height: 1.1 !important;
+}
+#basic-theme#basic-theme .cardLeft > h1 *, #basic-theme#basic-theme .cardLeft > h1 .mat-icon { color: var(--acc-text) !important; }
+#basic-theme .cardLeft > h1 .mat-icon { margin-right: 10px !important; }
+
+/* Ticket details */
+#basic-theme .cardLeft .seat span, #basic-theme .cardLeft .time span, #basic-theme .cardLeft .title span, #basic-theme .cardLeft .name span {
+  color: var(--bs-mute) !important; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 1px !important; text-transform: uppercase !important;
+}
+#basic-theme .cardLeft h2 { color: var(--bs-ink) !important; font-size: 15px !important; font-weight: 700 !important; margin: 2px 0 10px !important; }
+
+/* Price panel */
+#basic-theme#basic-theme .cardRight { padding: 20px 18px !important; justify-content: center !important; }
+#basic-theme#basic-theme .cardRight .number span { color: var(--bs-mute) !important; font-size: 10px !important; font-weight: 700 !important; letter-spacing: 1px !important; text-transform: uppercase !important; }
+#basic-theme#basic-theme .price-bloc, #basic-theme#basic-theme .price-bloc * { color: var(--bs-ink) !important; font-size: 44px !important; line-height: 1 !important; }
+#basic-theme .booking-fee-front-container, #basic-theme .booking-fee-front-container * { font-size: 13px !important; color: #425157 !important; }
+
+/* Buttons: yellow, black text (as the client mockup) */
+#basic-theme#basic-theme a.button.mat-raised-button,
+#basic-theme#basic-theme .mat-raised-button.mat-accent,
+#basic-theme#basic-theme .mat-raised-button.mat-primary {
+  background: var(--bs-yellow) !important;
+  color: #111 !important;
+  border: none !important;
+  border-radius: 6px !important;
+  box-shadow: none !important;
+  font-size: 13px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.4px !important;
+  text-transform: uppercase !important;
+  padding: 9px 22px !important;
+  min-width: 150px !important;
+  line-height: 1.3 !important;
+}
+#basic-theme#basic-theme a.button.mat-raised-button *, #basic-theme#basic-theme .mat-raised-button * { color: #111 !important; }
+#basic-theme#basic-theme a.button.mat-raised-button:hover, #basic-theme#basic-theme .mat-raised-button.mat-accent:hover, #basic-theme#basic-theme .mat-raised-button.mat-primary:hover { background: var(--bs-yellow-d) !important; }
+#basic-theme .cardRight .text-center { display: flex !important; flex-direction: column !important; gap: 10px !important; align-items: center !important; }
+
+@media (max-width: 768px) {
+  #basic-theme#basic-theme .cardLeft { border-right: none !important; border-bottom: 1px solid var(--bs-line) !important; }
+}
+
+/* Hide empty hook / message slots at the top of each ticket so the coloured header band sits flush at the top */
+#basic-theme .cardLeft > app-message:empty, #basic-theme .cardLeft > hook:not(:has(img,p,a,mat-icon,span)) { display: none !important; }
+/* Keep the detail rows aligned with the header text */
+#basic-theme#basic-theme .cardLeft > .seat, #basic-theme#basic-theme .cardLeft > .title, #basic-theme#basic-theme .cardLeft > .name { margin-left: 22px !important; }
+
+/* Ticket message: shown as a pale strapline strip under the header band */
+#basic-theme .cardLeft > app-message.message-in-ticket:not(:empty) { margin: 0 !important; display: block !important; }
+#basic-theme .cardLeft .message-in-ticket .message-content { background: var(--pale) !important; padding: 14px 22px 10px !important; margin: 0 !important; border-radius: 0 !important; box-shadow: none !important; }
+#basic-theme .cardLeft .message-in-ticket p { margin: 0 0 8px !important; font-size: 13px !important; line-height: 1.45 !important; color: var(--bs-mute) !important; font-weight: 400 !important; text-transform: none !important; }
+#basic-theme#basic-theme .cardLeft .message-in-ticket p:first-child { font-size: 14px !important; font-weight: 700 !important; color: var(--bs-ink) !important; text-transform: uppercase !important; letter-spacing: 0.15px !important; }
+#basic-theme .cardLeft .message-in-ticket p strong, #basic-theme .cardLeft .message-in-ticket p b { color: var(--bs-ink) !important; }
+#basic-theme .cardLeft .break { display: none !important; }
+#basic-theme#basic-theme .cardLeft > h1 { font-size: 22px !important; }
+#basic-theme .cardLeft .message-in-ticket, #basic-theme .cardLeft .message-in-ticket * { text-align: left !important; }
+#basic-theme#basic-theme .cardRight { padding: 14px 18px !important; }
+#basic-theme#basic-theme .cardLeft .message-in-ticket p:first-child { font-size: 13.5px !important; line-height: 1.4 !important; letter-spacing: 0 !important; }
+
+/* SPLIT THE COST - icon + label below the price, with small Klarna and Clearpay badges underneath */
+#basic-theme .cardRight .number h3::after {
+  content: 'Split the cost';
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 10px;
+  padding: 28px 0 30px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: none;
+  color: #142025;
+  background-repeat: no-repeat;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23142025' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='5' width='20' height='14' rx='2.5'/%3E%3Cpath d='M2 10h20M6 15h4'/%3E%3C/svg%3E"), url("data:image/png;base64,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"), url("data:image/png;base64,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");
+  background-size: 20px 20px, auto 20px, auto 20px;
+  background-position: center 0, calc(50% - 34px) calc(100% - 2px), calc(50% + 28px) calc(100% - 2px);
+}
+
+/* SOLO / TEAM ICONS - bold person (solo) or group (team) icon in each ticket header.
+   Team tickets are picked out by ticket id; add a new team ticket's id to the team list below. (njuko's own icon slot in the title is empty on this page, so the icon is drawn with ::before.) */
+#basic-theme#basic-theme .cardLeft > h1::before {
+  content: '' !important;
+  display: inline-block !important; width: 26px !important; height: 24px !important;
+  margin-right: 12px !important; flex: 0 0 auto;
+  background: currentColor !important; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='6.5' r='4.2' fill='%23fff'/%3E%3Cpath d='M3.5 21.5v-2.8c0-4.6 3.8-8.2 8.5-8.2s8.5 3.6 8.5 8.2v2.8Z' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='6.5' r='4.2' fill='%23fff'/%3E%3Cpath d='M3.5 21.5v-2.8c0-4.6 3.8-8.2 8.5-8.2s8.5 3.6 8.5 8.2v2.8Z' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1::before {
+  width: 32px !important;
+  background: currentColor !important; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 24'%3E%3Ccircle cx='16' cy='6' r='4.2' fill='%23fff'/%3E%3Ccircle cx='5.5' cy='9' r='3.5' fill='%23fff'/%3E%3Ccircle cx='26.5' cy='9' r='3.5' fill='%23fff'/%3E%3Cpath d='M9 22v-5c0-4.1 3-6.9 7-6.9s7 2.8 7 6.9v5Z' fill='%23fff'/%3E%3Cpath d='M1 22v-6c0-2.7 1.7-4.4 4.5-4.4 1.3 0 2.3.35 3.2 1.2C7.6 15 7.3 17.1 7.3 19.4V22Zm24 0v-2.6c0-2.3-.4-4.5-1.4-6.6a5 5 0 0 1 2.9-1.2c2.8 0 4.5 1.7 4.5 4.4v6Z' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat; mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 24'%3E%3Ccircle cx='16' cy='6' r='4.2' fill='%23fff'/%3E%3Ccircle cx='5.5' cy='9' r='3.5' fill='%23fff'/%3E%3Ccircle cx='26.5' cy='9' r='3.5' fill='%23fff'/%3E%3Cpath d='M9 22v-5c0-4.1 3-6.9 7-6.9s7 2.8 7 6.9v5Z' fill='%23fff'/%3E%3Cpath d='M1 22v-6c0-2.7 1.7-4.4 4.5-4.4 1.3 0 2.3.35 3.2 1.2C7.6 15 7.3 17.1 7.3 19.4V22Zm24 0v-2.6c0-2.3-.4-4.5-1.4-6.6a5 5 0 0 1 2.9-1.2c2.8 0 4.5 1.7 4.5 4.4v6Z' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+/* TICKET SPACING - tighter, even 12px gap between tickets (njuko default was ~48px) */
+#basic-theme .competitions-list > .cardWrap.flip-card { margin: 0 auto 12px !important; } /* auto side margins keep the tickets centred */
+#basic-theme .flip-card-front, #basic-theme .flip-card-back { margin-bottom: 0 !important; }
+
+/* INTRO MESSAGE BLOCK ("Text here" at the top of the entry page) - white rounded callout with a green tick badge.
+   Write the message in njuko as: first paragraph = short bold heading line, following paragraphs = detail.
+   Bold text inside a paragraph is highlighted. A heading (H1/H2) at the top is shown in the big Anton title style. */
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap { padding: 0 !important; margin: 15px auto 16px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) {
+  position: relative !important; background: #fff !important; border: 1px solid var(--bs-line) !important; border-radius: 14px !important;
+  box-shadow: 0 6px 20px rgba(11, 27, 26, 0.07) !important; margin: 0 !important; padding: 16px 20px 12px 68px !important; min-height: 64px;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent)::before {
+  content: '\2713'; position: absolute; left: 20px; top: 16px; width: 34px; height: 34px; border-radius: 10px;
+  background: #f0f5f1; color: var(--bs-green); font: 700 19px/34px Arial, sans-serif; text-align: center;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) p {
+  margin: 0 0 6px !important; font-size: 13px !important; line-height: 1.5 !important; color: var(--bs-mute) !important;
+  font-weight: 400 !important; text-transform: none !important; text-align: left !important;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) p:first-child { font-weight: 700 !important; color: var(--bs-ink) !important; text-transform: uppercase !important; letter-spacing: 0.2px; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) strong,
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) b { color: var(--bs-ink) !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) strong,
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) b,
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) p * { font-size: inherit !important; line-height: inherit !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) h1,
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content:not(.message-content-transparent) h2 {
+  font-family: 'Anton', Impact, sans-serif !important; font-weight: 400 !important; font-size: 32px !important; line-height: 1.05 !important;
+  text-transform: uppercase !important; color: var(--bs-ink) !important; margin: 0 0 8px !important;
+}
+
+/* Client intro block (message with logo, eyebrow, title, lede and a "Booking with friends?" callout).
+   Built for this order of paragraphs: 1 logo, 2 blank, 3 eyebrow, 4 title, 5 intro text, 6 callout (first line = callout heading). */
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent { border: 0 !important; margin: 0 !important; padding: 22px 24px 14px !important; background: rgba(16, 28, 24, 0.78) !important; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25) !important; border-radius: 14px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent > div { padding: 0; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p { margin: 0 0 10px !important; text-align: left !important; color: #fff !important; font-size: 15px !important; line-height: 1.55 !important; font-weight: 400 !important; text-transform: none !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:has(img) { margin: 0 0 6px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent img { max-height: 150px !important; width: auto !important; display: block; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:has(> br:only-child) { display: none !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(3) { font-size: 11px !important; font-weight: 800 !important; letter-spacing: 2px !important; color: var(--bs-yellow) !important; text-transform: uppercase !important; margin-bottom: 4px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(4) { font-family: 'Anton', Impact, sans-serif !important; font-size: clamp(30px, 4.2vw, 46px) !important; line-height: 1.02 !important; letter-spacing: 0.5px; text-transform: uppercase !important; color: #fff !important; margin-bottom: 10px !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(5) { max-width: 760px; color: #fff !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6) {
+  position: relative; background: #fff; border: 1px solid var(--bs-line); border-radius: 14px; box-shadow: 0 6px 20px rgba(11, 27, 26, 0.07);
+  padding: 16px 20px 12px 68px; margin: 14px 0 0 !important; font-size: 13px !important; line-height: 1.5 !important; color: var(--bs-mute) !important;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6)::first-line { font-weight: 800; color: var(--bs-ink); text-transform: uppercase; letter-spacing: 0.2px; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6)::before { content: '\2713'; position: absolute; left: 20px; top: 16px; width: 34px; height: 34px; border-radius: 10px; background: #f0f5f1; color: var(--bs-green); font: 700 19px/34px Arial, sans-serif; text-align: center; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6) strong, #basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(6) b { color: var(--bs-ink) !important; font-size: inherit !important; }
+
+/* ===== v8: HEADER, SPLIT-THE-COST PANEL AND OBSTACLE-RACE THEMING ===== */
+
+/* HEADER - Born Survivor logo (white PNG) on the left, menu on the right (as the client's own page) */
+#basic-theme .mat-toolbar.mat-primary { height: 58px !important; justify-content: flex-start !important; }
+#basic-theme .mat-toolbar.mat-primary > div:nth-of-type(101) { flex: 1 1 auto !important; display: flex !important; align-items: center !important; justify-content: flex-start !important; }
+#basic-theme .mat-toolbar.mat-primary > div:nth-of-type(101)::before {
+  content: ''; display: block; width: 73px; height: 40px; margin-left: 6px;
+  background: url("data:image/png;base64,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") left center / contain no-repeat;
+}
+#basic-theme .mat-toolbar.mat-primary > div:nth-of-type(101)::after { content: none; display: none; }
+#basic-theme .mat-toolbar .nav-button, #basic-theme .mat-toolbar .nav-button * { font-size: 12px !important; font-weight: 700 !important; letter-spacing: 1.4px !important; text-transform: uppercase !important; }
+
+/* SPLIT THE COST - moved out of the price panel into the bottom of the ticket (fills the empty space) */
+#basic-theme .cardRight .number h3::after { content: none !important; display: none !important; background: none !important; padding: 0 !important; margin: 0 !important; }
+#basic-theme#basic-theme .cardLeft { display: flex !important; flex-direction: column !important; }
+#basic-theme#basic-theme .cardLeft > .block-cut {
+  display: flex !important; flex-wrap: wrap; align-items: center; gap: 6px 14px;
+  margin: auto 22px 0 !important; padding: 12px 0 0 !important; border-top: 1px dashed #c4cfca; position: relative; background: none !important;
+}
+#basic-theme#basic-theme .cardLeft > .block-cut::before {
+  content: 'Split the cost'; padding-left: 28px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23142025' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2' y='5' width='20' height='14' rx='2.5'/%3E%3Cpath d='M2 10h20M6 15h4'/%3E%3C/svg%3E") left center / 20px 20px no-repeat;
+  font: 700 12px/20px Arial, Helvetica, sans-serif; color: var(--bs-ink); text-transform: uppercase; letter-spacing: 0.4px; white-space: nowrap;
+}
+#basic-theme#basic-theme .cardLeft > .block-cut .cut {
+  display: block !important; position: static !important; width: auto !important; height: auto !important; flex: 1 1 150px;
+  background: none !important; border-radius: 0 !important; box-shadow: none !important; transform: none !important;
+  font-size: 11px; line-height: 1.3; color: var(--bs-mute);
+}
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::before { content: 'Enter now with easy instalments at checkout.'; }
+#basic-theme#basic-theme .cardLeft > .block-cut::after {
+  content: ''; width: 134px; height: 24px; flex: 0 0 auto;
+  background: url("data:image/png;base64,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") left center / auto 22px no-repeat, url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHkAAAAoCAYAAADaKFUbAAAH6klEQVR42u1cb2hb1xX/XVmEBSISaemjGtFsKEUVKGBSJOIvGqiTI0FowIsdOkQLEgS1SU0QdmtjZuNS19lsRPHi1aRYYGMyKqWGZAG7NtGYv6RIEAwOCBEMNU5rqrayiwfZVrl3H+r7uO/qPf1J3DhV3vlivaf37j33/O45v3POkx+hlAIAkv/Lo/2ABAC4WfwqAgAE+Bt0+UUIBd4CgFeNv5kQ8SQM5N0vLAcbdrrNDc/1FIp5qpvulyUWo0Q2d765/HCnYaT9gFRg50niv1/L1/zKUPxWN1V9yH9+NB4FUAAAw65L6wDXmeziaWk/IMEAAAcbdrp1s9SfMFzJjR++jPzaKH2kc3B9cvR3xfybBgDQAa5PYbiSmz98+aNujvoWg24CHWRd9lm2NzbJ9sYmeSpA3t7YJB1HXiQdR14kqXiC6PA8vsSjgyTscCPscOODtjBZzayQfQU5/+CB/PmLe1kdoT0AeD4+Ix8vp5bQ62tDPDpYs2fr4fopDdE8wLzMx2cQdrhRS7TcF5AtRons5XU/pw77Lc1eDxJb92kkNqQ4PxHtQ7XUaKx2Z2XmFuUw3OR0wBXwwWQ100r3sWvuLd4h6bkFAMBh6SjsL58gTl+L5v3c9YTNBwCZuUUAkOdni5RsNjQ6X8LC1DV8n/8W7d2dJdezY7YOd6C1Wh3Q5HTAG+qgzBZszPyDB1hb+Wm8xuMOvOA6TtXGya+vK/SuZLPhxVnS62vD802/BQB4Qx3UFfCR5MgYeC+fiPbhi3tZEooNaI5ZsU5OxRNkItqn+t25nkv4Q88FCgCrmRXS62sDAPhDQbBJtzc2yV/eiCCXvqu6S98eH1Usentjk/z1QheWU0sl1/tDQXmBkdgQzp6/iN8fOqyqWyQ2BMlmw3vtr5fcW40OWjrz4/QnpwFAngMAElv3qQha2OGWjyez6YrOwSJNoZinvKOUs1EkNgRvqIPWHK7LAQwAn1z+EPHoIFELfRajRNgC1YzFkomwww0+kdACmPHRo4rWvUwHERQtncVxPIEzJTZj4wBAcmRMAUSjzV428qXiCRKPDpLrV68AANQANlnNdPTmP8CH8M9vfVY7J29vbCoA9oeCmMymMZlNKwafj88gc+c2pGPHSsbgF+gPBZHYuk8TW/fpZDaNZq9H/m5h6hosRomk4gnCA9yfnJbn9IeCFYFkc0xm0z+F0t0QqbYG5oVMPr08TixGifA6A8Dw4mxFHdSMbbKaqZhAuQI+zRZyKp4gYYcbE9E+zMdnZM4VM2kGeubObQWwLKzXBDLjHWacrrFxmKxmarKa6dnzF9GfnIY/FIQ/FMTDrX+X3L+2nlPs+vbuTrmwN1nN9O3xUUVEKBTzlFe6PzkNT+CMPGfX2LhiY6gJ42GT1UxFj2n2ehRr8ATOYHhxVqGDqPNkNg1XyyvyPWq8VyjmKeN7FhlWMyslG+ZczyXVML2aWSEftIU1I+bC1LUS54tHB0mvr00R8djaa0q8+FrXHWhV7MBCMU+dvhY4fS0KZcsBwIdEAEQtcvBKO30ttFDMy9/BCnry9CmiFcrFsWAF5ec5efoUeI4rFPP0BddxVV3YpjBZzXRtPUdMVrMcJs/1XMInlz+E6F2R2JAM1L/+Pgvp2DHFhml9448lOopJFHOoJqcDbKxc+q7Mz1r0Obw4W5bnjXhCYnefKDl38NChiqHmUaSaxGavxRXwycCoAcfrpAUWi15r6zl5rOXUEq5fvYKJaB9RowmtZKsqkJucDvlzem4BnsAZwrzZYpTI0twNsPLCHWhFo/OlshONp/4J/n7mVTwwzV6P7KmrmRXiankFhWKemqxmajFK5HE6aZ/f+gxnz19kHg6LUSJr6znNTbicWlKUgOyv6MV8MuQPBWUOFqmK535xDB6sQjEPk9WsiDDihvCHgmjv7qx6MxvK7Uw+ufr4/QGZU69fvYL32l/HfHwG8/EZHDxyqOT+RptdwaGjnRfkjHNtPafoyyZHxmAxSuTk6VPy9b2+NizN3ZCNONp54bGy6+XUkkKHpbkbCgpp9nrQaLMrkis+82dcWE1OoOXF2xubCoBZIqjmjWJiyHSczKYRig3QWqJV2Tq5UgnFJ2WZO7fB18ldY+NYW8+JXAy7+0RJecLXjn9qPUe0yhdx94t1sliDVqO/WN+KdW056U9OQ2ymiD1nXie1mrnRZtfMuBlvs2hZrnHzyG1Nb6ijpJ0mAhyKDVA1JVmY5TNYlkiIO5MH5p2pCc0supoyqlx7UOv8ZDat4HP+uFYdDktHNblY9L6ww42P3x/QTB4bbXZ0jY0jFBugjwpwVR2vatuafLtPrb2XiidkTt1ta6KWlqLY1mRz8L1bMezxnhyJDcEV8IltzbI68DprtTVFG1TqbmlFCp6X2TW1cu9jgbyXDwWe5O/JRJDPnr9Ykvzt5Xx8UsW3drXCsJhj2N0n8M7UhKLkLDfOU/kUar9/MMhn9Huti5hUlWtOsMaK2EXLpe+CJaN7Kc/c8+Sfq4bmO1MiF1cCWy2TZvK719p0kMuJZLM9sbn4hLKcF6uJ09dC1Z4ZR2JDqo8un2pO1qX60L+XEUf/+c8zQCk6yM+AGNg/L+tSn0KBtwysZtTNUX/CcCWUUtza2RimlL6rm6W+hBDy59MN1l4DADzcaRjRTVJ/wnDVXydRp8K/TkJ/MUydcbDqi2H0VzzVTxYNqL/i6f9qUODRfTSxjgAAAABJRU5ErkJggg==") right center / auto 22px no-repeat;
+}
+
+/* OBSTACLE-RACE THEMING - hazard-tape edge under each header band and a faint  */
+#basic-theme#basic-theme .cardLeft > h1 {
+  border-bottom: 6px solid transparent !important;
+  border-image: repeating-linear-gradient(-45deg, #ffc526 0 10px, #142025 10px 20px) 6 !important;
+}
+/* Split-the-cost panel layout fixes (njuko gives .block-cut a fixed 32px width and rotates the .cut notch, so both are reset) */
+#basic-theme#basic-theme .cardLeft > .block-cut { display: grid !important; grid-template-columns: 1fr auto; align-items: center; gap: 4px 12px; width: auto !important; height: auto !important; left: auto !important; right: auto !important; top: auto !important; bottom: auto !important; overflow: visible !important; align-self: stretch; flex: 0 0 auto !important; }
+#basic-theme#basic-theme .cardLeft > .block-cut::before { grid-column: 1; grid-row: 1; min-width: 0; }
+#basic-theme#basic-theme .cardLeft > .block-cut::after { grid-column: 2; grid-row: 1; }
+#basic-theme#basic-theme .cardLeft > .block-cut .cut { grid-column: 1 / -1; grid-row: 2; flex: none; }
+#basic-theme#basic-theme .cardLeft > .block-cut .cut,
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::before,
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::after { transform: none !important; position: static !important; width: auto !important; height: auto !important; top: auto !important; left: auto !important; right: auto !important; bottom: auto !important; border-radius: 0 !important; background: none !important; box-shadow: none !important; margin: 0 !important; overflow: visible !important; }
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::after { content: none !important; }
+
+/* ===== v9: EASIER NAVIGATION ===== */
+
+/* 1. Tickets are grouped: solo entries first, then team entries, each under a section heading.
+   (Order and headings are set by ticket id - if you add a ticket in njuko, give it an order number below.) */
+#basic-theme .competitions-list > app-message.cardWrap:first-child { order: 0; }
+#basic-theme .competitions-list > app-message.cardWrap:last-child { order: 99; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(3) { order: 1; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(101) { order: 2; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(102) { order: 3; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(1) { order: 4; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(5) { order: 5; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(2) { order: 6; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(4) { order: 7; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(6) { order: 8; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(3)::before,
+#basic-theme .competitions-list > div.flip-card:nth-of-type(2)::before {
+  display: block; margin: 8px 0 12px; padding: 9px 16px 8px; border-left: 6px solid var(--bs-yellow); border-radius: 4px 12px 12px 4px;
+  background: rgba(16, 28, 24, 0.82); color: #fff; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  font: 400 24px/1.1 'Anton', Impact, sans-serif; letter-spacing: 0.8px; text-transform: uppercase;
+}
+#basic-theme .competitions-list > div.flip-card:nth-of-type(3)::before { content: 'Solo entries'; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(2)::before { content: 'Team entries - captain books first, members join by link'; font-size: 20px; }
+
+/* 2. Smooth scrolling, and tickets stop below the fixed header when jumped to */
+html, body, #basic-theme .mat-sidenav-content, #basic-theme .wrapper { scroll-behavior: smooth; }
+#basic-theme .competitions-list > .cardWrap { scroll-margin-top: 78px; }
+
+/* 3. Tickets respond to the pointer: lift on hover, clear yellow focus ring for keyboard users */
+#basic-theme .flip-card-front { transition: transform 0.18s ease, box-shadow 0.18s ease !important; }
+#basic-theme .flip-card-front:hover { transform: translateY(-3px); box-shadow: 0 12px 28px rgba(11, 27, 26, 0.22) !important; }
+#basic-theme#basic-theme a.button.mat-raised-button { transition: background 0.16s ease, transform 0.16s ease !important; }
+#basic-theme#basic-theme a.button.mat-raised-button:hover { transform: translateY(-1px); }
+#basic-theme#basic-theme a.button.mat-raised-button .mat-button-wrapper::after { content: ' \2192'; display: inline-block; width: 0; overflow: hidden; vertical-align: bottom; transition: width 0.16s ease; }
+#basic-theme#basic-theme a.button.mat-raised-button:hover .mat-button-wrapper::after { width: 1.2em; }
+#basic-theme a.button:focus-visible, #basic-theme .nav-button:focus-visible, #basic-theme button:focus-visible { outline: 3px solid var(--bs-yellow) !important; outline-offset: 2px; }
+
+/* 4. Header menu: clearer hover and a yellow underline on the item you are over */
+#basic-theme .mat-toolbar .nav-button { position: relative; transition: background 0.16s ease; }
+#basic-theme .mat-toolbar .nav-button::after { content: ''; position: absolute; left: 12px; right: 12px; bottom: 4px; height: 3px; background: var(--bs-yellow); transform: scaleX(0); transition: transform 0.18s ease; }
+#basic-theme .mat-toolbar .nav-button:hover::after { transform: scaleX(1); }
+
+/* 5. "Scroll for more" pill - bounces at the bottom of the screen and fades away at the end of the page (browsers that support scroll-driven animation) */
+@supports (animation-timeline: scroll()) {
+  @keyframes bs-bounce { 0%, 100% { translate: 0 0; } 50% { translate: 0 5px; } }
+  @keyframes bs-cue-hide { to { opacity: 0; visibility: hidden; } }
+  #basic-theme .wrapper::after {
+    content: 'Scroll for more \2193'; position: sticky; bottom: 16px; display: block; width: max-content; margin: -36px auto 0; z-index: 50; pointer-events: none; white-space: nowrap;
+    background: var(--bs-yellow); color: #111; font: 700 12px/1 Arial, sans-serif; letter-spacing: 0.6px; text-transform: uppercase; padding: 10px 16px; border-radius: 999px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+    animation: bs-bounce 1.6s ease-in-out infinite, bs-cue-hide 1s linear both; animation-timeline: auto, scroll(nearest block); animation-range: normal, 80% 100%;
+  }
+  #basic-theme .wrapper:not(:has(.competitions-list))::after { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html, body, #basic-theme .mat-sidenav-content, #basic-theme .wrapper { scroll-behavior: auto; }
+  #basic-theme .flip-card-front, #basic-theme .wrapper::after { animation: none !important; transition: none !important; }
+}
+
+/* ===== v10 FIXES ===== */
+/* Button: keep label on one line, centred (the hover arrow was wrapping and adding empty space above the text) */
+#basic-theme#basic-theme a.button.mat-raised-button, #basic-theme#basic-theme .cardRight button.mat-raised-button { min-height: 0 !important; height: auto !important; line-height: 1.3 !important; }
+#basic-theme#basic-theme a.button.mat-raised-button .mat-button-wrapper, #basic-theme#basic-theme button.mat-raised-button .mat-button-wrapper { display: inline-flex !important; align-items: center; justify-content: center; white-space: nowrap !important; line-height: 1.3 !important; }
+#basic-theme#basic-theme a.button.mat-raised-button .mat-button-wrapper::after, #basic-theme#basic-theme button.mat-raised-button .mat-button-wrapper::after { vertical-align: baseline !important; display: inline-block; height: 1.3em; line-height: 1.3; }
+
+/* Header: gift button reads "GIFT ENTRY", dark text on yellow, same height as the other menu items */
+#basic-theme .mat-toolbar .gift-menu .nav-button { background: var(--bs-yellow) !important; color: #111 !important; border-radius: 6px !important; min-width: 0 !important; width: auto !important; height: 36px !important; line-height: 36px !important; padding: 0 14px !important; margin-left: 6px; }
+#basic-theme .mat-toolbar .gift-menu .nav-button:hover { background: var(--bs-yellow-d) !important; }
+#basic-theme .mat-toolbar .gift-menu .nav-button .mat-icon { display: none !important; }
+#basic-theme .mat-toolbar .gift-menu .nav-button .mat-button-wrapper::before { content: 'Gift entry'; color: #111; font: 700 12px/36px Arial, Helvetica, sans-serif; letter-spacing: 1.4px; text-transform: uppercase; }
+#basic-theme .mat-toolbar .gift-menu .nav-button::after { display: none !important; }
+
+/* ===== v10: TEAMS PAGE (join a team) ===== */
+#basic-theme .teams-list { max-width: 1000px; margin: 0 auto; padding: 24px 16px 32px !important; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap { float: none; display: block; max-width: 100% !important; flex: none; width: 100% !important; margin: 0 0 16px !important; padding: 0 !important; background: #fff !important; border: 1px solid var(--bs-line) !important; border-left: 6px solid var(--bs-yellow) !important; border-radius: 6px 14px 14px 6px !important; box-shadow: 0 6px 20px rgba(11,27,26,.18) !important; }
+#basic-theme#basic-theme .teams-list > app-message .message-content { padding: 0 !important; border: none !important; background: none !important; }
+#basic-theme#basic-theme .teams-list > app-message .message-content > div { padding: 18px 22px !important; }
+#basic-theme#basic-theme .teams-list > app-message .message-content, #basic-theme#basic-theme .teams-list > app-message .message-content * { color: var(--bs-mute) !important; font-size: 15px !important; line-height: 1.55 !important; }
+#basic-theme#basic-theme .teams-list > app-message p:first-child { color: var(--bs-ink) !important; font: 400 26px/1.1 Anton, Impact, sans-serif !important; letter-spacing: .6px; text-transform: uppercase; margin: 0 0 8px !important; }
+#basic-theme#basic-theme .teams-list > .search-team { background: #fff; border-radius: 14px 14px 0 0; padding: 20px 20px 0 !important; margin: 0 !important; box-shadow: 0 6px 20px rgba(11,27,26,.18); }
+#basic-theme .teams-list > mat-divider { display: none !important; }
+#basic-theme#basic-theme .teams-list > data-table { display: block; background: #fff; border-radius: 0 0 14px 14px; padding: 0 20px 14px; box-shadow: 0 10px 20px rgba(11,27,26,.18); }
+#basic-theme .teams-list .mat-form-field-appearance-outline .mat-form-field-outline-thick { color: var(--bs-green) !important; }
+#basic-theme .teams-list mat-header-row { border-bottom: 3px solid var(--bs-yellow) !important; min-height: 44px; }
+#basic-theme#basic-theme .teams-list mat-header-cell, #basic-theme#basic-theme .teams-list mat-header-cell * { color: var(--bs-green) !important; font: 400 17px/1 Anton, Impact, sans-serif !important; letter-spacing: .8px; text-transform: uppercase; }
+#basic-theme .teams-list mat-row { border-bottom: 1px solid var(--bs-line) !important; transition: background .15s ease; }
+#basic-theme .teams-list mat-row:hover { background: #eff8f2 !important; }
+#basic-theme#basic-theme .teams-list mat-cell, #basic-theme#basic-theme .teams-list mat-cell * { color: var(--bs-ink) !important; font-size: 15px !important; }
+#basic-theme#basic-theme .teams-list mat-cell.mat-column-name { font-weight: 700 !important; }
+#basic-theme#basic-theme .teams-list mat-cell button.mat-button, #basic-theme#basic-theme .teams-list mat-cell button.mat-raised-button, #basic-theme#basic-theme .teams-list mat-cell button.mat-flat-button, #basic-theme#basic-theme .teams-list mat-cell button.mat-stroked-button { background: var(--bs-yellow) !important; color: #111 !important; border: none !important; border-radius: 6px !important; font-weight: 700 !important; font-size: 12px !important; letter-spacing: .4px; text-transform: uppercase; }
+
+/* Remove njuko's grey notch (drawn with borders on .cut pseudo-elements) behind the split-the-cost text */
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::before,
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::after { border: 0 !important; }
+
+/* ===== v13: DISCOUNT CODE BOX IN THE BASKET - bigger, voucher-style, impossible to miss ===== */
+#basic-theme#basic-theme .registration-cart-reservation-discount-code { margin: 18px 0 10px !important; width: 100%; }
+#basic-theme#basic-theme .registration-cart-reservation-discount-code .discount-code-applied-container > div { justify-content: stretch !important; }
+/* closed state: full-width dashed "voucher" button */
+#basic-theme#basic-theme .discount-code-button { width: 100% !important; min-height: 54px !important; padding: 10px 16px !important; background: #fff8dc !important; color: var(--bs-ink) !important; border: 2px dashed var(--bs-yellow-d) !important; border-radius: 12px !important; box-shadow: 0 3px 10px rgba(240, 176, 0, 0.25) !important; transition: background 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease; }
+#basic-theme#basic-theme .discount-code-button, #basic-theme#basic-theme .discount-code-button * { font-family: Arial, Helvetica, sans-serif !important; font-size: 16px !important; font-weight: 700 !important; letter-spacing: 0.5px; text-transform: uppercase; color: var(--bs-ink) !important; line-height: 1.2 !important; }
+#basic-theme#basic-theme .discount-code-button .mat-icon { font-family: 'Material Icons' !important; text-transform: none !important; letter-spacing: normal !important; font-weight: 400 !important; color: var(--bs-green) !important; font-size: 28px !important; width: 28px !important; height: 28px !important; margin-right: 10px !important; }
+#basic-theme#basic-theme .discount-code-button:hover { background: #ffefb0 !important; transform: translateY(-1px); box-shadow: 0 6px 16px rgba(240, 176, 0, 0.35) !important; }
+/* open state: boxed panel with a large input and button */
+#basic-theme#basic-theme .discount-code-applied-container .use-code { display: flex !important; flex-direction: column !important; gap: 10px; align-items: stretch !important; padding: 16px 18px !important; background: #fff8dc !important; border: 2px dashed var(--bs-yellow-d) !important; border-radius: 12px !important; }
+#basic-theme#basic-theme .use-code .use-code-text, #basic-theme#basic-theme .use-code-text { color: var(--bs-ink) !important; font: 400 24px/1.1 'Anton', Impact, sans-serif !important; font-style: normal !important; letter-spacing: 0.6px; text-transform: uppercase; }
+#basic-theme#basic-theme .use-code form { display: flex !important; flex-wrap: wrap; gap: 10px; align-items: center; }
+#basic-theme#basic-theme .use-code mat-form-field { flex: 1 1 200px; }
+#basic-theme#basic-theme .use-code input { font-size: 18px !important; font-weight: 700 !important; letter-spacing: 1px; text-transform: uppercase; }
+#basic-theme#basic-theme .use-code .mat-form-field-outline { background: #fff; border-radius: 10px; }
+#basic-theme#basic-theme .use-code .mat-form-field-outline-thick { color: var(--bs-yellow-d) !important; }
+#basic-theme#basic-theme .use-code button { min-height: 50px !important; padding: 0 26px !important; font-size: 15px !important; }
+
+/* ===== v16: TEAMS PAGE - clearer search and team code fields ===== */
+/* Search box: label reads "Search your team name here..." (njuko's own text is hidden and replaced) */
+#basic-theme#basic-theme .teams-list .search-team label.mat-form-field-label mat-label,
+#basic-theme#basic-theme .teams-list mat-cell label.mat-form-field-label mat-label { font-size: 0 !important; }
+#basic-theme#basic-theme .teams-list .search-team label.mat-form-field-label mat-label::after { content: 'Search your team name here...'; font-size: 17px; font-weight: 700; color: var(--bs-mute); }
+#basic-theme#basic-theme .teams-list mat-cell label.mat-form-field-label mat-label::after { content: 'Enter the team code'; font-size: 15px; font-weight: 700; color: var(--bs-mute); }
+/* the label is hidden once the field is used, so the outline never shows a mismatched notch */
+#basic-theme#basic-theme .teams-list .mat-form-field-should-float label.mat-form-field-label { opacity: 0 !important; }
+#basic-theme#basic-theme .teams-list .mat-form-field-appearance-outline.mat-form-field-should-float .mat-form-field-outline-gap { border-top-color: currentColor !important; }
+/* bigger, bolder fields with a green outline so they read as "type here" */
+#basic-theme#basic-theme .teams-list .search-team input { font-size: 18px !important; font-weight: 700 !important; }
+#basic-theme#basic-theme .teams-list mat-cell input { font-size: 16px !important; font-weight: 700 !important; letter-spacing: 1px; }
+#basic-theme#basic-theme .teams-list .search-team .mat-form-field-outline-thick,
+#basic-theme#basic-theme .teams-list mat-cell .mat-form-field-outline-thick { color: var(--bs-green) !important; }
+#basic-theme#basic-theme .teams-list .search-team .mat-form-field-outline,
+#basic-theme#basic-theme .teams-list mat-cell .mat-form-field-outline { color: #9db3a8; background: #fff; border-radius: 10px; }
+/* Join buttons: solid yellow when ready, clearly greyed until a code is entered */
+#basic-theme#basic-theme .teams-list mat-cell button:disabled { background: #e6ebe8 !important; color: #8a979d !important; opacity: 1 !important; }
+
+/* ===== v17: TEAMS PAGE INTRO BANNER - bold dark panel, hazard-tape edge, two "step" cards ===== */
+#basic-theme#basic-theme .teams-list > app-message.cardWrap { position: relative; overflow: hidden; background: linear-gradient(135deg, rgba(16, 26, 30, 0.95), rgba(28, 44, 38, 0.95)) !important; border: 0 !important; border-radius: 16px !important; box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4) !important; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 8px; background: repeating-linear-gradient(-45deg, #ffc526 0 10px, #142025 10px 20px); }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div { padding: 34px 32px 28px !important; }
+/* eyebrow + big Anton heading */
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:first-child { margin: 0 0 12px !important; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:first-child::before { content: 'Team members'; display: block; margin-bottom: 6px; color: #ffc526; font: 700 13px/1 Arial, Helvetica, sans-serif; letter-spacing: 3px; text-transform: uppercase; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:first-child,
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:first-child strong { color: #fff !important; font: 400 44px/1.05 'Anton', Impact, sans-serif !important; letter-spacing: 0.6px !important; text-transform: uppercase; }
+/* lead paragraph */
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:nth-child(2) { margin: 0 0 18px !important; color: rgba(255, 255, 255, 0.9) !important; font-size: 17px !important; line-height: 1.55 !important; max-width: 760px; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:nth-child(2) strong { color: #ffc526 !important; }
+/* the two options become numbered white cards */
+#basic-theme#basic-theme .teams-list > app-message.cardWrap ol { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin: 0 0 18px !important; padding: 0 !important; list-style: none !important; counter-reset: step; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap ol li { position: relative; counter-increment: step; margin: 0 !important; padding: 18px 18px 18px 76px !important; background: #fff; border-radius: 12px; border-bottom: 5px solid #ffc526; color: #3e4b55 !important; font-size: 15px !important; line-height: 1.45 !important; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap ol li::before { content: counter(step); position: absolute; left: 18px; top: 50%; transform: translateY(-50%); width: 44px; height: 44px; border-radius: 50%; background: #ffc526; color: #142025; font: 400 26px/44px 'Anton', Impact, sans-serif; text-align: center; }
+#basic-theme#basic-theme .teams-list > app-message.cardWrap ol li strong:first-child { display: block; margin-bottom: 3px; color: #006c3b !important; font: 400 21px/1.1 'Anton', Impact, sans-serif !important; letter-spacing: 0.5px; text-transform: uppercase; }
+/* closing line as a yellow callout */
+#basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:last-child { margin: 0 !important; padding: 12px 16px; background: rgba(255, 197, 38, 0.14); border-left: 4px solid #ffc526; border-radius: 4px 10px 10px 4px; color: #ffe08a !important; font-size: 16px !important; font-weight: 700; }
+@media (max-width: 700px) {
+  #basic-theme#basic-theme .teams-list > app-message.cardWrap ol { grid-template-columns: 1fr; }
+  #basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div { padding: 28px 20px 22px !important; }
+  #basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:first-child, #basic-theme#basic-theme .teams-list > app-message.cardWrap .message-content > div > p:first-child strong { font-size: 34px !important; }
+}
+
+/* ===== v18: TEAM CAPTAIN DASHBOARD - white cards, bold Anton titles, clear team code, share-link panel ===== */
+#basic-theme#basic-theme .wrapper-group { display: flex; align-items: center; justify-content: space-between; padding: 10px 24px !important; background: #142025 !important; border-bottom: 4px solid #ffc526; }
+#basic-theme#basic-theme .wrapper-group, #basic-theme#basic-theme .wrapper-group * { color: #fff !important; font-size: 15px !important; font-weight: 700; letter-spacing: 0.4px; }
+#basic-theme#basic-theme .wrapper-group .group-disconnect { padding: 6px 16px; border: 2px solid #ffc526; border-radius: 6px; color: #ffc526 !important; cursor: pointer; text-transform: uppercase; font-size: 13px !important; transition: background 0.16s ease; }
+#basic-theme#basic-theme .wrapper-group .group-disconnect:hover { background: #ffc526; color: #142025 !important; }
+/* cards */
+#basic-theme#basic-theme gridster#dashboard gridster-item { background: #fff !important; border-radius: 14px !important; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35) !important; overflow: hidden !important; }
+#basic-theme#basic-theme gridster#dashboard gridster-item, #basic-theme#basic-theme gridster#dashboard gridster-item * { color: #142025; }
+#basic-theme#basic-theme gridster#dashboard gridster-item span, #basic-theme#basic-theme gridster#dashboard gridster-item div { font-family: Arial, Helvetica, sans-serif; }
+/* card titles: brown band, yellow Anton text, hazard-tape underline */
+#basic-theme#basic-theme gridster#dashboard gridster-item .title { margin: 0 0 18px !important; padding: 16px 22px !important; background: #70411e !important; border-bottom: 6px solid transparent; border-image: repeating-linear-gradient(-45deg, #ffc526 0 10px, #142025 10px 20px) 6; text-align: left !important; }
+#basic-theme#basic-theme gridster#dashboard gridster-item .title, #basic-theme#basic-theme gridster#dashboard gridster-item .title * { color: #ffc526 !important; font: 400 26px/1.1 'Anton', Impact, sans-serif !important; letter-spacing: 0.6px; text-transform: uppercase; }
+#basic-theme#basic-theme gridster#dashboard gridster-item .title mat-divider { display: none !important; }
+#basic-theme#basic-theme gridster#dashboard gridster-item .team-infos > *:not(.title), #basic-theme#basic-theme gridster#dashboard gridster-item .team-manager > *:not(.title), #basic-theme#basic-theme gridster#dashboard gridster-item .static-widget > *:not(.title), #basic-theme#basic-theme gridster#dashboard gridster-item .team-registrations-widget > *:not(.title) { margin-left: 22px !important; margin-right: 22px !important; }
+/* team summary */
+#basic-theme#basic-theme .team-infos { text-align: left !important; font-size: 16px; }
+#basic-theme#basic-theme .team-infos .mt-16 span:first-child { display: block; margin-bottom: 2px; color: #55636a !important; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+#basic-theme#basic-theme .team-infos .mt-16 span:last-child { font: 400 28px/1.15 'Anton', Impact, sans-serif; letter-spacing: 0.5px; text-transform: uppercase; }
+#basic-theme#basic-theme .team-infos .mt-16 > div:nth-child(2) span:last-child { display: inline-block; margin-top: 4px; padding: 6px 14px; background: #fff8dc; border: 2px dashed #f0b000; border-radius: 8px; font-size: 26px; letter-spacing: 2px; }
+#basic-theme#basic-theme .team-infos .sub-title { margin-bottom: 6px !important; color: #006c3b !important; font: 400 20px/1.1 'Anton', Impact, sans-serif; letter-spacing: 0.6px; text-transform: uppercase; }
+/* team manager card */
+#basic-theme#basic-theme .team-manager { text-align: left !important; }
+#basic-theme#basic-theme .team-manager .mb-16 > div:first-child { color: #55636a !important; font-size: 12px !important; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 3px; }
+#basic-theme#basic-theme .team-manager .mb-16 > div:nth-child(2) { font-size: 18px !important; font-weight: 700; text-transform: uppercase; }
+#basic-theme#basic-theme .team-manager mat-divider, #basic-theme#basic-theme .team-registrations-widget mat-divider { display: none !important; }
+/* teammate rows */
+#basic-theme#basic-theme gridster#dashboard mat-card.mat-card { margin-bottom: 10px !important; padding: 12px 14px !important; background: #f3f5f4 !important; border: 1px solid #dce2e0; border-left: 6px solid #ffc526; border-radius: 10px !important; box-shadow: none !important; transition: background 0.15s ease; }
+#basic-theme#basic-theme gridster#dashboard mat-card.mat-card:hover { background: #eff8f2 !important; }
+#basic-theme#basic-theme gridster#dashboard mat-card.mat-card, #basic-theme#basic-theme gridster#dashboard mat-card.mat-card * { color: #142025 !important; }
+#basic-theme#basic-theme gridster#dashboard mat-card .mat-icon { color: #006c3b !important; }
+/* share link: a clear "copy this" panel */
+#basic-theme#basic-theme .group-connection-link .static-content { color: #3e4b55 !important; font-size: 15px !important; }
+#basic-theme#basic-theme .group-connection-link .public-link { padding: 14px 16px; background: #fff8dc; border: 2px dashed #f0b000; border-radius: 10px; }
+#basic-theme#basic-theme .group-connection-link .public-link, #basic-theme#basic-theme .group-connection-link .public-link * { color: #142025 !important; font: 700 14px/1.4 Arial, Helvetica, sans-serif !important; word-break: break-all; text-decoration: none !important; }
+#basic-theme#basic-theme gridster#dashboard gridster-item button.mat-raised-button.mat-accent { min-height: 44px; padding: 0 22px !important; font-size: 14px !important; }
+#basic-theme#basic-theme .team-infos .mt-16 > div { display: flex !important; flex-direction: column; align-items: flex-start; }
+#basic-theme#basic-theme .team-infos .mt-16 { margin: 0 22px 10px !important; }
+#basic-theme#basic-theme .team-infos .mb-8 { margin-bottom: 6px !important; }
+#basic-theme#basic-theme .team-infos .mb-16 { margin-bottom: 10px !important; }
+#basic-theme#basic-theme .team-infos > .mb-16, #basic-theme#basic-theme .team-infos > .mb-8 { text-align: left; }
+#basic-theme#basic-theme gridster#dashboard gridster-item .title button, #basic-theme#basic-theme gridster#dashboard gridster-item .title button * { color: #142025 !important; font: 700 13px/1 Arial, sans-serif !important; letter-spacing: 0.4px; }
+#basic-theme#basic-theme gridster#dashboard gridster-item .title button { background: #ffc526 !important; margin-left: 12px; }
+/* member view: the intro card ("Click below to join your team...") */
+#basic-theme#basic-theme gridster#dashboard gridster-item .infos-statics .title, #basic-theme#basic-theme gridster#dashboard gridster-item .title:empty { display: none !important; }
+#basic-theme#basic-theme .infos-statics .static-widget { display: flex; align-items: center; justify-content: center; min-height: 100%; padding: 20px 28px; border-left: 8px solid #ffc526; text-align: center; }
+#basic-theme#basic-theme .infos-statics .static-content, #basic-theme#basic-theme .infos-statics .static-content * { margin: 0 !important; color: #142025 !important; font: 400 26px/1.2 'Anton', Impact, sans-serif !important; letter-spacing: 0.5px; text-transform: uppercase; }
+#basic-theme#basic-theme .team-infos .join-btn { min-height: 52px; padding: 0 34px !important; font-size: 16px !important; }
+
+/* ===== v19: DISABLED BUTTONS LOOK DISABLED (e.g. Join Team / Add Teammate when njuko has switched them off) ===== */
+#basic-theme#basic-theme button.mat-raised-button.mat-accent[disabled],
+#basic-theme#basic-theme button.mat-raised-button.mat-accent.mat-button-disabled,
+#basic-theme#basic-theme button.mat-raised-button.mat-primary[disabled] { background: #e6ebe8 !important; color: #8a979d !important; cursor: not-allowed !important; box-shadow: none !important; opacity: 1 !important; }
+#basic-theme#basic-theme button.mat-raised-button[disabled] *, #basic-theme#basic-theme button.mat-raised-button.mat-button-disabled * { color: #8a979d !important; }
+
+/* v20: Clearpay badge removed from the ticket; Klarna kept; payment options spelled out */
+#basic-theme#basic-theme .cardLeft > .block-cut::after {
+  width: 84px !important;
+  background-position: right center, right center !important;
+  background-size: auto 22px, 0 0 !important;
+}
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::before {
+  content: '\2022  Split your purchase into 3 interest-free instalments paid every 30 days.\A \2022  Order what you want and pay up to 30 days after your item ships with no interest or fees.' !important;
+  display: block; white-space: pre-line; line-height: 1.45;
+}
+
+/* v21: new tickets 9 and 10 (Classic 12km Team Wave 1 / Wave 2 Guarantee) lead the team section.
+   Team order: 9 Wave 1, 10 Wave 2, 4 Classic Team, 6 Team of 5, 8 Rookie Team. Solo order unchanged. */
+#basic-theme .competitions-list > div.flip-card:nth-of-type(7) { order: 6; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(8) { order: 7; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(2) { order: 8; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(4) { order: 9; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(6) { order: 10; }
+/* "Team entries" heading moves from ticket 4 to the first team ticket (9) */
+#basic-theme .competitions-list > div.flip-card:nth-of-type(2)::before { content: none; display: none; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(7)::before {
+  content: 'Team entries - captain books first, members join by link'; font-size: 20px;
+  display: block; margin: 8px 0 12px; padding: 9px 16px 8px; border-left: 6px solid var(--bs-yellow); border-radius: 4px 12px 12px 4px;
+  background: rgba(16, 28, 24, 0.82); color: #fff; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  font-family: 'Anton', Impact, sans-serif; font-weight: 400; line-height: 1.1; letter-spacing: 0.8px; text-transform: uppercase;
+}
+
+/* v22: team order = 6 Team of 5, 9 Wave 1, 10 Wave 2, 4 Classic Team, 8 Rookie Team; heading moves to ticket 6 */
+#basic-theme .competitions-list > div.flip-card:nth-of-type(4) { order: 6; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(7) { order: 7; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(8) { order: 8; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(2) { order: 9; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(6) { order: 10; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(7)::before { content: none; display: none; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(4)::before {
+  content: 'Team entries - captain books first, members join by link'; font-size: 20px;
+  display: block; margin: 8px 0 12px; padding: 9px 16px 8px; border-left: 6px solid var(--bs-yellow); border-radius: 4px 12px 12px 4px;
+  background: rgba(16, 28, 24, 0.82); color: #fff; box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  font-family: 'Anton', Impact, sans-serif; font-weight: 400; line-height: 1.1; letter-spacing: 0.8px; text-transform: uppercase;
+}
+
+/* v23: team tickets use a TWO-person icon; njuko's own extra icon is hidden on tickets 9 and 10 so only one icon shows */
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1::before {
+  width: 32px !important;
+  background: currentColor !important;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 24'%3E%3Ccircle cx='12' cy='7' r='4.4' fill='%23fff'/%3E%3Cpath d='M3 22v-3c0-4 3.8-7 9-7s9 3 9 7v3Z' fill='%23fff'/%3E%3Ccircle cx='23.5' cy='8.5' r='3.6' fill='%23fff'/%3E%3Cpath d='M22.6 12.4c3.7.3 6.9 2.6 6.9 6.4V22h-5v-3c0-2.6-.8-4.8-1.9-6.6Z' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 24'%3E%3Ccircle cx='12' cy='7' r='4.4' fill='%23fff'/%3E%3Cpath d='M3 22v-3c0-4 3.8-7 9-7s9 3 9 7v3Z' fill='%23fff'/%3E%3Ccircle cx='23.5' cy='8.5' r='3.6' fill='%23fff'/%3E%3Cpath d='M22.6 12.4c3.7.3 6.9 2.6 6.9 6.4V22h-5v-3c0-2.6-.8-4.8-1.9-6.6Z' fill='%23fff'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1 .mat-icon,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1 .mat-icon { display: none !important; }
+
+/* v23: TEAMS FIRST, SOLO LAST.
+   Teams: 6 Team of 5, 9 Wave 1, 10 Wave 2, 4 Classic Team, 8 Rookie Team.
+   Solo:  5 Elite, 1 Wave 1, 2 Wave 2, 3 Classic, 7 Rookie. */
+#basic-theme .competitions-list > div.flip-card:nth-of-type(4) { order: 1; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(7) { order: 2; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(8) { order: 3; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(2) { order: 4; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(6) { order: 5; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(3) { order: 6; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(101) { order: 7; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(102) { order: 8; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(1) { order: 9; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(5) { order: 10; }
+
+/* v24: Clearpay badge restored beside Klarna; instalment options spelled out per provider */
+#basic-theme#basic-theme .cardLeft > .block-cut::after {
+  width: 134px !important;
+  background-position: left center, right center !important;
+  background-size: auto 22px, auto 22px !important;
+}
+#basic-theme#basic-theme .cardLeft > .block-cut .cut::before {
+  content: '\2022  Klarna: split into 3 interest-free instalments paid every 30 days, or pay up to 30 days after your item ships with no interest or fees.\A \2022  Clearpay: split into 4 interest-free instalments paid every 2 weeks.' !important;
+  display: block; white-space: pre-line; line-height: 1.45;
+}
+
+/* v25: SOLO + TEAM IN ONE TICKET (visual merge).
+   Each solo ticket is followed directly by its team ticket, which is shrunk to a footer strip (Team entry - price - Create a team).
+   Pairs by position: 1+9 Wave 1, 2+10 Wave 2, 3+4 Classic, 7+8 Rookie. Elite (5) and Team of 5 (6) stand alone. */
+#basic-theme .competitions-list > div.flip-card:nth-of-type(3) { order: 1; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(101) { order: 2; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(7) { order: 3; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(102) { order: 4; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(8) { order: 5; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(1) { order: 6; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(2) { order: 7; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(5) { order: 8; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(6) { order: 9; }
+#basic-theme .competitions-list > div.flip-card:nth-of-type(4) { order: 10; }
+/* section headings no longer apply */
+#basic-theme .competitions-list > div.flip-card:nth-of-type(3)::before,
+#basic-theme .competitions-list > div.flip-card:nth-of-type(4)::before { content: none !important; display: none !important; }
+/* solo tickets that have a team strip: square off the bottom and remove the gap */
+#basic-theme .competitions-list > div.flip-card:nth-of-type(101),
+#basic-theme .competitions-list > div.flip-card:nth-of-type(102),
+#basic-theme .competitions-list > div.flip-card:nth-of-type(1),
+#basic-theme .competitions-list > div.flip-card:nth-of-type(5) { margin-bottom: 0 !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(101) .flip-card-front,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(102) .flip-card-front,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(1) .flip-card-front,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(5) .flip-card-front { border-bottom-left-radius: 0 !important; border-bottom-right-radius: 0 !important; }
+/* team tickets that follow a solo ticket become the footer strip */
+#basic-theme .competitions-list > div.flip-card:nth-of-type(2),
+#basic-theme .competitions-list > div.flip-card:nth-of-type(6),
+#basic-theme .competitions-list > div.flip-card:nth-of-type(7),
+#basic-theme .competitions-list > div.flip-card:nth-of-type(8) { margin-top: 0 !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .flip-card-front,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .flip-card-front,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .flip-card-front,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .flip-card-front {
+  flex-direction: row !important; align-items: center !important; min-height: 0 !important; height: auto !important;
+  border-top-left-radius: 0 !important; border-top-right-radius: 0 !important; border-top: 2px dashed #c4cfca !important; background: #f6f8f7 !important;
+}
+/* hide the team ticket's detail panel, keep only a label */
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft > *:not(h1),
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > *:not(h1),
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > *:not(h1),
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > *:not(h1) { display: none !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft { flex: 1 1 auto !important; width: auto !important; padding: 0 !important; min-height: 0 !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft > h1,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > h1,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1 {
+  background: none !important; border: 0 !important; border-image: none !important; padding: 16px 22px !important; margin: 0 !important;
+  font-size: 0 !important; line-height: 0 !important; display: flex !important; align-items: center !important; justify-content: flex-start !important; min-height: 0 !important;
+}
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft > h1::after,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > h1::after,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1::after,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1::after {
+  content: 'Booking as a team? Captain books first, members join by link.'; display: block;
+  font: 700 15px/1.3 Arial, Helvetica, sans-serif; color: var(--bs-ink); text-transform: none; letter-spacing: 0;
+}
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1::before { color: var(--bs-ink); margin-right: 12px !important; height: 22px !important; width: 30px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1 .mat-icon,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1 .mat-icon { display: none !important; }
+/* strip right side: price and button on one row */
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight {
+  flex: 0 0 auto !important; width: auto !important; display: flex !important; flex-direction: row !important; align-items: center !important; gap: 18px; padding: 10px 22px !important; border: 0 !important; background: none !important; min-height: 0 !important; height: auto !important;
+}
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight .number h3,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight .number h3,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight .number h3,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight .number h3 { font-size: 26px !important; margin: 0 !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight .number > span,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight .number > span,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight .number > span,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight .number > span { display: none !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight .text-center,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight .text-center,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight .text-center,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight .text-center { margin: 0 !important; }
+@media (max-width: 768px) {
+  #basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .flip-card-front,
+  #basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .flip-card-front,
+  #basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .flip-card-front,
+  #basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .flip-card-front { flex-direction: column !important; align-items: stretch !important; }
+  #basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight,
+  #basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight,
+  #basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight,
+  #basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight { justify-content: space-between !important; }
+}
+
+/* v25 refinements: strip sizing (label left, price + Create a team right) */
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft { flex: 1 1 0 !important; max-width: none !important; min-width: 0 !important; width: auto !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight { flex: 0 0 auto !important; max-width: none !important; min-width: 0 !important; margin-left: auto !important; overflow: visible !important; gap: 12px !important; padding: 10px 16px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight .eye,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight .eye,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight .eye,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight .eye { display: none !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight .text-center:empty,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight .text-center:empty,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight .text-center:empty,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight .text-center:empty { display: none !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight .number,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight .number,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight .number,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight .number { margin: 0 !important; padding: 0 !important; width: auto !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight .number h3,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight .number h3,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight .number h3,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight .number h3 { font-size: 22px !important; white-space: nowrap; margin: 0 !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight .text-center a,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight .text-center a,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight .text-center a,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight .text-center a { white-space: nowrap !important; margin: 0 !important; min-width: 0 !important; padding: 8px 14px !important; font-size: 13px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft > h1,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > h1,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1 { padding: 12px 16px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft > h1::after,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > h1::after,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1::after,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1::after { content: 'Team entry - captain books first, members join by link' !important; font-size: 13px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1::before { width: 26px !important; margin-right: 10px !important; flex: 0 0 26px; }
+
+/* v26: MAKE A TEAM MORE PROMINENT - bold green strip, large heading, big button, price in white */
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .flip-card-front,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .flip-card-front,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .flip-card-front,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .flip-card-front { background: linear-gradient(100deg, #006c3b 0%, #0b8a4f 100%) !important; border-top: 0 !important; min-height: 76px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft > h1,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > h1,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1 { padding: 16px 20px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft > h1::after,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > h1::after,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1::after,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1::after { content: 'Entering with friends? Create a team' !important; font: 400 22px/1.1 'Anton', Impact, sans-serif !important; color: #ffc526 !important; text-transform: uppercase !important; letter-spacing: 0.6px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft > h1::before,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft > h1::before { color: #ffc526 !important; width: 36px !important; height: 27px !important; flex: 0 0 36px !important; margin-right: 14px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight { gap: 16px !important; padding: 12px 20px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight .number h3,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight .number h3,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight .number h3,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight .number h3 { color: #fff !important; font-size: 28px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight .number h3 *,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight .number h3 *,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight .number h3 *,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight .number h3 * { color: #fff !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardRight .text-center a,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardRight .text-center a,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardRight .text-center a,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardRight .text-center a { padding: 13px 22px !important; font-size: 15px !important; font-weight: 800 !important; background: #ffc526 !important; color: #142025 !important; box-shadow: 0 4px 0 rgba(0,0,0,0.25) !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(2) .cardLeft,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(6) .cardLeft,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(7) .cardLeft,
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(8) .cardLeft { background: transparent !important; }
+
+/* v27: CLASSIC 10KM TEAM OF 5 - EXCLUSIVE LAUNCH OFFER (ticket 6): moved to top, gold frame, ribbon, offer panel, pulsing button */
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) { order: 0 !important; position: relative !important; margin-top: 34px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .flip-card-front { border: 4px solid #ffc526 !important; box-shadow: 0 0 0 4px rgba(255, 197, 38, 0.35), 0 18px 44px rgba(0, 0, 0, 0.45) !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4)::before { content: 'EXCLUSIVE LAUNCH OFFER  -  ENDS 10TH NOVEMBER'; position: absolute; top: -18px; left: 50%; transform: translateX(-50%); z-index: 5; white-space: nowrap; padding: 9px 22px; background: #d4181f; color: #fff; font: 400 15px/1 'Anton', Impact, sans-serif; letter-spacing: 1.2px; border-radius: 999px; border: 3px solid #ffc526; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4); }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardLeft > h1::after { content: 'PAY FOR 4, RUN WITH 5'; display: block; margin-top: 8px; font: 400 18px/1 'Anton', Impact, sans-serif; letter-spacing: 1px; color: #ffc526; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardRight { background: linear-gradient(160deg, #142025 0%, #2a3a3f 100%) !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardRight h3, #basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardRight h3 * { color: #ffc526 !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardRight .number > span { color: #fff !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardRight .text-center a { animation: bs-offer-pulse 2s ease-in-out infinite; }
+@keyframes bs-offer-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(255, 197, 38, 0.7); } 60% { box-shadow: 0 0 0 14px rgba(255, 197, 38, 0); } }
+@media (prefers-reduced-motion: reduce) { #basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardRight .text-center a { animation: none; } }
+@media (max-width: 600px) { #basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4)::before { font-size: 12px; padding: 8px 14px; } }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4)::before { content: 'EXCLUSIVE LAUNCH OFFER  -  ENDS 10TH NOVEMBER' !important; display: block !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardLeft > h1 { display: flex !important; flex-wrap: wrap !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardLeft > h1::before { display: block !important; flex: 0 0 36px !important; }
+#basic-theme#basic-theme .competitions-list > div.flip-card:nth-of-type(4) .cardLeft > h1::after { flex: 0 0 100% !important; margin-left: 50px !important; }
+
+/* ===== v30: FINAL REDESIGN - clean cards, solo + team buttons side by side in one ticket =====
+   Each pair is two real njuko tickets: solo (1,2,3,7) and its team ticket (9,10,4,8). The team ticket is pulled up
+   over the solo ticket's button row so "Enter solo" and "Create a team" sit side by side. Both buttons stay
+   njuko's own links, so both work. Team of 5 (6) is the launch-offer card at the top, Elite (5) stands alone. */
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(101){order:1 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(102){order:3 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(1){order:5 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(2){order:6 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(3){order:9 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4){order:0 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(5){order:7 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(6){order:8 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(7){order:2 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(8){order:4 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1){flex:0 0 100% !important;width:calc(100% - 32px) !important;max-width:520px !important;margin:0 auto 16px !important;padding:0 !important;position:relative !important;min-height:0 !important;height:auto !important;transform:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4)::before{content:none !important;display:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .flip-card-inner{display:block !important;height:auto !important;width:100% !important;margin:0 !important;transform:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .flip-card-front{display:flex !important;flex-direction:column !important;align-items:stretch !important;width:100% !important;height:auto !important;min-height:0 !important;background:#fff !important;border:1px solid #e2ddd0 !important;border-radius:10px !important;box-shadow:none !important;overflow:hidden !important;padding:0 !important;margin:0 !important;position:relative !important;font-family:'Inter',Arial,sans-serif !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft,
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardRight{display:contents !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > hook,
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > .break,
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardRight > .eye,
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > app-message:empty,
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > h1 hook,
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > h1 .mat-icon{display:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > h1{order:1 !important;display:block !important;background:none !important;border:0 !important;border-image:none !important;margin:0 !important;padding:20px 18px 4px !important;height:auto !important;min-height:0 !important;width:auto !important;font:800 30px/1.02 'Roboto Condensed','Arial Narrow',Impact,sans-serif !important;text-transform:uppercase !important;letter-spacing:0 !important;color:#14231c !important;text-shadow:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > h1::before{display:block !important;width:auto !important;height:auto !important;-webkit-mask:none !important;mask:none !important;background:none !important;margin:0 0 10px !important;font:700 9.5px/1 'Inter',Arial,sans-serif !important;letter-spacing:2.4px !important;color:#1f6b4a !important;text-transform:uppercase !important;position:static !important;flex:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > h1::after{content:none !important;display:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(101) .cardLeft > h1::before{content:'Guaranteed start - wave 1' !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(102) .cardLeft > h1::before{content:'Guaranteed start - wave 2' !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(1) .cardLeft > h1::before{content:'Our signature course' !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(3) .cardLeft > h1::before{content:'Competitive wave - solo entry only' !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > h1::before{content:'Exclusive launch offer - ends 10 November' !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(5) .cardLeft > h1::before{content:'A great first challenge' !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > app-message:not(:empty){order:2 !important;display:block !important;background:none !important;border:0 !important;box-shadow:none !important;margin:0 !important;padding:4px 18px 6px !important;width:auto !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > app-message .message-content{background:none !important;border:0 !important;box-shadow:none !important;padding:0 !important;margin:0 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > app-message p{margin:0 0 4px !important;padding:0 !important;font:400 13px/1.5 'Inter',Arial,sans-serif !important;color:#5c6b63 !important;text-transform:none !important;letter-spacing:0 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > app-message p:first-child{font:800 20px/1.15 'Roboto Condensed','Arial Narrow',Impact,sans-serif !important;text-transform:uppercase !important;margin:0 0 6px !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardRight > .number{order:3 !important;display:block !important;text-align:left !important;margin:0 !important;padding:10px 18px 16px !important;background:none !important;border:0 !important;width:auto !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardRight > .number > span{display:block !important;font:700 8.5px/1 'Inter',Arial,sans-serif !important;letter-spacing:1.8px !important;text-transform:uppercase !important;color:#5c6b63 !important;margin:0 0 4px !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardRight > .number h3{display:flex !important;flex-direction:column !important;align-items:flex-start !important;margin:0 !important;padding:0 !important;text-align:left !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .price-bloc,
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .price-bloc *{font:800 40px/1 'Roboto Condensed','Arial Narrow',Impact,sans-serif !important;color:#14231c !important;justify-content:flex-start !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .booking-fee-front-container,
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .booking-fee-front-container *{font:500 11px/1.3 'Inter',Arial,sans-serif !important;color:#5c6b63 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > .block-cut{order:4 !important;margin:0 !important;border-top:1px solid #e2ddd0 !important;border-radius:0 !important;background:#f4f6f3 !important;padding:14px 18px !important;width:auto !important;max-width:none !important;box-shadow:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardRight > .text-center{order:5 !important;display:block !important;margin:14px 18px !important;padding:0 !important;width:auto !important;background:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .text-center a{display:flex !important;align-items:center !important;justify-content:center !important;width:100% !important;height:46px !important;min-height:46px !important;padding:0 10px !important;margin:0 !important;background:#f1c232 !important;color:#14231c !important;border:1px solid #f1c232 !important;border-radius:5px !important;box-shadow:none !important;animation:none !important;font:800 11px/1 'Inter',Arial,sans-serif !important;letter-spacing:1.3px !important;text-transform:uppercase !important;white-space:nowrap !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .text-center a *{font:inherit !important;color:inherit !important;letter-spacing:inherit !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .text-center a::after{content:none !important;display:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(101),:nth-of-type(102),:nth-of-type(1),:nth-of-type(5)) .cardRight > .text-center{width:calc(50% - 24px) !important;margin:14px 0 14px 18px !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(7),:nth-of-type(8),:nth-of-type(2),:nth-of-type(6)){margin:-90px auto 16px !important;height:74px !important;pointer-events:none !important;overflow:visible !important;z-index:2 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(7),:nth-of-type(8),:nth-of-type(2),:nth-of-type(6)) .flip-card-front{background:transparent !important;border:0 !important;flex-direction:row !important;justify-content:flex-end !important;height:74px !important;overflow:visible !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(7),:nth-of-type(8),:nth-of-type(2),:nth-of-type(6)) .cardLeft > *,
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(7),:nth-of-type(8),:nth-of-type(2),:nth-of-type(6)) .cardRight > *{display:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(7),:nth-of-type(8),:nth-of-type(2),:nth-of-type(6)) .cardRight > .text-center{display:block !important;pointer-events:auto !important;width:calc(50% - 24px) !important;margin:14px 18px 14px auto !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(7),:nth-of-type(8),:nth-of-type(2),:nth-of-type(6)) .text-center a{background:#fff !important;border:1px solid #c9c4b6 !important;color:#14231c !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(7),:nth-of-type(8),:nth-of-type(2),:nth-of-type(6)) .text-center a:hover{border-color:#14231c !important;background:#f4f6f3 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(3) .flip-card-front{border-left:5px solid #1f6b4a !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .flip-card-front{background:#17392b !important;border:0 !important;border-left:6px solid #f1c232 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > h1,
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > app-message p:first-child{color:#fff !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > h1{font-size:26px !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > h1::before{color:#f1c232 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > h1::after{content:none !important;display:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > app-message p{color:#cfdcd4 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardRight > .number > span{color:#a9c0b3 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .price-bloc,
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .price-bloc *{color:#f1c232 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .booking-fee-front-container,
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .booking-fee-front-container *{color:#a9c0b3 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > .block-cut{background:#1f4a39 !important;border-top-color:#2f5342 !important;color:#cfdcd4 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > .block-cut *{color:#cfdcd4 !important}
+@media (max-width:420px){#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardLeft > h1{font-size:27px !important}#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .text-center a{font-size:10px !important;letter-spacing:.8px !important}}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(7),:nth-of-type(8),:nth-of-type(2),:nth-of-type(6)) .cardLeft > :is(h1,app-message,.block-cut,hook,.break):not(.zz),#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(7),:nth-of-type(8),:nth-of-type(2),:nth-of-type(6)) .cardRight > :not(.text-center):not(.zz){display:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(7),:nth-of-type(8),:nth-of-type(2),:nth-of-type(6)) .cardRight > .text-center:not(.zz):not(.zz):not(.zz){display:block !important;margin:14px 18px 14px auto !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1) .cardRight > .text-center:not(:has(a)):not(.zz):not(.zz):not(.zz){display:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > app-message p:first-child,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > app-message p:first-child *{color:#fff !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > .block-cut::before,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > .block-cut .cut::before,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4) .cardLeft > .block-cut::after{color:#cfdcd4 !important}
+#basic-theme#basic-theme,#basic-theme#basic-theme .wrapper,#basic-theme#basic-theme .mat-sidenav-content,body{background:#f5f2ea !important;background-image:none !important}
+#basic-theme#basic-theme .mat-toolbar.mat-primary{background:#17392b !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > app-message:first-child,#basic-theme#basic-theme .competitions-list.competitions-list > app-message:first-child > .message-content,#basic-theme#basic-theme .competitions-list.competitions-list > app-message:first-child .message-content{background:#17392b !important;box-shadow:none !important;border-radius:10px !important}
+#basic-theme#basic-theme .competitions-list.competitions-list{display:flex !important;flex-direction:column !important;flex-wrap:nowrap !important;align-items:center !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1):not(.zz){flex:0 0 auto !important;width:calc(100% - 28px) !important;max-width:520px !important;margin-left:auto !important;margin-right:auto !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > app-message{flex:0 0 auto !important;width:calc(100% - 28px) !important;max-width:640px !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1):not(.zz) .cardLeft > h1,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1):not(.zz) .cardLeft > h1::before,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1):not(.zz) .cardLeft > app-message,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1):not(.zz) .cardRight > .number,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1):not(.zz) .cardRight > .number *,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1):not(.zz) .cardLeft > .block-cut,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1):not(.zz) .cardLeft > .block-cut *{text-align:left !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1):not(.zz) .cardLeft > app-message p,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1):not(.zz) .cardLeft > app-message p *{text-align:left !important;color:inherit !important;font-family:inherit !important;font-size:inherit !important;letter-spacing:inherit !important;line-height:inherit !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1):not(.zz) .cardLeft > app-message p:first-child strong{font-weight:700 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4):not(.zz) .cardLeft > app-message p,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4):not(.zz) .cardLeft > app-message p *{color:#cfdcd4 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4):not(.zz) .cardLeft > app-message p:first-child,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4):not(.zz) .cardLeft > app-message p:first-child *{color:#fff !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(101),:nth-of-type(102),:nth-of-type(1),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)):not(.zz) .cardLeft > app-message:has(p:nth-child(2)):not(.zz),#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(101),:nth-of-type(102),:nth-of-type(1),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)):not(.zz) .cardLeft > app-message:has(p:nth-child(2)):not(.zz) > .message-content,#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(101),:nth-of-type(102),:nth-of-type(1),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)):not(.zz) .cardLeft > app-message:has(p:nth-child(2)):not(.zz) > .message-content > div{display:contents !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(101),:nth-of-type(102),:nth-of-type(1),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)):not(.zz) .cardLeft > app-message:has(p:nth-child(2)):not(.zz) p{order:2 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(101),:nth-of-type(102),:nth-of-type(1),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)):not(.zz) .cardLeft > app-message:has(p:nth-child(2)):not(.zz) p:first-child{order:0 !important;margin:0 !important;padding:20px 18px 0 !important;font:700 9.5px/1 'Inter',Arial,sans-serif !important;letter-spacing:2.4px !important;color:#1f6b4a !important;text-transform:uppercase !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(101),:nth-of-type(102),:nth-of-type(1),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)):not(.zz) .cardLeft:has(> app-message p:nth-child(2)) > h1{padding-top:10px !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(101),:nth-of-type(102),:nth-of-type(1),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)):not(.zz) .cardLeft:has(> app-message p:nth-child(2)) > h1::before{display:none !important;content:none !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(101),:nth-of-type(102),:nth-of-type(1),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)):not(.zz) .cardLeft > app-message:has(p:nth-child(2)):not(.zz) p:not(:first-child){padding:2px 18px 6px !important;color:#5c6b63 !important;font-weight:400 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(101),:nth-of-type(102),:nth-of-type(1),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)):not(.zz) .cardLeft > app-message:has(p:nth-child(2)):not(.zz) p:has(a):not(.zz){order:6 !important;text-align:center !important;box-sizing:border-box !important;height:34px !important;padding:0 18px 16px !important;font-size:12px !important;line-height:18px !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(1):has(app-message p a) + div.flip-card:nth-of-type(2):not(.zz):not(.zz):not(.zz){margin-top:-130px !important;margin-bottom:56px !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(5):has(app-message p a) + div.flip-card:nth-of-type(6):not(.zz):not(.zz):not(.zz){margin-top:-130px !important;margin-bottom:56px !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(101),:nth-of-type(102),:nth-of-type(1),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)):not(.zz) .cardLeft > app-message:has(p:nth-child(2)):not(.zz) p a{color:#5c6b63 !important;text-decoration:underline !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:is(:nth-of-type(101),:nth-of-type(102),:nth-of-type(1),:nth-of-type(3),:nth-of-type(4),:nth-of-type(5)):not(.zz) .cardLeft > app-message:has(p:nth-child(2)):not(.zz) p a:hover{color:#14231c !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4):not(.zz) .cardLeft > app-message:has(p:nth-child(3)):not(.zz) p:first-child{color:#f1c232 !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4):not(.zz) .cardLeft > app-message:has(p:nth-child(3)):not(.zz) p:nth-child(2){font:800 20px/1.15 'Roboto Condensed','Arial Narrow',Impact,sans-serif !important;color:#fff !important;text-transform:uppercase !important;padding:2px 18px 4px !important}
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(4):not(.zz) .cardLeft > app-message:has(p:nth-child(3)):not(.zz) p:nth-child(3){color:#cfdcd4 !important}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content-transparent p:nth-child(5) strong{display:block !important;margin-top:12px !important;font-size:11px !important;font-weight:800 !important;letter-spacing:2px !important;color:var(--bs-yellow,#f1c232) !important;text-transform:uppercase !important}
+
+/* v36: wider tickets, readable basket button, clean Klarna/Clearpay badges (white edges removed from the badge images above) */
+#basic-theme#basic-theme .competitions-list.competitions-list > div.flip-card:nth-of-type(n+1):not(.zz) { max-width: 800px !important; }
+#basic-theme#basic-theme .competitions-list.competitions-list > app-message { max-width: 800px !important; }
+#basic-theme#basic-theme .mat-toolbar .sign-in-button,
+#basic-theme#basic-theme .mat-toolbar .sign-in-button .mat-button-wrapper,
+#basic-theme#basic-theme .mat-toolbar .sign-in-button * { color: #ffffff !important; }
+#basic-theme#basic-theme .mat-toolbar .sign-in-button { border-color: #fdc239 !important; background: rgba(255, 255, 255, 0.06) !important; }
+#basic-theme#basic-theme .mat-toolbar .sign-in-button:hover { background: rgba(255, 197, 38, 0.18) !important; }
+
+/* v37: the native JOIN A TEAM button replaces the "Already in a team? Join here" text link, so the link is hidden (it sat on top of the button);
+   Teams page rows: compact Join arrow on phones so it no longer overlaps the team name */
+#basic-theme#basic-theme .cardLeft app-message p:has(> a[href*="currentPage=teams"]) { display: none !important; }
+#basic-theme#basic-theme .teams-list mat-row .cdk-column-actions { flex: 0 0 56px !important; width: 56px !important; min-width: 56px !important; max-width: 56px !important; padding: 0 !important; justify-content: center !important; }
+#basic-theme#basic-theme .teams-list mat-row .cdk-column-actions .dtv-flex-end-center,
+#basic-theme#basic-theme .teams-list mat-row .cdk-column-actions .dtv-flex-row-gap-6 { justify-content: center !important; width: auto !important; min-width: 0 !important; }
+#basic-theme#basic-theme .teams-list mat-row .cdk-column-actions button.button-front { min-width: 0 !important; width: 44px !important; height: 44px !important; padding: 0 !important; line-height: 1 !important; border-radius: 10px !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+#basic-theme#basic-theme .teams-list mat-row .cdk-column-actions button.button-front .mat-button-wrapper { display: flex !important; align-items: center !important; justify-content: center !important; width: auto !important; height: auto !important; padding: 0 !important; }
+#basic-theme#basic-theme .teams-list mat-row .cdk-column-actions button.button-front mat-icon { font-size: 28px !important; width: 28px !important; height: 28px !important; line-height: 28px !important; }
+#basic-theme#basic-theme .teams-list mat-row .cdk-column-name { flex: 1 1 auto !important; min-width: 0 !important; padding-right: 8px !important; }
+
