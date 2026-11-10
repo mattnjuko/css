@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800;900&family=Manrope:wght@500;600;700;800&family=Barlow+Condensed:wght@500;600;700&display=swap');
+/* =============================================================================
+   RUNNING INDUSTRY AWARDS 2027 (presented by JustGiving) - FULL PAGE TAKEOVER
+   Brand lifted from runningindustryawards.com: black canvas, concentric
+   yellow>orange>pink arcs, Raleway / Manrope / Barlow Condensed, JustGiving purple.
+   Targets njuko's Angular Material DOM (root #basic-theme).
+   ============================================================================= */
+
+:root {
+  --y:  #e4cb1e;  --o: #f26722;  --p: #c9499b;  --jg: #7a04dd;
+  --grad:  linear-gradient(90deg, #e4cb1e -21.77%, #f26722 56.58%, #c9499b 131.85%);
+  --grad-d: linear-gradient(135deg, #e4cb1e 0%, #f26722 52%, #c9499b 100%);
+  --bg: #000000;  --card: #0c0c10;  --card-2: #141419;
+  --paper: #ffffff;  --paper-2: rgba(255,255,255,0.68);  --line: rgba(255,255,255,0.14);
+  --radius: 14px;
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --head: 'Raleway', 'Helvetica Neue', Arial, sans-serif;
+  --body: 'Manrope', 'Helvetica Neue', Arial, sans-serif;
+  --cond: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+}
+
+/* ---- 1. BASE TYPE (icon fonts excluded) ---------------------------------- */
+body, #basic-theme,
+#basic-theme *:not(.mat-icon):not(.material-icons):not([class*="material-icons"]):not(.fa):not([class*="fa-"]):not(i) {
+  font-family: var(--body) !important;
+  -webkit-font-smoothing: antialiased;
+}
+#basic-theme#basic-theme h1, #basic-theme#basic-theme h2, #basic-theme#basic-theme h3, #basic-theme#basic-theme h4,
+#basic-theme#basic-theme .cardLeft h1, #basic-theme#basic-theme .section-title {
+  font-family: var(--head) !important; color: var(--paper) !important; font-weight: 800 !important; letter-spacing: -0.01em !important;
+}
+
+/* ---- 2. FULL-BLEED ANIMATED BACKGROUND ----------------------------------- */
+html { background: var(--bg) !important; }
+body { background: transparent !important; color: var(--paper) !important; }
+.mat-sidenav-container, .mat-drawer-container, #basic-theme .mat-sidenav-container,
+#basic-theme .mat-sidenav-content, #basic-theme .wrapper, #basic-theme .content, #basic-theme .background {
+  background: transparent !important; background-image: none !important; color: var(--paper) !important;
+}
+/* concentric gradient arcs, slowly breathing and turning like the site's hero */
+body::before {
+  content: ''; position: fixed; inset: -12%; z-index: -3; pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000' preserveAspectRatio='xMaxYMin slice'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='1' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23e4cb1e'/%3E%3Cstop offset='.5' stop-color='%23f26722'/%3E%3Cstop offset='1' stop-color='%23c9499b'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='1480' cy='120' r='300' fill='none' stroke='url(%23g)' stroke-opacity='0.10' stroke-width='0.90'/%3E%3Ccircle cx='1480' cy='120' r='324' fill='none' stroke='url(%23g)' stroke-opacity='0.12' stroke-width='0.93'/%3E%3Ccircle cx='1480' cy='120' r='348' fill='none' stroke='url(%23g)' stroke-opacity='0.13' stroke-width='0.95'/%3E%3Ccircle cx='1480' cy='120' r='372' fill='none' stroke='url(%23g)' stroke-opacity='0.15' stroke-width='0.98'/%3E%3Ccircle cx='1480' cy='120' r='396' fill='none' stroke='url(%23g)' stroke-opacity='0.16' stroke-width='1.00'/%3E%3Ccircle cx='1480' cy='120' r='420' fill='none' stroke='url(%23g)' stroke-opacity='0.18' stroke-width='1.03'/%3E%3Ccircle cx='1480' cy='120' r='445' fill='none' stroke='url(%23g)' stroke-opacity='0.19' stroke-width='1.06'/%3E%3Ccircle cx='1480' cy='120' r='470' fill='none' stroke='url(%23g)' stroke-opacity='0.21' stroke-width='1.08'/%3E%3Ccircle cx='1480' cy='120' r='495' fill='none' stroke='url(%23g)' stroke-opacity='0.22' stroke-width='1.11'/%3E%3Ccircle cx='1480' cy='120' r='520' fill='none' stroke='url(%23g)' stroke-opacity='0.24' stroke-width='1.14'/%3E%3Ccircle cx='1480' cy='120' r='545' fill='none' stroke='url(%23g)' stroke-opacity='0.25' stroke-width='1.17'/%3E%3Ccircle cx='1480' cy='120' r='571' fill='none' stroke='url(%23g)' stroke-opacity='0.27' stroke-width='1.19'/%3E%3Ccircle cx='1480' cy='120' r='597' fill='none' stroke='url(%23g)' stroke-opacity='0.29' stroke-width='1.22'/%3E%3Ccircle cx='1480' cy='120' r='623' fill='none' stroke='url(%23g)' stroke-opacity='0.30' stroke-width='1.25'/%3E%3Ccircle cx='1480' cy='120' r='649' fill='none' stroke='url(%23g)' stroke-opacity='0.32' stroke-width='1.28'/%3E%3Ccircle cx='1480' cy='120' r='675' fill='none' stroke='url(%23g)' stroke-opacity='0.33' stroke-width='1.31'/%3E%3Ccircle cx='1480' cy='120' r='702' fill='none' stroke='url(%23g)' stroke-opacity='0.35' stroke-width='1.34'/%3E%3Ccircle cx='1480' cy='120' r='729' fill='none' stroke='url(%23g)' stroke-opacity='0.37' stroke-width='1.36'/%3E%3Ccircle cx='1480' cy='120' r='756' fill='none' stroke='url(%23g)' stroke-opacity='0.39' stroke-width='1.39'/%3E%3Ccircle cx='1480' cy='120' r='783' fill='none' stroke='url(%23g)' stroke-opacity='0.40' stroke-width='1.42'/%3E%3Ccircle cx='1480' cy='120' r='811' fill='none' stroke='url(%23g)' stroke-opacity='0.42' stroke-width='1.45'/%3E%3Ccircle cx='1480' cy='120' r='839' fill='none' stroke='url(%23g)' stroke-opacity='0.44' stroke-width='1.48'/%3E%3Ccircle cx='1480' cy='120' r='867' fill='none' stroke='url(%23g)' stroke-opacity='0.45' stroke-width='1.51'/%3E%3Ccircle cx='1480' cy='120' r='895' fill='none' stroke='url(%23g)' stroke-opacity='0.47' stroke-width='1.54'/%3E%3Ccircle cx='1480' cy='120' r='923' fill='none' stroke='url(%23g)' stroke-opacity='0.49' stroke-width='1.57'/%3E%3Ccircle cx='1480' cy='120' r='952' fill='none' stroke='url(%23g)' stroke-opacity='0.51' stroke-width='1.61'/%3E%3Ccircle cx='1480' cy='120' r='981' fill='none' stroke='url(%23g)' stroke-opacity='0.53' stroke-width='1.64'/%3E%3Ccircle cx='1480' cy='120' r='1010' fill='none' stroke='url(%23g)' stroke-opacity='0.54' stroke-width='1.67'/%3E%3Ccircle cx='1480' cy='120' r='1039' fill='none' stroke='url(%23g)' stroke-opacity='0.56' stroke-width='1.70'/%3E%3Ccircle cx='1480' cy='120' r='1069' fill='none' stroke='url(%23g)' stroke-opacity='0.58' stroke-width='1.73'/%3E%3Ccircle cx='1480' cy='120' r='1099' fill='none' stroke='url(%23g)' stroke-opacity='0.60' stroke-width='1.77'/%3E%3Ccircle cx='1480' cy='120' r='1129' fill='none' stroke='url(%23g)' stroke-opacity='0.62' stroke-width='1.80'/%3E%3Ccircle cx='1480' cy='120' r='1159' fill='none' stroke='url(%23g)' stroke-opacity='0.64' stroke-width='1.83'/%3E%3Ccircle cx='1480' cy='120' r='1190' fill='none' stroke='url(%23g)' stroke-opacity='0.66' stroke-width='1.86'/%3E%3Ccircle cx='1480' cy='120' r='1221' fill='none' stroke='url(%23g)' stroke-opacity='0.68' stroke-width='1.90'/%3E%3Ccircle cx='1480' cy='120' r='1252' fill='none' stroke='url(%23g)' stroke-opacity='0.69' stroke-width='1.93'/%3E%3Ccircle cx='1480' cy='120' r='1283' fill='none' stroke='url(%23g)' stroke-opacity='0.71' stroke-width='1.96'/%3E%3Ccircle cx='1480' cy='120' r='1315' fill='none' stroke='url(%23g)' stroke-opacity='0.73' stroke-width='2.00'/%3E%3Ccircle cx='1480' cy='120' r='1347' fill='none' stroke='url(%23g)' stroke-opacity='0.75' stroke-width='2.03'/%3E%3Ccircle cx='1480' cy='120' r='1379' fill='none' stroke='url(%23g)' stroke-opacity='0.77' stroke-width='2.07'/%3E%3Ccircle cx='1480' cy='120' r='1411' fill='none' stroke='url(%23g)' stroke-opacity='0.79' stroke-width='2.10'/%3E%3Ccircle cx='1480' cy='120' r='1444' fill='none' stroke='url(%23g)' stroke-opacity='0.82' stroke-width='2.14'/%3E%3Ccircle cx='1480' cy='120' r='1477' fill='none' stroke='url(%23g)' stroke-opacity='0.84' stroke-width='2.18'/%3E%3C/svg%3E") right top / cover no-repeat;
+  transform-origin: 92% 12%;
+  animation: riaArcs 46s ease-in-out infinite alternate;
+}
+/* colour glows drifting behind the arcs */
+body::after {
+  content: ''; position: fixed; inset: 0; z-index: -2; pointer-events: none;
+  background:
+    radial-gradient(46vmax 46vmax at 100% 0%, rgba(201,73,155,0.30), transparent 62%),
+    radial-gradient(42vmax 42vmax at 8% 100%, rgba(242,103,34,0.20), transparent 62%),
+    radial-gradient(34vmax 34vmax at 55% 55%, rgba(228,203,30,0.07), transparent 66%);
+  animation: riaGlow 22s ease-in-out infinite alternate;
+}
+@keyframes riaArcs { 0% { transform: rotate(-2deg) scale(1); } 100% { transform: rotate(3deg) scale(1.07); } }
+@keyframes riaGlow { 0% { opacity: .75; transform: translate3d(0,0,0) scale(1); } 100% { opacity: 1; transform: translate3d(-1.5%,1.5%,0) scale(1.06); } }
+@media (prefers-reduced-motion: reduce) { body::before, body::after { animation: none !important; } }
+
+#basic-theme a { color: var(--y) !important; font-weight: 700 !important; text-decoration: none !important; transition: color 160ms var(--ease); }
+#basic-theme a:hover { color: var(--paper) !important; }
+
+/* ---- 3. TOOLBAR ----------------------------------------------------------- */
+.mat-toolbar.mat-primary {
+  background: rgba(0,0,0,0.78) !important; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  color: var(--paper) !important; border-bottom: 0 !important; position: relative;
+}
+.mat-toolbar.mat-primary::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--grad); }
+.mat-toolbar.mat-primary a, .mat-toolbar.mat-primary span, .mat-toolbar.mat-primary .mat-button { color: var(--paper) !important; }
+
+/* ---- 4. HERO (logo lock-up + headline), built on the ticket list --------- */
+#basic-theme .competitions-list { display: flex !important; flex-direction: column !important; align-items: stretch !important; max-width: 1080px !important; margin: 0 auto !important; }
+#basic-theme .competitions-list::before {
+  content: ''; display: block; order: -2; box-sizing: border-box; width: 100%; max-width: 560px; height: 150px; margin: 18px auto 6px;
+  background: url("https://www.runningindustryawards.com/img/logos.png") center / contain no-repeat;
+  filter: drop-shadow(0 18px 40px rgba(201,73,155,0.35));
+  animation: riaRise 900ms var(--ease) both;
+}
+#basic-theme .competitions-list::after {
+  content: 'HAVE YOUR SAY \00A0\2022\00A0 VOTE FOR THE BEST IN RUNNING';
+  display: block; order: -1; width: 100%; box-sizing: border-box; margin: 6px 0 26px; padding: 4px 12px; text-align: center;
+  font-family: var(--cond); font-weight: 600; font-size: 20px; letter-spacing: 0.28em; text-transform: uppercase;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+}
+@keyframes riaRise { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+#basic-theme .message-content-transparent, #basic-theme .message-content-transparent * { color: var(--paper) !important; text-align: center; }
+#basic-theme .message-content-transparent p:first-child { font-family: var(--head) !important; font-weight: 800 !important; }
+@media (max-width: 600px) {
+  #basic-theme .competitions-list::before { height: 96px; }
+  #basic-theme .competitions-list::after { font-size: 14px; letter-spacing: 0.16em; }
+}
+
+/* ---- 5. THE TICKET (bold, gradient-framed, striped like the logo star) --- */
+#basic-theme .competitions-list > div.flip-card {
+  order: 0; position: relative; width: 100% !important; max-width: 860px !important; margin: 0 auto 22px !important;
+  background: transparent !important; border: 0 !important; box-shadow: none !important;
+}
+#basic-theme .flip-card .flip-card-front {
+  position: relative; overflow: hidden !important;
+  border: 3px solid transparent !important; border-radius: 20px !important;
+  background: linear-gradient(180deg, #101015, #07070a) padding-box, var(--grad-d) border-box !important;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.7), 0 0 60px rgba(242,103,34,0.22) !important;
+  transition: transform 220ms var(--ease), box-shadow 220ms var(--ease) !important;
+}
+#basic-theme .flip-card:hover .flip-card-front { transform: translateY(-4px) !important; box-shadow: 0 38px 80px rgba(0,0,0,0.75), 0 0 80px rgba(201,73,155,0.35) !important; }
+#basic-theme .flip-card .flip-card-front::before {
+  content: ''; display: block; height: 22px; width: 100%;
+  background: repeating-linear-gradient(0deg, transparent 0 2px, rgba(0,0,0,0.55) 2px 4px), var(--grad);
+}
+#basic-theme .flip-card .flip-card-front::after {
+  content: ''; position: absolute; top: 0; bottom: 0; left: -40%; width: 30%; pointer-events: none;
+  background: linear-gradient(100deg, transparent, rgba(255,255,255,0.07), transparent); transform: skewX(-18deg);
+  animation: riaShine 7s ease-in-out infinite;
+}
+@keyframes riaShine { 0%, 55% { left: -40%; } 100% { left: 130%; } }
+
+#basic-theme .flip-card .cardLeft, #basic-theme .flip-card .cardRight {
+  background: transparent !important; border: 0 !important; box-shadow: none !important; color: var(--paper) !important;
+}
+#basic-theme .flip-card .cardLeft { padding: 26px 30px 12px !important; }
+#basic-theme .flip-card .cardRight { padding: 8px 30px 28px !important; text-align: center; }
+@media (min-width: 900px) {
+  #basic-theme .flip-card .flip-card-front { display: flex !important; flex-wrap: wrap; }
+  #basic-theme .flip-card .flip-card-front::before { flex: 0 0 100%; }
+  #basic-theme .flip-card .cardLeft { flex: 1 1 58% !important; width: auto !important; padding: 30px 34px 30px !important; }
+  #basic-theme .flip-card .cardRight {
+    flex: 1 1 34% !important; width: auto !important; display: flex !important; flex-direction: column; justify-content: center; align-items: center;
+    padding: 30px 28px !important; border-left: 2px dashed rgba(255,255,255,0.22) !important; position: relative;
+  }
+  #basic-theme .flip-card .cardRight::before, #basic-theme .flip-card .cardRight::after {
+    content: ''; position: absolute; left: -15px; width: 28px; height: 28px; border-radius: 50%; background: #000; z-index: 2;
+  }
+  #basic-theme .flip-card .cardRight::before { top: -15px; }
+  #basic-theme .flip-card .cardRight::after { bottom: -15px; }
+}
+#basic-theme#basic-theme .cardLeft h1 {
+  font-size: clamp(30px, 5vw, 46px) !important; line-height: 1.04 !important; font-weight: 900 !important; text-transform: uppercase !important;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent !important;
+  border: 0 !important; padding: 0 0 10px !important; margin: 0 0 8px !important;
+}
+#basic-theme .cardLeft p, #basic-theme .cardLeft app-message, #basic-theme .cardLeft app-message * { color: var(--paper-2) !important; font-weight: 600 !important; }
+#basic-theme .cardLeft .seat span, #basic-theme .cardLeft .time span, #basic-theme .cardRight .number > span {
+  color: var(--paper-2) !important; font-family: var(--cond) !important; font-weight: 600 !important; letter-spacing: 0.18em !important; text-transform: uppercase !important; font-size: 14px !important;
+}
+#basic-theme .cardLeft .seat h2, #basic-theme .cardLeft .time h2 { color: var(--paper) !important; font-weight: 700 !important; }
+#basic-theme .cardRight .price-bloc, #basic-theme .cardRight .price-bloc * {
+  font-family: var(--head) !important; font-weight: 900 !important; font-size: 44px !important; line-height: 1 !important; letter-spacing: -0.02em !important;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent !important;
+}
+#basic-theme .cardRight .number h3, #basic-theme .cardRight .number h3 * { color: var(--paper) !important; }
+#basic-theme .cardRight .block-cut, #basic-theme .cardRight .block-cut * { color: var(--paper-2) !important; font-size: 13px !important; }
+#basic-theme .flip-card .cut { display: none !important; }
+
+/* VOTING TICKET: no price anywhere - a big VOTE badge and a VOTE NOW button instead */
+#basic-theme .cardLeft .seat, #basic-theme .cardLeft .time,
+#basic-theme .cardRight .number > *, #basic-theme .cardRight .price-bloc, #basic-theme .cardRight .block-cut { display: none !important; }
+#basic-theme .cardRight .number { display: flex !important; flex-direction: column; align-items: center; margin: 0 0 20px !important; }
+#basic-theme .cardRight .number::before {
+  content: 'VOTE'; display: block; font-family: var(--head); font-weight: 900; font-size: clamp(56px, 9vw, 84px); line-height: 0.95; letter-spacing: -0.02em;
+  background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: transparent;
+}
+#basic-theme .cardRight .number::after {
+  content: 'CAST YOUR BALLOT'; display: block; margin-top: 8px; font-family: var(--cond); font-weight: 600; font-size: 15px; letter-spacing: 0.3em; color: var(--paper-2);
+}
+#basic-theme .competitions-list a.button .mat-button-wrapper { font-size: 0 !important; }
+#basic-theme .competitions-list a.button .mat-button-wrapper::after { content: 'VOTE NOW'; font-size: 16px; }
+
+/* ---- 6. BUTTONS: gradient pill, black label, glow ------------------------ */
+#basic-theme .mat-raised-button.mat-accent, #basic-theme .mat-flat-button.mat-accent,
+#basic-theme .competitions-list .button, #basic-theme a.button.mat-raised-button,
+#basic-theme .form-page .cardBottom button.mat-raised-button.mat-accent {
+  background: var(--grad) !important; background-size: 160% 100% !important; background-position: 0 0 !important;
+  color: #0a0a0c !important; border: 0 !important; border-radius: 999px !important;
+  font-family: var(--head) !important; font-weight: 800 !important; font-size: 16px !important; letter-spacing: 0.06em !important; text-transform: uppercase !important;
+  padding: 13px 38px !important; box-shadow: 0 12px 30px rgba(242,103,34,0.38) !important;
+  transition: transform 200ms var(--ease), box-shadow 200ms var(--ease), background-position 400ms var(--ease) !important;
+}
+#basic-theme .mat-raised-button.mat-accent .mat-button-wrapper, #basic-theme .competitions-list .button .mat-button-wrapper,
+#basic-theme a.button.mat-raised-button .mat-button-wrapper { color: #0a0a0c !important; }
+#basic-theme .mat-raised-button.mat-accent:hover, #basic-theme .competitions-list .button:hover, #basic-theme a.button.mat-raised-button:hover,
+#basic-theme .form-page .cardBottom button.mat-raised-button.mat-accent:hover {
+  background-position: 100% 0 !important; transform: translateY(-3px) scale(1.02) !important; box-shadow: 0 18px 40px rgba(201,73,155,0.5) !important; opacity: 1 !important;
+}
+#basic-theme .mat-raised-button.mat-accent[disabled], #basic-theme .mat-button-disabled {
+  background: rgba(255,255,255,0.1) !important; color: rgba(255,255,255,0.4) !important; box-shadow: none !important; transform: none !important;
+}
+#basic-theme .mat-raised-button.mat-accent[disabled] *, #basic-theme .mat-button-disabled * { color: rgba(255,255,255,0.4) !important; }
+#basic-theme .mat-stroked-button, #basic-theme .mat-button.mat-accent, #basic-theme button.secondary {
+  border-radius: 999px !important; border: 2px solid transparent !important;
+  background: linear-gradient(#0c0c10,#0c0c10) padding-box, var(--grad) border-box !important;
+  color: var(--paper) !important; font-family: var(--head) !important; font-weight: 800 !important; letter-spacing: 0.05em !important; text-transform: uppercase !important;
+}
+#basic-theme .mat-stroked-button:hover, #basic-theme .mat-button.mat-accent:hover, #basic-theme button.secondary:hover { background: var(--grad) border-box !important; color: #0a0a0c !important; }
+#basic-theme .mat-button { font-family: var(--head) !important; font-weight: 800 !important; text-transform: uppercase !important; border-radius: 999px !important; color: var(--paper) !important; }
+#basic-theme button:focus-visible, #basic-theme a:focus-visible, #basic-theme input:focus-visible { outline: 3px solid rgba(228,203,30,0.7) !important; outline-offset: 2px !important; }
+@media (max-width: 600px) {
+  #basic-theme .competitions-list .button, #basic-theme a.button.mat-raised-button, #basic-theme .form-page .cardBottom button.mat-raised-button.mat-accent { width: 100% !important; }
+}
+
+/* ---- 7. FORM / VOTING / CART STEPS - dark glass cards -------------------- */
+#basic-theme :is(.form-page, .cart-list, .select-payment-method, .custom-step, .confirmation-page) .card.cardTop,
+#basic-theme .form-page .mat-card {
+  position: relative; background: linear-gradient(180deg, rgba(20,20,26,0.92), rgba(9,9,12,0.94)) !important;
+  border: 1px solid var(--line) !important; border-radius: 18px !important; box-shadow: 0 24px 60px rgba(0,0,0,0.6) !important;
+  -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); overflow: hidden;
+}
+#basic-theme :is(.form-page, .cart-list, .select-payment-method, .custom-step, .confirmation-page) .card.cardTop::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 0; height: 5px; background: var(--grad);
+}
+#basic-theme#basic-theme .card.cardTop, #basic-theme#basic-theme .card.cardTop *:not(.mat-icon):not(button):not(button *):not(a),
+#basic-theme#basic-theme .cardBottom, #basic-theme#basic-theme .form-page .mat-card *, #basic-theme#basic-theme .summary-panel, #basic-theme#basic-theme .summary-panel *,
+#basic-theme#basic-theme .cart-list *:not(button):not(button *):not(a), #basic-theme#basic-theme .confirmation-page *:not(button):not(button *):not(a) { color: var(--paper) !important; }
+#basic-theme .cardBottom { background: transparent !important; border: 0 !important; box-shadow: none !important; }
+#basic-theme .card.cardTop h1, #basic-theme .card.cardTop h2 { font-family: var(--head) !important; text-transform: uppercase !important; }
+
+/* fields */
+#basic-theme .mat-form-field-appearance-outline .mat-form-field-outline { color: rgba(255,255,255,0.26) !important; }
+#basic-theme .mat-form-field-appearance-outline .mat-form-field-flex { padding: 0 18px !important; background: rgba(255,255,255,0.04) !important; border-radius: 12px !important; }
+#basic-theme .mat-form-field-appearance-outline .mat-form-field-infix { padding: 18px 0 !important; }
+#basic-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick { color: var(--o) !important; }
+#basic-theme .mat-form-field.mat-focused .mat-form-field-label { color: var(--y) !important; }
+#basic-theme .mat-form-field-label, #basic-theme .mat-select-placeholder, #basic-theme .mat-hint { color: rgba(255,255,255,0.62) !important; }
+#basic-theme .mat-input-element, #basic-theme textarea.mat-input-element { color: var(--paper) !important; caret-color: var(--o) !important; }
+#basic-theme .mat-input-element::placeholder { color: rgba(255,255,255,0.4) !important; }
+#basic-theme .mat-select-value, #basic-theme .mat-select-value-text, #basic-theme .mat-select-arrow { color: var(--paper) !important; }
+#basic-theme .mat-form-field-required-marker, #basic-theme .mat-error { color: var(--p) !important; }
+#basic-theme input:-webkit-autofill, #basic-theme input:-webkit-autofill:focus { -webkit-box-shadow: 0 0 0 1000px #15151b inset !important; -webkit-text-fill-color: #fff !important; caret-color: #fff !important; }
+
+/* VOTING VISUALS: each category field is a bold vote tile; a chosen nominee lights it up */
+#basic-theme .form-page .mat-form-field-appearance-outline { margin-bottom: 4px !important; }
+#basic-theme .form-page .mat-form-field:has(.mat-select) .mat-form-field-flex { min-height: 64px; transition: background 220ms var(--ease), box-shadow 220ms var(--ease) !important; }
+#basic-theme .form-page .mat-form-field:has(.mat-select) .mat-form-field-label { font-family: var(--cond) !important; font-weight: 600 !important; font-size: 18px !important; letter-spacing: 0.05em !important; text-transform: uppercase !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+#basic-theme .form-page .mat-form-field:has(.mat-select:not(.mat-select-empty)) .mat-form-field-flex {
+  background: linear-gradient(90deg, rgba(228,203,30,0.14), rgba(242,103,34,0.14), rgba(201,73,155,0.18)) !important; box-shadow: 0 0 26px rgba(242,103,34,0.22) !important;
+}
+#basic-theme .form-page .mat-form-field:has(.mat-select:not(.mat-select-empty)) .mat-form-field-outline { color: var(--o) !important; }
+#basic-theme .form-page .mat-form-field:has(.mat-select:not(.mat-select-empty)) .mat-form-field-label { color: var(--y) !important; }
+#basic-theme .form-page .mat-form-field:has(.mat-select:not(.mat-select-empty)) .mat-select-value-text { font-weight: 800 !important; }
+#basic-theme .form-page .mat-form-field:has(.mat-select:not(.mat-select-empty)) .mat-form-field-suffix::after {
+  content: '\2713'; display: inline-flex; align-items: center; justify-content: center; width: 26px; height: 26px; margin-left: 10px; border-radius: 50%;
+  background: var(--grad-d); color: #0a0a0c; font-weight: 900; font-size: 15px;
+}
+/* dropdown overlay (rendered outside #basic-theme) */
+.mat-select-panel, .mat-autocomplete-panel { background: #101015 !important; border: 1px solid rgba(255,255,255,0.16) !important; border-radius: 14px !important; box-shadow: 0 24px 60px rgba(0,0,0,0.7) !important; }
+.mat-option { color: #ffffff !important; font-family: var(--body) !important; font-weight: 600 !important; }
+.mat-option:hover:not(.mat-option-disabled), .mat-option.mat-active { background: rgba(242,103,34,0.18) !important; }
+.mat-option.mat-selected:not(.mat-option-disabled) { color: var(--y) !important; background: rgba(228,203,30,0.1) !important; }
+.mat-option .mat-pseudo-checkbox { border-color: rgba(255,255,255,0.6) !important; }
+.mat-dialog-container, .mat-datepicker-content { background: #101015 !important; color: #fff !important; border: 1px solid rgba(255,255,255,0.14); border-radius: 18px !important; }
+
+/* inner light panels njuko draws inside the card + "registering for" radio tiles */
+#basic-theme .form-page .form { background: transparent !important; }
+#basic-theme .form-page mat-radio-button { background: rgba(255,255,255,0.06) !important; border: 1px solid rgba(255,255,255,0.16) !important; border-radius: 14px !important; box-shadow: none !important; }
+#basic-theme .form-page mat-radio-button.mat-radio-checked { background: var(--grad) !important; border-color: transparent !important; }
+#basic-theme#basic-theme#basic-theme .card.cardTop mat-radio-button.mat-radio-checked * { color: #0a0a0c !important; }
+#basic-theme .form-page .mat-radio-button.mat-radio-checked .mat-radio-outer-circle { border-color: #0a0a0c !important; }
+#basic-theme .form-page .mat-radio-button.mat-radio-checked .mat-radio-inner-circle { background: #0a0a0c !important; }
+#basic-theme .form-page .hint-message { background: rgba(255,255,255,0.08) !important; border-radius: 12px !important; }
+/* outlines + labels must beat the blanket white-text rule above (triple id) */
+#basic-theme#basic-theme#basic-theme .card.cardTop .mat-form-field-outline { color: rgba(255,255,255,0.26) !important; }
+#basic-theme#basic-theme#basic-theme .card.cardTop .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick { color: var(--o) !important; }
+#basic-theme#basic-theme#basic-theme .card.cardTop .mat-form-field-label { color: rgba(255,255,255,0.66) !important; }
+#basic-theme#basic-theme#basic-theme .card.cardTop .mat-form-field.mat-focused .mat-form-field-label { color: var(--y) !important; }
+#basic-theme#basic-theme#basic-theme .card.cardTop .mat-form-field-required-marker, #basic-theme#basic-theme#basic-theme .card.cardTop .mat-error { color: var(--p) !important; }
+#basic-theme#basic-theme#basic-theme .form-page .mat-form-field:has(.mat-select:not(.mat-select-empty)) .mat-form-field-outline { color: var(--o) !important; }
+#basic-theme#basic-theme#basic-theme .form-page .mat-form-field:has(.mat-select:not(.mat-select-empty)) .mat-form-field-label { color: var(--y) !important; }
+
+/* checkboxes / radios / toggles */
+#basic-theme .mat-checkbox-frame, #basic-theme .mat-radio-outer-circle { border-color: rgba(255,255,255,0.6) !important; }
+#basic-theme .mat-checkbox-label, #basic-theme .mat-radio-label-content { color: var(--paper) !important; font-weight: 600 !important; }
+#basic-theme .mat-checkbox-checked.mat-accent .mat-checkbox-background, #basic-theme .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background,
+#basic-theme .mat-pseudo-checkbox-checked, #basic-theme .mat-pseudo-checkbox-indeterminate { background: var(--o) !important; }
+#basic-theme .mat-checkbox-checkmark-path { stroke: #0a0a0c !important; }
+#basic-theme .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle { border-color: var(--o) !important; }
+#basic-theme .mat-radio-button.mat-accent .mat-radio-inner-circle { background-color: var(--o) !important; }
+#basic-theme .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb { background-color: var(--o) !important; }
+#basic-theme .mat-slide-toggle.mat-checked .mat-slide-toggle-bar { background-color: rgba(242,103,34,0.4) !important; }
+
+/* stepper / progress / chips / totals */
+#basic-theme .mat-step-header .mat-step-icon-selected, #basic-theme .mat-step-header .mat-step-icon-state-done,
+#basic-theme .mat-step-header .mat-step-icon.mat-step-icon-state-edit { background: var(--grad-d) !important; color: #0a0a0c !important; }
+#basic-theme .mat-step-header .mat-step-label { color: var(--paper-2) !important; }
+#basic-theme .mat-step-header .mat-step-label.mat-step-label-active { color: var(--paper) !important; }
+#basic-theme .mat-progress-bar-fill::after { background: var(--grad) !important; }
+#basic-theme .mat-progress-bar-buffer { background-color: rgba(255,255,255,0.12) !important; }
+#basic-theme .mat-progress-spinner circle, #basic-theme .mat-spinner circle { stroke: var(--o) !important; }
+#basic-theme .mat-chip.mat-standard-chip.mat-chip-selected.mat-accent { background: var(--grad-d) !important; color: #0a0a0c !important; }
+#basic-theme .mat-tab-label, #basic-theme .mat-tab-link { color: var(--paper-2) !important; }
+#basic-theme .mat-tab-label-active { color: var(--paper) !important; opacity: 1 !important; font-weight: 800 !important; }
+#basic-theme .mat-ink-bar { background: var(--grad) !important; height: 3px !important; }
+#basic-theme .mat-badge-accent .mat-badge-content { background: var(--grad-d) !important; color: #0a0a0c !important; font-weight: 800 !important; }
+#basic-theme .summary-panel .total, #basic-theme .cart-total, #basic-theme .price-total, #basic-theme .basket .total { color: var(--y) !important; font-weight: 800 !important; }
+#basic-theme .mat-divider, #basic-theme hr { border-color: rgba(255,255,255,0.14) !important; }
+#basic-theme .mat-table, #basic-theme .mat-header-cell, #basic-theme .mat-cell { background: transparent !important; color: var(--paper) !important; border-color: rgba(255,255,255,0.12) !important; }
+
+/* ---- 8. FOOTER ----------------------------------------------------------- */
+#basic-theme footer { background: transparent !important; }
+#basic-theme footer .footer-container {
+  position: relative !important; margin-top: 48px !important; padding: 44px 20px 40px !important; background: rgba(8,8,11,0.92) !important;
+  border: 0 !important; text-align: center !important; color: var(--paper-2) !important;
+}
+#basic-theme footer .footer-container::after { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 4px; background: var(--grad); }
+#basic-theme footer .footer-container::before {
+  content: 'RUNNING INDUSTRY AWARDS \00A0\2022\00A0 PRESENTED BY JUSTGIVING\A \00A9 2027 Running Industry Alliance Limited';
+  white-space: pre-line; display: block; margin-bottom: 16px; color: var(--paper); font-family: var(--head); font-weight: 800; font-size: 13px; letter-spacing: 0.12em; line-height: 2;
+}
+#basic-theme footer .footer-container .footer-message, #basic-theme footer .footer-container .terms span:last-child { display: none !important; }
+#basic-theme footer .footer-container .terms span:first-child { display: inline-flex !important; flex-wrap: wrap; justify-content: center; align-items: center; gap: 8px 16px; color: var(--line) !important; }
+#basic-theme#basic-theme footer .footer-container .terms a.footer-cgus-link { color: var(--y) !important; font-family: var(--cond) !important; font-weight: 600 !important; text-transform: uppercase !important; letter-spacing: 0.14em !important; font-size: 14px !important; }
+#basic-theme#basic-theme footer .footer-container .terms a.footer-cgus-link:hover { color: var(--paper) !important; }
+
+/* ---- 9. SCROLLBAR -------------------------------------------------------- */
+#basic-theme ::-webkit-scrollbar { width: 10px; height: 10px; }
+#basic-theme ::-webkit-scrollbar-thumb { background: linear-gradient(var(--y), var(--o), var(--p)); border-radius: 999px; }
+#basic-theme ::-webkit-scrollbar-track { background: #0c0c10; }
+#basic-theme { scrollbar-color: var(--o) #0c0c10; scrollbar-width: thin; }
+
+/* ---- 10. RESPONSIVE ------------------------------------------------------ */
+#basic-theme .flip-card .cardLeft, #basic-theme .flip-card .cardRight { box-sizing: border-box !important; min-width: 0; }
+#basic-theme .competitions-list a.button.mat-raised-button, #basic-theme .form-page .cardBottom .mat-raised-button, #basic-theme .form-page .cardBottom .mat-stroked-button { box-sizing: border-box !important; max-width: 100% !important; }
+#basic-theme .mat-stroked-button, #basic-theme .form-page .cardBottom .mat-button { padding: 11px 28px !important; line-height: 1.2 !important; }
+@media (max-width: 600px) {
+  #basic-theme .competitions-list a.button.mat-raised-button { width: 100% !important; padding-left: 18px !important; padding-right: 18px !important; }
+  #basic-theme .form-page .mat-form-field:has(.mat-select) .mat-form-field-label { font-size: 14px !important; letter-spacing: 0.01em !important; line-height: 1.15 !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+  #basic-theme .form-page .mat-form-field:has(.mat-select) .mat-form-field-flex { min-height: 60px; }
+  #basic-theme .card.cardTop { padding-left: 14px !important; padding-right: 14px !important; }
+  #basic-theme .form-page .mat-form-field-appearance-outline .mat-form-field-flex { padding: 0 12px !important; }
+  #basic-theme .form-page .mat-form-field:has(.mat-select:not(.mat-select-empty)) .mat-form-field-suffix::after { width: 22px; height: 22px; font-size: 13px; margin-left: 6px; }
+}
+@media (max-width: 360px) {
+  #basic-theme .flip-card .cardLeft h1 { font-size: 26px !important; }
+  #basic-theme .competitions-list::after { letter-spacing: 0.1em; font-size: 12px; }
+  #basic-theme .cardBottom, #basic-theme .mock-btn-row { display: flex !important; flex-wrap: wrap !important; gap: 10px !important; justify-content: center !important; }
+  #basic-theme .cardBottom > *, #basic-theme .mock-btn-row > * { flex: 1 1 100% !important; max-width: 100% !important; min-width: 0 !important; box-sizing: border-box !important; text-align: center !important; }
+  #basic-theme .form-page .mat-form-field:has(.mat-select) .mat-form-field-label { font-size: 12px !important; letter-spacing: 0 !important; }
+  #basic-theme .form-page .mat-form-field:has(.mat-select) .mat-form-field-suffix::after { display: none !important; }
+}
+@media (max-width: 899px) {
+  #basic-theme .flip-card .cardRight { border-top: 2px dashed rgba(255,255,255,0.22) !important; margin-top: 8px; }
+  #basic-theme .flip-card .cardLeft { padding: 22px 22px 8px !important; }
+  #basic-theme .flip-card .cardRight { padding: 20px 22px 26px !important; }
+  #basic-theme .cardRight .price-bloc, #basic-theme .cardRight .price-bloc * { font-size: 38px !important; }
+}
