@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800&family=Archivo+Black&display=swap');
+
+/* Riyadh Marathon 2027 - njuko entry page, v2
+   Brand: hot orange-red (#fa3200 / #ff5e00), ribbon stripes in red / orange / yellow, chunky black headlines, clean white cards.
+   Scoped with app-root + !important so it wins over the njuko default theme. */
+
+:root {
+  --rm-red: #fa3200;
+  --rm-orange: #ff5e00;
+  --rm-amber: #ff9d00;
+  --rm-yellow: #ffd000;
+  --rm-ink: #181617;
+  --rm-cream: #fff8f1;
+  --rm-peach: #ffe9d9;
+}
+
+html, body, app-root, app-edition,
+body app-root mat-sidenav-container,
+body app-root mat-sidenav-content,
+body app-root .wrapper,
+body app-root #basic-theme {
+  background: var(--rm-cream) !important;
+  background-image: none !important;
+  font-family: 'Lexend', 'Helvetica Neue', Arial, sans-serif !important;
+  color: var(--rm-ink) !important;
+}
+body app-root *:not(mat-icon):not(.material-icons) { font-family: 'Lexend', 'Helvetica Neue', Arial, sans-serif; }
+body app-root mat-icon, body app-root .material-icons { font-family: 'Material Icons' !important; }
+
+/* ---------- top bar ---------- */
+body app-root .toolbar,
+body app-root .mat-toolbar {
+  background: linear-gradient(90deg, var(--rm-red) 0%, var(--rm-orange) 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 18px rgba(250, 50, 0, 0.35) !important;
+}
+body app-root .toolbar a, body app-root .toolbar button, body app-root .toolbar span,
+body app-root .mat-toolbar a, body app-root .mat-toolbar button { color: #fff !important; font-weight: 600 !important; letter-spacing: 0.4px !important; }
+body app-root .toolbar .mat-button-base[class*="basket"], body app-root .toolbar button.mat-stroked-button { border: 2px solid rgba(255, 255, 255, 0.85) !important; border-radius: 999px !important; }
+
+/* ---------- hero: gradient + drifting ribbon stripes ---------- */
+body app-root .background {
+  position: relative !important;
+  min-height: 250px !important;
+  height: auto !important;
+  overflow: hidden !important;
+  background: linear-gradient(135deg, var(--rm-red) 0%, var(--rm-orange) 58%, var(--rm-amber) 100%) !important;
+}
+body app-root .background .gradient { background: none !important; position: relative !important; z-index: 2 !important; }
+body app-root .background .container { padding-top: 38px !important; padding-bottom: 310px !important; text-align: center !important; }
+body app-root .background h1 {
+  font-family: 'Archivo Black', 'Lexend', Impact, sans-serif !important;
+  font-weight: 400 !important;
+  font-size: clamp(30px, 6vw, 58px) !important;
+  line-height: 1.02 !important;
+  letter-spacing: 1px !important;
+  text-transform: uppercase !important;
+  color: #fff !important;
+  text-shadow: 0 4px 0 rgba(24, 22, 23, 0.28) !important;
+}
+body app-root .background::before,
+body app-root .background::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  background-repeat: repeat-x;
+  z-index: 1;
+}
+body app-root .background::before {
+  height: 130px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='150' viewBox='0 0 1200 150' fill='none' stroke-linecap='round'%3E%3Cpath d='M0 70 Q300 10 600 70 T1200 70' stroke='%23ffd000' stroke-width='16'/%3E%3Cpath d='M0 94 Q300 34 600 94 T1200 94' stroke='%23ff9d00' stroke-width='16'/%3E%3Cpath d='M0 118 Q300 58 600 118 T1200 118' stroke='%23fa3200' stroke-width='16'/%3E%3Cpath d='M0 142 Q300 82 600 142 T1200 142' stroke='%23ffffff' stroke-width='14' stroke-opacity='.9'/%3E%3C/svg%3E");
+  background-size: 1200px 150px;
+  animation: rmDriftA 38s linear infinite;
+  opacity: 0.95;
+}
+body app-root .background::after {
+  height: 110px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='110' viewBox='0 0 900 110' fill='none' stroke-linecap='round'%3E%3Cpath d='M0 40 Q225 100 450 40 T900 40' stroke='%23ffffff' stroke-width='6' stroke-opacity='.45'/%3E%3Cpath d='M0 62 Q225 122 450 62 T900 62' stroke='%23ffd000' stroke-width='6' stroke-opacity='.55'/%3E%3C/svg%3E");
+  background-size: 900px 110px;
+  animation: rmDriftB 26s linear infinite reverse;
+}
+@keyframes rmDriftA { from { background-position-x: 0; } to { background-position-x: -1200px; } }
+@keyframes rmDriftB { from { background-position-x: 0; } to { background-position-x: -900px; } }
+@media (prefers-reduced-motion: reduce) { body app-root .background::before, body app-root .background::after { animation: none !important; } }
+
+/* ---------- edition logo overlapping the ribbons ---------- */
+body app-root .logo-edition { position: relative !important; z-index: 3 !important; margin: -292px auto 150px !important; text-align: center !important; }
+body app-root .logo-edition img {
+  height: 150px !important; width: auto !important; max-width: 70% !important;
+  filter: drop-shadow(0 8px 14px rgba(120, 20, 0, 0.45)) !important;
+}
+
+/* ---------- intro text card ---------- */
+body app-root .offers-container { max-width: 940px !important; margin: 0 auto !important; }
+body app-root .offers-panel.cardWrap {
+  float: none !important; width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important; margin: 0 auto !important; padding: 0 16px 40px !important;
+  background: transparent !important; box-shadow: none !important;
+}
+body app-root .offers-panel > app-message,
+body app-root .offers-panel > app-message .message-content {
+  display: block !important; background: #fff !important; border-radius: 18px !important; box-shadow: 0 14px 40px rgba(250, 50, 0, 0.12) !important; border: 0 !important;
+}
+body app-root .offers-panel > app-message { position: relative !important; overflow: hidden !important; margin-bottom: 28px !important; }
+body app-root .offers-panel > app-message::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 0; height: 8px;
+  background: linear-gradient(90deg, var(--rm-red), var(--rm-orange), var(--rm-amber), var(--rm-yellow));
+}
+body app-root .offers-panel > app-message .message-content { padding: 36px 40px 30px !important; box-shadow: none !important; background: transparent !important; }
+body app-root .offers-panel > app-message p { color: #3b3638 !important; font-size: 15px !important; line-height: 1.75 !important; font-weight: 400 !important; text-align: center !important; }
+body app-root .offers-panel > app-message p:has(> strong:only-child),
+body app-root .offers-panel > app-message p:has(> strong:only-child) * { color: var(--rm-ink) !important; font-size: 19px !important; font-weight: 700 !important; line-height: 1.45 !important; }
+
+/* ---------- race groups ---------- */
+body app-root .preview-offers-panel {
+  background: #fff !important; border-radius: 18px !important; padding: 26px 24px 8px !important; margin-bottom: 26px !important;
+  box-shadow: 0 14px 40px rgba(250, 50, 0, 0.12) !important; border: 0 !important; position: relative !important; overflow: hidden !important;
+}
+body app-root .section-title {
+  font-family: 'Archivo Black', 'Lexend', Impact, sans-serif !important; font-weight: 400 !important;
+  font-size: 20px !important; letter-spacing: 0.6px !important; text-transform: uppercase !important; color: var(--rm-ink) !important;
+  border: 0 !important; padding: 0 0 14px !important; position: relative !important;
+}
+body app-root .section-title::after {
+  content: ''; display: block; width: 84px; height: 6px; border-radius: 6px; margin-top: 12px;
+  background: linear-gradient(90deg, var(--rm-red), var(--rm-orange), var(--rm-yellow));
+}
+
+/* ---------- race tickets ---------- */
+body app-root .offer-in-section {
+  position: relative !important; overflow: hidden !important;
+  background: #fff !important; border: 1px solid var(--rm-peach) !important; border-radius: 16px !important;
+  box-shadow: 0 6px 20px rgba(24, 22, 23, 0.07) !important; margin-bottom: 18px !important;
+  transition: transform .2s ease, box-shadow .2s ease !important;
+}
+body app-root .offer-in-section:hover { transform: translateY(-3px) !important; box-shadow: 0 14px 30px rgba(250, 50, 0, 0.2) !important; }
+body app-root .offer-in-section::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 8px; z-index: 2;
+  background: linear-gradient(180deg, var(--rm-yellow), var(--rm-amber) 35%, var(--rm-orange) 70%, var(--rm-red));
+}
+body app-root .offer-title {
+  font-family: 'Archivo Black', 'Lexend', Impact, sans-serif !important; font-weight: 400 !important;
+  font-size: 22px !important; line-height: 1.15 !important; text-transform: uppercase !important; letter-spacing: 0.3px !important;
+  color: var(--rm-ink) !important; border: 0 !important; padding: 22px 24px 4px 30px !important;
+}
+body app-root .offer-description, body app-root .offer-description p {
+  color: #5a5457 !important; font-size: 14px !important; line-height: 1.6 !important; border: 0 !important;
+}
+body app-root .offer-description { padding: 4px 24px 22px 30px !important; }
+body app-root .offer-right-part {
+  position: relative !important; background: linear-gradient(160deg, #fff4ea, #ffe9d9) !important; border-left: 2px dashed #ffc9a3 !important; padding: 18px 14px !important;
+}
+/* ticket notches on the perforation */
+body app-root .offer-right-part::before, body app-root .offer-right-part::after {
+  content: ''; position: absolute; left: -11px; width: 20px; height: 20px; border-radius: 50%; background: #fff; border: 1px solid var(--rm-peach); z-index: 3;
+}
+body app-root .offer-right-part::before { top: -11px; }
+body app-root .offer-right-part::after { bottom: -11px; }
+body app-root .offer-price, body app-root .offer-price * {
+  font-family: 'Archivo Black', 'Lexend', Impact, sans-serif !important; font-weight: 400 !important; font-size: 30px !important; color: var(--rm-ink) !important; letter-spacing: 0.3px !important;
+}
+body app-root .offer-price app-message, body app-root .offer-price app-message * { font-family: 'Lexend', Arial, sans-serif !important; font-size: 11px !important; color: #7a6f72 !important; }
+body app-root .offer-button button {
+  min-width: 168px !important; height: 48px !important; padding: 0 22px !important; border-radius: 999px !important;
+  background: linear-gradient(135deg, var(--rm-orange), var(--rm-red)) !important; color: #fff !important;
+  font-weight: 700 !important; font-size: 14px !important; letter-spacing: 0.8px !important; text-transform: uppercase !important;
+  box-shadow: 0 8px 18px rgba(250, 50, 0, 0.35) !important; border: 0 !important;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease !important;
+}
+body app-root .offer-button button .mat-button-wrapper::after { content: '\2192'; margin-left: 10px; font-weight: 800; }
+body app-root .offer-button button:hover { background: var(--rm-ink) !important; transform: translateY(-2px) !important; box-shadow: 0 12px 22px rgba(24, 22, 23, 0.35) !important; }
+body app-root .offer-button button, body app-root .offer-button button * { color: #fff !important; }
+
+
+/* ---------- distance colour coding (from the RM2027 ticketing deck: 42K orange, 21K blue, 10K purple, family run green; colour bar only, no text) ---------- */
+body app-root .offer-in-section { --rm-d: #f26a21; --rm-d2: #ff9d00; }
+body app-root .preview-offers-panel:first-of-type .offer-in-section:nth-of-type(3) { --rm-d: #2f8fe8; --rm-d2: #7cc0ff; }
+body app-root .preview-offers-panel:first-of-type .offer-in-section:nth-of-type(4) { --rm-d: #8a5be0; --rm-d2: #c3a2ff; }
+body app-root .preview-offers-panel + .preview-offers-panel .offer-in-section { --rm-d: #1fbf6b; --rm-d2: #7be0a8; }
+body app-root .offer-in-section::before { background: linear-gradient(180deg, var(--rm-d2), var(--rm-d)) !important; }
+body app-root .offer-in-section:hover { box-shadow: 0 14px 30px rgba(24, 22, 23, 0.16) !important; }
+
+/* ---------- early bird banner (first <div> inside the page-top message: 3 paragraphs) ---------- */
+body app-root .offers-panel > app-message .message-content > div > div:first-child {
+  position: relative !important; overflow: hidden !important; display: block !important;
+  margin: 0 0 26px !important; padding: 22px 28px !important; border-radius: 16px !important; text-align: center !important;
+  background: linear-gradient(115deg, var(--rm-ink) 0%, #3a1308 55%, var(--rm-red) 135%) !important;
+  box-shadow: 0 12px 28px rgba(250, 50, 0, 0.3) !important;
+}
+body app-root .offers-panel > app-message .message-content > div > div:first-child::before {
+  content: ''; position: absolute; left: 0; right: 0; top: 0; height: 6px;
+  background: linear-gradient(90deg, var(--rm-red), var(--rm-orange), var(--rm-amber), var(--rm-yellow));
+}
+body app-root .offers-panel > app-message .message-content > div > div:first-child p { margin: 0 !important; text-align: center !important; line-height: 1.2 !important; }
+body app-root .offers-panel > app-message .message-content > div > div:first-child p:nth-child(1) {
+  display: inline-block !important; padding: 6px 16px !important; margin-bottom: 8px !important; border-radius: 999px !important;
+  background: var(--rm-yellow) !important; color: var(--rm-ink) !important; font-size: 12px !important; font-weight: 800 !important; letter-spacing: 1.6px !important; text-transform: uppercase !important;
+}
+body app-root .offers-panel > app-message .message-content > div > div:first-child p:nth-child(2) {
+  font-family: 'Archivo Black', 'Lexend', Impact, sans-serif !important; font-weight: 400 !important;
+  font-size: clamp(44px, 9vw, 78px) !important; letter-spacing: 1px !important; text-transform: uppercase !important; color: var(--rm-yellow) !important;
+  text-shadow: 0 4px 0 rgba(250, 50, 0, 0.55) !important; margin-bottom: 8px !important;
+}
+body app-root .offers-panel > app-message .message-content > div > div:first-child p:nth-child(3) { color: #fff !important; font-size: 15px !important; font-weight: 500 !important; letter-spacing: 0.3px !important; }
+
+/* ---------- early bird tag under each price ---------- */
+body app-root .offer-price app-message { display: block !important; margin-top: 8px !important; text-align: center !important; }
+body app-root .offer-price app-message .message-content { background: transparent !important; padding: 0 !important; box-shadow: none !important; }
+body app-root .offer-price app-message p {
+  display: inline-block !important; margin: 0 !important; padding: 5px 12px !important; border-radius: 999px !important;
+  background: linear-gradient(135deg, var(--rm-orange), var(--rm-red)) !important; box-shadow: 0 4px 10px rgba(250, 50, 0, 0.3) !important;
+}
+body app-root .offer-price app-message, body app-root .offer-price app-message * { color: #fff !important; font-size: 11px !important; font-weight: 700 !important; letter-spacing: 0.6px !important; text-transform: uppercase !important; }
+body app-root .offer-price app-message .message-content, body app-root .offer-price app-message div { background: transparent !important; }
+
+/* ---------- footer ---------- */
+body app-root .mat-toolbar-row a, body app-root footer a { color: inherit; }
+
+/* ---------- mobile ---------- */
+@media (max-width: 700px) {
+  body app-root .background .container { padding-bottom: 270px !important; }
+  body app-root .background::before { height: 100px; background-size: 900px 100px; }
+  body app-root .logo-edition { margin-top: -250px !important; margin-bottom: 120px !important; }
+  body app-root .logo-edition img { height: 118px !important; }
+  body app-root .offers-panel.cardWrap { padding: 0 10px 28px !important; }
+  body app-root .offers-panel > app-message .message-content { padding: 28px 20px 22px !important; }
+  body app-root .offers-panel > app-message p:has(> strong:only-child), body app-root .offers-panel > app-message p:has(> strong:only-child) * { font-size: 16px !important; }
+  body app-root .preview-offers-panel { padding: 20px 12px 4px !important; }
+  body app-root .offer-in-section { flex-direction: column !important; }
+  body app-root .offer-right-part { flex: 0 0 auto !important; max-width: 100% !important; border-left: 0 !important; border-top: 2px dashed #ffc9a3 !important; }
+  body app-root .offer-right-part::before { left: -11px; top: -11px; }
+  body app-root .offer-right-part::after { left: auto; right: -11px; top: -11px; bottom: auto; }
+  body app-root .offer-title { font-size: 19px !important; }
+  body app-root .offers-panel > app-message .message-content > div > div:first-child { padding: 18px 14px !important; }
+}
+
+
+/* ---------- right-to-left (Arabic) ---------- */
+html[dir="rtl"] body app-root .offer-in-section::before { left: auto; right: 0; }
+html[dir="rtl"] body app-root .offer-title { padding: 22px 30px 4px 24px !important; }
+html[dir="rtl"] body app-root .offer-description { padding: 4px 30px 22px 24px !important; }
+html[dir="rtl"] body app-root .offer-right-part { border-left: 0 !important; border-right: 2px dashed #ffc9a3 !important; }
+html[dir="rtl"] body app-root .offer-right-part::before, html[dir="rtl"] body app-root .offer-right-part::after { left: auto; right: -11px; }
+html[dir="rtl"] body app-root .offer-button button .mat-button-wrapper::after { content: '\2190'; margin-left: 0; margin-right: 10px; }
