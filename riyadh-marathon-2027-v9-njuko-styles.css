@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700;800&family=Readex+Pro:wght@400;500;600;700&display=swap');
+
+/* Riyadh Marathon 2027 - njuko entry page, v8 SUNSET
+   Built around the new campaign art: smeared red-orange / amber light, wide italic white headlines,
+   cream buttons with hot orange-red type. Classic ticket list + offers layout + Arabic (RTL).
+   Scoped with app-root / #basic-theme + !important so it wins over the njuko default theme. */
+
+:root {
+  --rm-red: #d92b00;
+  --rm-hot: #fa3200;
+  --rm-orange: #ff5e00;
+  --rm-amber: #ffb347;
+  --rm-glow: #ffd98a;
+  --rm-cream: #fff1e8;
+  --rm-ember: rgba(90, 12, 0, 0.52);
+  --rm-ember-solid: #5a0c00;
+  --rm-line: rgba(255, 255, 255, 0.28);
+  --rm-font: 'Lexend', 'Readex Pro', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ---------- page background: sunset smear + light streaks + film grain ---------- */
+html, body {
+  background-color: #e2400a !important;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1  0 0 0 0 .8  0 0 0 0 .6  0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E"),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 1000' preserveAspectRatio='none' fill='none' stroke-linecap='round'%3E%3Cg transform='rotate(-14 800 500)'%3E%3Cpath d='M-300 120 H1900' stroke='%23ffe2a8' stroke-width='3' stroke-opacity='.35'/%3E%3Cpath d='M-300 210 H1900' stroke='%23ffffff' stroke-width='2' stroke-opacity='.22'/%3E%3Cpath d='M-300 330 H1900' stroke='%23ffd27a' stroke-width='10' stroke-opacity='.18'/%3E%3Cpath d='M-300 420 H1900' stroke='%23ffffff' stroke-width='2' stroke-opacity='.25'/%3E%3Cpath d='M-300 520 H1900' stroke='%23ffe9c0' stroke-width='22' stroke-opacity='.14'/%3E%3Cpath d='M-300 640 H1900' stroke='%23ffffff' stroke-width='3' stroke-opacity='.2'/%3E%3Cpath d='M-300 740 H1900' stroke='%23a31d00' stroke-width='26' stroke-opacity='.22'/%3E%3Cpath d='M-300 860 H1900' stroke='%23ffd27a' stroke-width='3' stroke-opacity='.3'/%3E%3Cpath d='M-300 960 H1900' stroke='%23a31d00' stroke-width='14' stroke-opacity='.25'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(1100px 520px at 22% 44%, rgba(255, 217, 138, 0.85), rgba(255, 217, 138, 0) 70%),
+    radial-gradient(900px 460px at 88% 62%, rgba(255, 150, 70, 0.55), rgba(255, 150, 70, 0) 70%),
+    linear-gradient(172deg, #c82a03 0%, #ec4b0b 30%, #f5701a 52%, #e0430a 76%, #b82300 100%) !important;
+  background-size: 300px 300px, cover, auto, auto, auto !important;
+  background-repeat: repeat, no-repeat, no-repeat, no-repeat, no-repeat !important;
+  background-attachment: fixed !important;
+  font-family: var(--rm-font) !important;
+}
+app-root, app-edition,
+body app-root mat-sidenav-container,
+body app-root mat-sidenav-content,
+body app-root .wrapper,
+body app-root #basic-theme,
+body app-root .competitions-list {
+  background: transparent !important; background-color: transparent !important; background-image: none !important;
+}
+body app-root *:not(mat-icon):not(.material-icons) { font-family: var(--rm-font); }
+body app-root mat-icon, body app-root .material-icons { font-family: 'Material Icons' !important; }
+
+/* ---------- top bar + footer: deep ember glass ---------- */
+body app-root .toolbar, body app-root .mat-toolbar {
+  background: rgba(70, 8, 0, 0.62) !important; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  color: #fff !important; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) !important;
+}
+body app-root .toolbar a, body app-root .toolbar button, body app-root .toolbar span,
+body app-root .mat-toolbar a, body app-root .mat-toolbar button { color: #fff !important; font-weight: 600 !important; letter-spacing: 0.5px !important; }
+body app-root .toolbar button.mat-stroked-button, body app-root .toolbar .mat-button-base[class*="basket"] { border: 2px solid rgba(255, 255, 255, 0.85) !important; border-radius: 0 !important; }
+body app-root .footer-container, body app-root footer { background: rgba(70, 8, 0, 0.62) !important; color: #fff !important; }
+body app-root .footer-container a, body app-root footer a { color: #fff !important; }
+
+/* ---------- hero: just the edition logo + title on the sunset ---------- */
+body app-root .background { background: transparent !important; background-image: none !important; min-height: 0 !important; height: auto !important; position: relative !important; overflow: visible !important; }
+body app-root .background::before, body app-root .background::after { content: none !important; display: none !important; }
+body app-root .background .gradient { background: none !important; }
+body app-root .background .container { padding-top: 34px !important; padding-bottom: 8px !important; text-align: center !important; }
+body app-root .background h1 {
+  font-family: var(--rm-font) !important; font-weight: 800 !important; font-style: italic !important;
+  font-size: clamp(30px, 6vw, 56px) !important; line-height: 1.05 !important; letter-spacing: 0.5px !important; text-transform: uppercase !important;
+  color: #fff !important; text-shadow: 0 3px 18px rgba(120, 20, 0, 0.45) !important;
+}
+body app-root .logo-edition { position: relative !important; z-index: 3 !important; margin: 18px auto 14px !important; text-align: center !important; }
+body app-root .logo-edition img { height: 150px !important; width: auto !important; max-width: 70% !important; filter: drop-shadow(0 6px 18px rgba(120, 20, 0, 0.45)) !important; }
+
+/* ---------- shared headline + button look ---------- */
+body app-root .section-title, body app-root .offer-title, body app-root .competitions-list .cardLeft h1 {
+  font-family: var(--rm-font) !important; font-weight: 800 !important; font-style: italic !important; text-transform: uppercase !important; color: #fff !important; letter-spacing: 0.3px !important;
+}
+body app-root .offer-button button,
+#basic-theme .competitions-list .cardRight .text-center a,
+#basic-theme .competitions-list .cardRight button {
+  background: var(--rm-cream) !important; color: var(--rm-red) !important; border: 0 !important; border-radius: 0 !important;
+  font-weight: 800 !important; font-style: italic !important; font-size: 15px !important; letter-spacing: 0.8px !important; text-transform: uppercase !important; text-decoration: none !important;
+  box-shadow: 0 8px 22px rgba(90, 12, 0, 0.35) !important; transition: transform .15s ease, background .15s ease, color .15s ease !important;
+}
+body app-root .offer-button button *, #basic-theme .competitions-list .cardRight .text-center a *, #basic-theme .competitions-list .cardRight button * { color: var(--rm-red) !important; }
+body app-root .offer-button button:hover, #basic-theme .competitions-list .cardRight .text-center a:hover, #basic-theme .competitions-list .cardRight button:hover {
+  background: #fff !important; transform: translateY(-2px) !important;
+}
+body app-root .offer-button button .mat-button-wrapper::after { content: '\2192'; margin-left: 10px; font-weight: 800; }
+body app-root .offer-button button { min-width: 168px !important; height: 48px !important; padding: 0 22px !important; }
+
+/* ---------- intro text card (offers layout) ---------- */
+body app-root .offers-container { max-width: 940px !important; margin: 0 auto !important; }
+body app-root .offers-panel.cardWrap { float: none !important; width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important; margin: 0 auto !important; padding: 0 16px 40px !important; background: transparent !important; box-shadow: none !important; }
+body app-root .offers-panel > app-message { display: block !important; position: relative !important; margin-bottom: 26px !important; background: var(--rm-ember) !important; border: 1px solid var(--rm-line) !important; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+body app-root .offers-panel > app-message .message-content { display: block !important; background: transparent !important; box-shadow: none !important; border: 0 !important; padding: 34px 38px 28px !important; }
+body app-root .offers-panel > app-message p { color: #fff !important; font-size: 15px !important; line-height: 1.75 !important; text-align: center !important; }
+body app-root .offers-panel > app-message p:has(> strong:only-child), body app-root .offers-panel > app-message p:has(> strong:only-child) * { color: #fff !important; font-size: 19px !important; font-weight: 700 !important; line-height: 1.45 !important; }
+
+/* ---------- offers layout: groups + tickets ---------- */
+body app-root .preview-offers-panel { background: var(--rm-ember) !important; border: 1px solid var(--rm-line) !important; border-radius: 0 !important; padding: 26px 24px 8px !important; margin-bottom: 26px !important; box-shadow: 0 16px 40px rgba(90, 12, 0, 0.35) !important; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+body app-root .section-title { font-size: 20px !important; border: 0 !important; padding: 0 0 14px !important; }
+body app-root .section-title::after { content: ''; display: block; width: 84px; height: 5px; margin-top: 12px; background: var(--rm-cream); }
+body app-root .offer-in-section { position: relative !important; overflow: hidden !important; background: rgba(60, 6, 0, 0.45) !important; border: 1px solid var(--rm-line) !important; border-radius: 0 !important; box-shadow: none !important; margin-bottom: 18px !important; transition: transform .2s ease !important; }
+body app-root .offer-in-section:hover { transform: translateY(-3px) !important; }
+body app-root .offer-in-section::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 8px; z-index: 2; background: linear-gradient(180deg, var(--rm-d2, #ffb347), var(--rm-d, #f26a21)); }
+body app-root .offer-in-section { --rm-d: #f26a21; --rm-d2: #ffb347; }
+body app-root .preview-offers-panel:first-of-type .offer-in-section:nth-of-type(3) { --rm-d: #2f8fe8; --rm-d2: #7cc0ff; }
+body app-root .preview-offers-panel:first-of-type .offer-in-section:nth-of-type(4) { --rm-d: #8a5be0; --rm-d2: #c3a2ff; }
+body app-root .preview-offers-panel + .preview-offers-panel .offer-in-section { --rm-d: #1fbf6b; --rm-d2: #7be0a8; }
+body app-root .offer-title { font-size: 22px !important; line-height: 1.15 !important; border: 0 !important; padding: 22px 24px 4px 30px !important; }
+body app-root .offer-description, body app-root .offer-description p { color: #fff !important; font-size: 14px !important; line-height: 1.6 !important; border: 0 !important; opacity: .95; }
+body app-root .offer-description { padding: 4px 24px 22px 30px !important; }
+body app-root .offer-right-part { position: relative !important; background: rgba(60, 6, 0, 0.35) !important; border-left: 2px dashed rgba(255, 255, 255, 0.55) !important; padding: 18px 14px !important; }
+body app-root .offer-price, body app-root .offer-price * { font-family: var(--rm-font) !important; font-weight: 800 !important; font-style: italic !important; font-size: 30px !important; color: #fff !important; }
+body app-root .offer-price app-message, body app-root .offer-price app-message * { font-size: 11px !important; font-style: normal !important; }
+
+/* ---------- early bird banner (first <div> in the page-top message) ---------- */
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:not(:has(> p:nth-child(4))) {
+  position: relative !important; display: block !important; margin: 0 0 26px !important; padding: 24px 28px !important; text-align: center !important;
+  background: rgba(120, 18, 0, 0.5) !important; border: 1px solid rgba(255, 255, 255, 0.55) !important; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px);
+  box-shadow: 0 14px 36px rgba(90, 12, 0, 0.3) !important;
+}
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:not(:has(> p:nth-child(4))) p { margin: 0 !important; text-align: center !important; line-height: 1.2 !important; }
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:not(:has(> p:nth-child(4))) p:nth-child(1) {
+  display: inline-block !important; padding: 7px 16px !important; margin-bottom: 10px !important; background: var(--rm-cream) !important; color: var(--rm-red) !important;
+  font-size: 12px !important; font-weight: 800 !important; font-style: italic !important; letter-spacing: 1.6px !important; text-transform: uppercase !important;
+}
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:not(:has(> p:nth-child(4))) p:nth-child(2) {
+  font-weight: 800 !important; font-style: italic !important; font-size: clamp(42px, 9vw, 76px) !important; letter-spacing: 0.5px !important; text-transform: uppercase !important; color: #fff !important;
+  text-shadow: 0 4px 22px rgba(120, 20, 0, 0.45) !important; margin-bottom: 10px !important;
+}
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:not(:has(> p:nth-child(4))) p:nth-child(3) { color: #fff !important; font-size: 15px !important; font-weight: 500 !important; }
+
+/* ---------- early bird tag under each price ---------- */
+body app-root .offer-price app-message, body app-root .competitions-list .cardRight app-message { display: block !important; margin: 8px 0 0 !important; text-align: center !important; }
+body app-root .offer-price app-message .message-content, body app-root .competitions-list .cardRight app-message .message-content { background: transparent !important; padding: 0 !important; box-shadow: none !important; }
+body app-root .offer-price app-message p, body app-root .competitions-list .cardRight app-message p {
+  display: inline-block !important; margin: 0 !important; padding: 5px 12px !important; background: var(--rm-cream) !important; box-shadow: none !important;
+  color: var(--rm-red) !important; font-size: 11px !important; font-weight: 800 !important; font-style: italic !important; letter-spacing: 0.6px !important; text-transform: uppercase !important;
+}
+body app-root .offer-price app-message p * , body app-root .competitions-list .cardRight app-message p * { color: var(--rm-red) !important; }
+
+/* ---------- CLASSIC LIST LAYOUT (.competitions-list > .flip-card tickets) ---------- */
+body app-root .competitions-list { position: relative !important; max-width: 940px !important; margin: 0 auto !important; padding: 32px 16px 40px !important; justify-content: center !important; }
+body app-root .competitions-list > app-message { float: none !important; margin: 0 auto !important; }
+body app-root .competitions-list > app-message .message-content { background: transparent !important; box-shadow: none !important; padding: 0 !important; border: 0 !important; }
+body app-root .competitions-list > app-message p { color: #fff !important; }
+body app-root .competitions-list .flip-card { margin-bottom: 20px !important; }
+body app-root .competitions-list .flip-card .card { box-shadow: none !important; position: relative !important; overflow: visible !important; }
+#basic-theme .competitions-list .flip-card .flip-card-front .card.cardLeft {
+  background: var(--rm-ember) !important; background-color: var(--rm-ember) !important; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border: 1px solid var(--rm-line) !important; border-right: 0 !important; border-radius: 0 !important; padding-left: 30px !important;
+}
+#basic-theme .competitions-list .flip-card .flip-card-front .card.cardRight {
+  background: rgba(60, 6, 0, 0.5) !important; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border: 1px solid var(--rm-line) !important; border-left: 2px dashed rgba(255, 255, 255, 0.6) !important; border-radius: 0 !important;
+}
+/* distance colour bar */
+body app-root .competitions-list .flip-card .card.cardLeft::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 9px; z-index: 2; background: linear-gradient(180deg, #ffd98a, #ff9d00); }
+body app-root .competitions-list .flip-card:nth-of-type(2) .card.cardLeft::before { background: linear-gradient(180deg, #ffd98a, #ff9d00); }
+body app-root .competitions-list .flip-card:nth-of-type(3) .card.cardLeft::before { background: linear-gradient(180deg, #7cc0ff, #2f8fe8); }
+body app-root .competitions-list .flip-card:nth-of-type(4) .card.cardLeft::before { background: linear-gradient(180deg, #c3a2ff, #8a5be0); }
+body app-root .competitions-list .flip-card:nth-of-type(5) .card.cardLeft::before { background: linear-gradient(180deg, #7be0a8, #1fbf6b); }
+/* notches */
+body app-root .competitions-list .flip-card .card.cardRight::before, body app-root .competitions-list .flip-card .card.cardRight::after {
+  content: ''; position: absolute; left: -12px; width: 22px; height: 22px; border-radius: 50%; background: #d8400a; border: 1px solid var(--rm-line); z-index: 3;
+}
+body app-root .competitions-list .flip-card .card.cardRight::before { top: -12px; }
+body app-root .competitions-list .flip-card .card.cardRight::after { bottom: -12px; }
+#basic-theme .competitions-list .cardLeft .block-cut, #basic-theme .competitions-list .cardLeft .cut, #basic-theme .competitions-list .cardLeft .break { background: transparent !important; border-color: transparent !important; box-shadow: none !important; }
+#basic-theme .competitions-list .cardLeft .block-cut::before, #basic-theme .competitions-list .cardLeft .block-cut::after, #basic-theme .competitions-list .cardLeft .cut::before, #basic-theme .competitions-list .cardLeft .cut::after { display: none !important; }
+@media (min-width: 701px) { body app-root .competitions-list .flip-card-front .card.cardLeft { flex: 1 1 auto !important; width: auto !important; max-width: none !important; margin-right: 0 !important; } }
+
+/* ticket text */
+#basic-theme .competitions-list .cardLeft h1, #basic-theme .competitions-list .cardLeft h1 * { font-size: 28px !important; color: #fff !important; }
+#basic-theme .competitions-list .cardLeft .seat span, #basic-theme .competitions-list .cardLeft .time span { color: var(--rm-glow) !important; font-weight: 700 !important; letter-spacing: 1.2px !important; text-transform: uppercase !important; font-size: 11px !important; }
+#basic-theme .competitions-list .cardLeft h2, #basic-theme .competitions-list .cardLeft h2 *, #basic-theme .competitions-list .cardLeft small, #basic-theme .competitions-list .cardLeft p { color: #fff !important; }
+#basic-theme .competitions-list .cardLeft h2 { font-size: 17px !important; font-weight: 700 !important; }
+#basic-theme .competitions-list .cardLeft .seat, #basic-theme .competitions-list .cardLeft .time { margin-left: 0 !important; padding-left: 0 !important; text-align: left !important; }
+@media (min-width: 701px) {
+  #basic-theme .competitions-list .cardLeft .seat, #basic-theme .competitions-list .cardLeft .time { display: block !important; width: 100% !important; margin-bottom: 8px !important; }
+  body app-root .competitions-list .flip-card .flip-card-front .card.cardRight { flex: 0 0 250px !important; width: 250px !important; min-width: 250px !important; max-width: 250px !important; box-sizing: border-box !important; }
+}
+
+/* price column */
+#basic-theme .competitions-list .cardRight .number { padding: 14px 12px 4px !important; text-align: center !important; width: 100% !important; box-sizing: border-box !important; overflow: visible !important; }
+#basic-theme .competitions-list .cardRight .number > span { display: block !important; color: #fff !important; font-size: 11px !important; font-weight: 600 !important; letter-spacing: 1.2px !important; text-transform: uppercase !important; margin: 0 0 6px !important; opacity: .9; }
+#basic-theme .competitions-list .cardRight .number h3 { margin: 0 !important; font-size: 30px !important; line-height: 1.1 !important; overflow: visible !important; }
+#basic-theme .competitions-list .cardRight .number .price-bloc { display: flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important; flex-wrap: nowrap !important; }
+#basic-theme .competitions-list .cardRight .number .price-bloc, #basic-theme .competitions-list .cardRight .number .price-bloc * { font-family: var(--rm-font) !important; font-size: 30px !important; font-weight: 800 !important; font-style: italic !important; color: #fff !important; white-space: nowrap !important; }
+#basic-theme .competitions-list .cardRight .number .price-bloc mat-icon, #basic-theme .competitions-list .cardRight mat-icon { font-family: 'Material Icons' !important; font-style: normal !important; font-size: 18px !important; width: 18px !important; height: 18px !important; line-height: 18px !important; color: #fff !important; overflow: hidden !important; flex: 0 0 18px !important; }
+#basic-theme .competitions-list .cardRight .number .price-end, #basic-theme .competitions-list .cardRight .number .price-end * { display: block !important; font-size: 11px !important; font-weight: 500 !important; font-style: normal !important; line-height: 1.4 !important; letter-spacing: 0.2px !important; color: #fff !important; text-transform: none !important; white-space: normal !important; margin-top: 8px !important; }
+#basic-theme .competitions-list .cardRight .number app-message { margin: 8px 0 0 !important; }
+#basic-theme .competitions-list .cardRight .text-center { padding: 6px 12px 16px !important; width: 100% !important; box-sizing: border-box !important; }
+#basic-theme .competitions-list .cardRight .text-center a { display: block !important; width: 100% !important; min-width: 0 !important; box-sizing: border-box !important; padding: 14px 12px !important; text-align: center !important; }
+body app-root .competitions-list .cardRight .message-panel { background: rgba(255, 241, 232, 0.18) !important; border: 1px solid rgba(255, 255, 255, 0.6) !important; font-weight: 600 !important; }
+body app-root .competitions-list .cardRight .message-panel, body app-root .competitions-list .cardRight .message-panel * { color: #fff !important; }
+
+/* ---------- mobile ---------- */
+@media (max-width: 700px) {
+  body app-root .logo-edition img { height: 118px !important; }
+  body app-root .competitions-list { padding: 24px 10px 28px !important; }
+  body app-root .offers-panel.cardWrap { padding: 0 10px 28px !important; }
+  body app-root .offers-panel > app-message .message-content { padding: 26px 18px 20px !important; }
+  body app-root .offers-panel > app-message p:has(> strong:only-child), body app-root .offers-panel > app-message p:has(> strong:only-child) * { font-size: 16px !important; }
+  body app-root .preview-offers-panel { padding: 20px 12px 4px !important; }
+  body app-root .offer-in-section { flex-direction: column !important; }
+  body app-root .offer-right-part { flex: 0 0 auto !important; max-width: 100% !important; border-left: 0 !important; border-top: 2px dashed rgba(255, 255, 255, 0.55) !important; }
+  body app-root .offer-title { font-size: 19px !important; }
+  body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:not(:has(> p:nth-child(4))) { padding: 18px 14px !important; }
+  #basic-theme .competitions-list .flip-card .flip-card-front .card.cardRight { border-left: 1px solid var(--rm-line) !important; border-top: 2px dashed rgba(255, 255, 255, 0.6) !important; }
+  body app-root .competitions-list .flip-card .card.cardRight::before { left: -12px; top: -12px; }
+  body app-root .competitions-list .flip-card .card.cardRight::after { left: auto; right: -12px; top: -12px; bottom: auto; }
+  #basic-theme .competitions-list .cardRight .number .price-bloc, #basic-theme .competitions-list .cardRight .number .price-bloc * { font-size: 28px !important; }
+}
+
+/* ---------- right-to-left (Arabic): upright type, mirrored accents ---------- */
+html[dir="rtl"] body app-root .section-title, html[dir="rtl"] body app-root .offer-title, html[dir="rtl"] body app-root .competitions-list .cardLeft h1,
+html[dir="rtl"] body app-root .background h1, html[dir="rtl"] body app-root .offer-price, html[dir="rtl"] body app-root .offer-price *,
+html[dir="rtl"] body app-root .offer-button button, html[dir="rtl"] #basic-theme .competitions-list .cardRight .text-center a,
+html[dir="rtl"] #basic-theme .competitions-list .cardRight .number .price-bloc, html[dir="rtl"] #basic-theme .competitions-list .cardRight .number .price-bloc * { font-style: italic !important; text-transform: none !important; letter-spacing: 0 !important; }
+html[dir="rtl"] body app-root .offer-in-section::before { left: auto; right: 0; }
+html[dir="rtl"] body app-root .offer-title { padding: 22px 30px 4px 24px !important; }
+html[dir="rtl"] body app-root .offer-description { padding: 4px 30px 22px 24px !important; }
+html[dir="rtl"] body app-root .offer-right-part { border-left: 0 !important; border-right: 2px dashed rgba(255, 255, 255, 0.55) !important; }
+html[dir="rtl"] body app-root .offer-button button .mat-button-wrapper::after { content: '\2190'; margin-left: 0; margin-right: 10px; }
+html[dir="rtl"] body app-root .competitions-list .flip-card .card.cardLeft::before { left: auto; right: 0; }
+
+/* full-width tickets on desktop */
+body app-root .competitions-list .flip-card, body app-root .competitions-list > app-message { width: 100% !important; max-width: 100% !important; flex: 0 0 100% !important; }
+body app-root .competitions-list .flip-card .flip-card-front { width: 100% !important; max-width: 100% !important; }
+
+/* ---------- intro block (badge, title, copy, tagline, race day, call to action) ---------- */
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) {
+  display: block !important; margin: 0 0 26px !important; padding: 34px 38px 30px !important; text-align: center !important;
+  background: var(--rm-ember) !important; border: 1px solid var(--rm-line) !important; -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  box-shadow: 0 14px 36px rgba(90, 12, 0, 0.3) !important;
+}
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) p { margin: 0 0 12px !important; color: #fff !important; font-size: 15px !important; font-weight: 400 !important; line-height: 1.65 !important; text-align: center !important; font-style: normal !important; }
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) p * { color: #fff !important; }
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) p:nth-child(1) {
+  display: inline-block !important; padding: 7px 16px !important; margin: 0 0 14px !important; background: var(--rm-cream) !important; color: var(--rm-red) !important;
+  font-size: 12px !important; font-weight: 800 !important; font-style: italic !important; letter-spacing: 1.6px !important; text-transform: uppercase !important; line-height: 1.2 !important;
+}
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) p:nth-child(2) {
+  font-size: clamp(28px, 5.4vw, 48px) !important; font-weight: 800 !important; font-style: italic !important; line-height: 1.12 !important; letter-spacing: 0.3px !important; text-transform: uppercase !important;
+  margin: 0 0 18px !important; text-shadow: 0 4px 22px rgba(120, 20, 0, 0.45) !important;
+}
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) p:nth-child(5) { font-size: 19px !important; font-weight: 800 !important; font-style: italic !important; margin: 18px 0 6px !important; text-transform: uppercase !important; }
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) p:nth-child(6) { margin: 0 0 18px !important; }
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) p:nth-child(7) { display: inline-block !important; margin: 0 !important; padding: 12px 26px !important; background: var(--rm-cream) !important; font-size: 15px !important; font-weight: 800 !important; font-style: italic !important; letter-spacing: 0.6px !important; text-transform: uppercase !important; line-height: 1.3 !important; }
+body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) p:nth-child(7), body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) p:nth-child(7) * { color: var(--rm-red) !important; }
+html[dir="rtl"] body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) p:nth-child(2), html[dir="rtl"] body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) p:nth-child(5) { text-transform: none !important; letter-spacing: 0 !important; }
+@media (max-width: 700px) { body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) { padding: 26px 18px 22px !important; } }
+
+/* Arabic: more line height so the big discount figure does not collide with the line below */
+html[dir="rtl"] body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:not(:has(> p:nth-child(4))) p:nth-child(2) { line-height: 1.45 !important; margin-bottom: 16px !important; }
+html[dir="rtl"] body app-root :is(.offers-panel, .competitions-list) > app-message .message-content > div > div:has(> p:nth-child(4)) p:nth-child(2) { line-height: 1.4 !important; }
