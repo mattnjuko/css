@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,400;0,500;0,700;0,800;0,900;1,900&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/mattnjuko/css@main/mildas-apli-v1-njuko-styles.css');
+/* =============================================================================
+   Mildas apli 2027 - njuko select-competition CSS (v2)
+   = v1 (loaded by the @import above, keep v1 in the repo) + conversion upgrades:
+   1. Corporate and School Cup entry points rebuilt as two big ticket-style cards
+      (badge, bold line, full-width red button) under a clear "Teams & schools" heading.
+      The card wording comes from the njuko message; only the badges, heading and
+      button labels are written in this CSS (edit the 'content' lines if wording changes).
+   2. Hatched stripe under the hero, bigger ticket buttons with an arrow, ticket hover lift.
+   ============================================================================= */
+
+/* ---------- 1. Teams & schools: two ticket-style cards ---------- */
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap { margin-top: 44px !important; }
+#basic-theme .competitions-list > app-message.cardWrap .message-content > div::before {
+  content: 'Teams & schools'; display: block; margin: 0 0 4px; padding: 0 0 4px;
+  font: italic 900 clamp(30px, 4.6vw, 48px)/1.05 'Red Hat Display', 'Helvetica Neue', Arial, sans-serif;
+  text-transform: uppercase; letter-spacing: -0.015em; color: var(--rr-red);
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content > div > div {
+  display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; align-items: stretch;
+  background: none !important; background-color: transparent !important; padding: 14px 0 0 !important; margin: 0 !important; max-width: none !important; width: 100% !important;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap p {
+  position: relative; display: block !important; min-height: 214px; box-sizing: border-box; margin: 0 !important;
+  padding: 62px 26px 108px !important; text-align: left !important;
+  background: #fff !important; border: 1px solid var(--rr-line) !important; border-radius: 18px; box-shadow: 0 10px 30px rgba(89, 52, 78, 0.08);
+  font-size: 21px !important; font-weight: 800 !important; line-height: 1.28 !important; color: var(--rr-ink) !important; letter-spacing: -0.005em;
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap p + p { border-top: 1px solid var(--rr-line) !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap p:hover { box-shadow: 0 16px 38px rgba(89, 52, 78, 0.16); border-color: var(--rr-red) !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap p span { font: inherit !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap p::first-letter { font-size: 1.5em; }
+#basic-theme .competitions-list > app-message.cardWrap p::before {
+  content: 'For companies'; position: absolute; top: -1px; left: -1px; padding: 9px 20px; border-radius: 18px 0 18px 0;
+  background: var(--rr-red); color: #fff; font: 900 12px/1 'Red Hat Display', 'Helvetica Neue', Arial, sans-serif; letter-spacing: 0.1em; text-transform: uppercase;
+}
+#basic-theme .competitions-list > app-message.cardWrap p:nth-of-type(2)::before { content: 'For schools'; background: var(--rr-plum); }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap p a {
+  position: absolute; left: 26px; right: 26px; bottom: 26px; margin: 0 !important; padding: 17px 22px !important; box-sizing: border-box;
+  display: block; text-align: center; border-radius: 999px; background: var(--rr-red) !important; color: #fff !important;
+  font-size: 0 !important; line-height: 0 !important; text-decoration: none !important; transition: background-color 0.15s ease;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap p a:empty { display: none !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap p a::after {
+  content: 'Start a corporate group  \2192'; font: 900 16px/1.25 'Red Hat Display', 'Helvetica Neue', Arial, sans-serif; color: #fff; text-transform: uppercase; letter-spacing: 0.02em;
+}
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap p:nth-of-type(2) a { background: var(--rr-plum) !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap p:nth-of-type(2) a::after { content: 'Enter the School Cup  \2192'; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap p a:hover { background: var(--rr-red-d) !important; color: #fff !important; }
+#basic-theme#basic-theme .competitions-list > app-message.cardWrap p:nth-of-type(2) a:hover { background: #3f2237 !important; }
+
+/* ---------- 2. Polish: hatched stripe under the hero, stronger ticket CTA, hover lift ---------- */
+#basic-theme .content > registration-main#basic-theme { background: var(--rr-stripe) top / 100% 14px no-repeat, var(--rr-cream) !important; padding-top: 22px; }
+#basic-theme#basic-theme a.button.mat-raised-button, #basic-theme#basic-theme .mat-raised-button.mat-accent { padding: 17px 12px !important; box-shadow: 0 6px 16px rgba(204, 33, 40, 0.28) !important; }
+#basic-theme#basic-theme a.button.mat-raised-button *, #basic-theme#basic-theme .mat-raised-button.mat-accent * { font-size: 15px !important; font-weight: 900 !important; white-space: nowrap !important; letter-spacing: 0 !important; }
+#basic-theme#basic-theme a.button.mat-raised-button .mat-button-wrapper::after { content: ' \2192'; white-space: pre; }
+#basic-theme#basic-theme a.button.mat-raised-button:hover { box-shadow: 0 8px 20px rgba(204, 33, 40, 0.38) !important; }
+#basic-theme .flip-card-front { transition: box-shadow 0.2s ease, border-color 0.2s ease; }
+#basic-theme .flip-card-front:hover { box-shadow: 0 16px 40px rgba(89, 52, 78, 0.16) !important; border-color: #d9c79d !important; }
+
+@media (max-width: 767px) {
+  #basic-theme#basic-theme .competitions-list > app-message.cardWrap .message-content > div > div { grid-template-columns: minmax(0, 1fr); gap: 16px; }
+  #basic-theme#basic-theme .competitions-list > app-message.cardWrap p { min-height: 0; padding: 60px 22px 128px !important; font-size: 19px !important; }
+  #basic-theme#basic-theme .competitions-list > app-message.cardWrap p a { left: 22px; right: 22px; bottom: 22px; }
+  #basic-theme#basic-theme .competitions-list > app-message.cardWrap p a::after { font-size: 15px; }
+}
