@@ -1,0 +1,6 @@
+/* Generation Run 2027 - njuko styles v1
+   Hides Israel from the country list of every mobile phone field. */
+
+.phone-number-country-list .country-list-button:has(.flag-il) {
+  display: none !important;
+}
