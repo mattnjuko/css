@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,600;0,800;0,900;1,800&display=swap');
+/* =============================================================================
+   NJUKO FULL-TAKEOVER CSS - ARD ROCK 2027 (UK's No.1 Mountain Bike Event)
+   Dark mode. Mirrors ardrock.co.uk: pure black, signal red #e42320, Plaak caps,
+   italic race-plate titles, chevron motif, red square CTAs, scrolling ticker.
+   Brand font (Plaak) and logo are loaded from ardrock.co.uk; Archivo is the fallback.
+   ============================================================================= */
+
+@font-face { font-family: 'ArdPlaakBold'; src: url('https://www.ardrock.co.uk/_next/static/media/Plaak4Trial-44-BoldB.43fe3949.woff2') format('woff2'); font-display: swap; }
+@font-face { font-family: 'ArdPlaakReg'; src: url('https://www.ardrock.co.uk/_next/static/media/Plaak4Trial-34-RegularB.f21b8747.woff2') format('woff2'); font-display: swap; }
+
+:root {
+  --red: #e42320; --red-d: #b81a17; --red-l: #ff5a55; --red-glow: rgba(228, 35, 32, 0.5);
+  --blk: #0a0a0a; --panel: rgba(12, 12, 12, 0.9); --panel-solid: #121212; --panel-2: #1c1c1c;
+  --ink: #ffffff; --ink-2: #b9b9bd; --line: rgba(255, 255, 255, 0.14);
+  --head: 'ArdPlaakBold', 'Archivo', Impact, 'Arial Narrow', sans-serif;
+  --body: 'ArdPlaakReg', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --tb-h: 68px;
+  --logo: url('https://www.ardrock.co.uk/_next/static/media/logo.f974525e.svg');
+  --chev: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 120 120'%3E%3Crect width='120' height='120' fill='%23e42320'/%3E%3Cg fill='none' stroke='black' stroke-width='11'%3E%3Cpolyline points='-6,0 34,60 -6,120'/%3E%3Cpolyline points='22,0 62,60 22,120'/%3E%3Cpolyline points='50,0 90,60 50,120'/%3E%3Cpolyline points='78,0 118,60 78,120'/%3E%3Cpolyline points='106,0 146,60 106,120'/%3E%3C/g%3E%3C/svg%3E");
+  --tick: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1200' height='34'%3E%3Ctext x='8' y='23' font-family='Arial Black,Impact,sans-serif' font-size='14' font-weight='900' fill='white' textLength='1180' lengthAdjust='spacing'%3EARD ROCK 2027 // 23-25 JULY // ENDURO // EXPO // CAMPING // PUMP TRACK // AIRBAG JUMP // DEMO LOOPS // //%3C/text%3E%3C/svg%3E");
+}
+
+/* ---------- typography ---------- */
+body, #basic-theme, #basic-theme *:not(.mat-icon):not(.material-icons):not([class*="material-icons"]):not(.fa):not([class*="fa-"]):not(i) {
+  font-family: var(--body) !important; -webkit-font-smoothing: antialiased;
+}
+#basic-theme#basic-theme :is(h1, h2, h3, h4, .section-title, .offer-title, .offer-price, .price-bloc, .price-bloc *, .mat-raised-button, .mat-flat-button, .mat-stroked-button, .competitions-list .button, .competitions-list .button *) { font-family: var(--head) !important; }
+.mat-toolbar .mat-icon, .mat-toolbar .material-icons { font-family: 'Material Icons' !important; }
+::selection { background: var(--red); color: #fff; }
+
+/* ---------- page canvas: edition photo kept, darkened, red glow ---------- */
+html { background: #000 !important; }
+body { background: transparent !important; color: var(--ink) !important; }
+.mat-sidenav-container, .mat-drawer-container { background-size: cover !important; background-attachment: fixed !important; background-position: center 30% !important; color: var(--ink) !important; }
+.mat-sidenav-container::before { content: ''; position: fixed; inset: 0; z-index: 0; pointer-events: none; background: linear-gradient(180deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.9) 100%); }
+.mat-sidenav-container:not(:has(.competitions-list))::before { background: rgba(0, 0, 0, 0.95); }
+.mat-sidenav-content, .wrapper, .content { background: transparent !important; position: relative; z-index: 1; }
+
+/* ---------- header ---------- */
+.mat-toolbar.mat-primary { height: var(--tb-h) !important; min-height: var(--tb-h) !important; padding: 0 clamp(14px, 3vw, 40px) !important; background: #000 !important; border-bottom: 3px solid var(--red) !important; box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6) !important; position: relative; z-index: 5; }
+.mat-toolbar .branding { background: var(--logo) no-repeat left center / contain !important; height: 40px; width: 147px; }
+.mat-toolbar .branding img { opacity: 0 !important; width: 100% !important; height: 100% !important; }
+.mat-toolbar.mat-primary .nav-button { background: transparent !important; color: #fff !important; text-transform: uppercase !important; letter-spacing: 0.1em !important; font-size: 13px !important; font-family: var(--head) !important; font-weight: 400 !important; position: relative; transition: color 160ms ease; }
+.mat-toolbar.mat-primary .nav-button::after { content: ''; position: absolute; left: 14%; right: 14%; bottom: 6px; height: 3px; background: var(--red); transform: scaleX(0) skewX(-20deg); transition: transform 220ms ease; }
+.mat-toolbar.mat-primary .nav-button:hover { color: var(--red-l) !important; }
+.mat-toolbar.mat-primary .nav-button:hover::after { transform: scaleX(1) skewX(-20deg); }
+.mat-toolbar.mat-primary .mat-icon { color: #fff !important; }
+.mat-toolbar [class*="div-shopping"] button, .mat-toolbar button.cart-button { background: var(--red) !important; border: 0 !important; border-radius: 0 !important; color: #fff !important; transition: background 200ms ease; }
+.mat-toolbar [class*="div-shopping"] button:hover { background: #fff !important; color: #000 !important; }
+
+/* ---------- draft banner ---------- */
+#basic-theme .test-mode { background: repeating-linear-gradient(45deg, #e42320 0 16px, #000 16px 32px) !important; color: #fff !important; border-radius: 0 !important; }
+#basic-theme .test-mode * { color: #fff !important; }
+
+/* ---------- ticker strip ---------- */
+mat-sidenav-content .content:has(.competitions-list)::before { content: ''; display: block; height: 34px; background: var(--red) var(--tick) repeat-x 0 0 / 1200px 34px; animation: ard-tick 38s linear infinite; border-bottom: 1px solid rgba(0, 0, 0, 0.5); margin-top: calc(var(--tb-h) + 3px - 52px); }
+@keyframes ard-tick { to { background-position: -1200px 0; } }
+
+/* ---------- hero: logo, chevrons, tagline ---------- */
+#basic-theme .logo-edition-above { position: relative; display: flex !important; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; padding: clamp(34px, 6vw, 78px) 20px clamp(20px, 3vw, 36px); }
+#basic-theme .logo-edition-above img { width: min(620px, 88vw) !important; max-width: 100% !important; height: auto !important; filter: drop-shadow(0 12px 34px rgba(0, 0, 0, 0.7)); animation: ard-pop 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+#basic-theme .logo-edition-above::before { content: ''; position: absolute; right: max(4vw, 16px); top: 50%; width: 132px; height: 132px; margin-top: -66px; background: var(--chev) center / cover no-repeat; pointer-events: none; }
+#basic-theme .logo-edition-above::after { content: '23-25 JUL 2027   /   THE UK\'S NO.1 MOUNTAIN BIKE EVENT'; display: block; margin-top: 22px; padding: 6px 0 6px 14px; border-left: 4px solid var(--red); color: #fff; font-family: var(--head); font-size: clamp(13px, 1.7vw, 19px); letter-spacing: 0.14em; text-transform: uppercase; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8); animation: ard-up 0.8s 0.25s both; }
+@keyframes ard-pop { from { opacity: 0; transform: scale(0.92) translateY(10px); } to { opacity: 1; transform: none; } }
+@keyframes ard-up { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
+
+/* ---------- ticket cards ---------- */
+#basic-theme#basic-theme .competitions-list { max-width: 1060px !important; width: 100% !important; margin: 0 auto !important; padding: 6px 20px 30px !important; justify-content: center !important; }
+#basic-theme#basic-theme .competitions-list::before { content: 'CHOOSE YOUR CHALLENGE'; flex: 0 0 100%; margin: 0 0 22px; padding: 0 0 12px; border-bottom: 1px solid var(--line); color: #fff; font-family: var(--head); font-size: clamp(22px, 3.4vw, 36px); letter-spacing: 0.06em; }
+#basic-theme#basic-theme .competitions-list > .cardWrap { flex: 0 0 100% !important; max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 0 22px !important; animation: ard-up 0.7s cubic-bezier(0.2, 0.8, 0.2, 1) both; }
+#basic-theme .competitions-list > .cardWrap:nth-child(2) { animation-delay: 0.05s; }
+#basic-theme .competitions-list > .cardWrap:nth-child(3) { animation-delay: 0.15s; }
+#basic-theme .competitions-list > .cardWrap:nth-child(4) { animation-delay: 0.25s; }
+#basic-theme .competitions-list > .cardWrap:nth-child(5) { animation-delay: 0.35s; }
+#basic-theme .competitions-list > .cardWrap:nth-child(n+6) { animation-delay: 0.45s; }
+#basic-theme#basic-theme .competitions-list .flip-card-inner { display: block !important; transform: none !important; height: auto !important; min-height: 0 !important; transition: transform 200ms ease; filter: drop-shadow(0 14px 22px rgba(0, 0, 0, 0.55)); }
+#basic-theme#basic-theme .competitions-list .cardWrap:hover .flip-card-inner { transform: translateY(-3px) !important; }
+#basic-theme#basic-theme .competitions-list :is(.flip-card-back, .block-cut, .cut, .break, .eye) { display: none !important; }
+#basic-theme#basic-theme .competitions-list .flip-card-front {
+  display: grid !important; grid-template-columns: minmax(0, 1fr) 310px; position: relative !important; transform: none !important; height: auto !important; min-height: 0 !important; padding: 0 !important; overflow: hidden !important;
+  background: #1c1c1c !important; border: 1px solid var(--line) !important; border-left: 7px solid var(--red) !important; border-radius: 0 !important; box-shadow: none !important;
+  clip-path: polygon(0 0, calc(100% - 34px) 0, 100% 34px, 100% 100%, 0 100%);
+}
+#basic-theme#basic-theme .competitions-list .cardRight::before { content: ''; position: absolute; left: 0; bottom: 0; width: 96px; height: 96px; background: repeating-linear-gradient(45deg, #000 0 8px, transparent 8px 16px); -webkit-clip-path: polygon(0 0, 0 100%, 100% 100%); clip-path: polygon(0 0, 0 100%, 100% 100%); pointer-events: none; }
+#basic-theme#basic-theme .competitions-list .card { flex: none !important; width: auto !important; height: auto !important; min-height: 0 !important; background: none !important; box-shadow: none !important; border: 0 !important; border-radius: 0 !important; margin: 0 !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft { display: flex !important; flex-direction: column; justify-content: center; gap: 12px; padding: 30px 36px !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft > * { margin: 0 !important; text-align: left !important; justify-content: flex-start !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft { align-items: flex-start !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft > h1 { order: -1; display: inline-block !important; color: #fff !important; font-family: var(--head) !important; font-size: clamp(28px, 3.6vw, 44px) !important; line-height: 1.05 !important; text-transform: uppercase !important; letter-spacing: 0.02em !important; font-weight: 400 !important; padding: 0 0 8px !important; border-bottom: 4px solid var(--red) !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft > h1 :is(.mat-icon, hook) { display: none !important; }
+#basic-theme#basic-theme .competitions-list :is(.seat, .time, .name) { display: block !important; text-align: left !important; padding: 0 !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft :is(.seat, .time, .name) > span, #basic-theme#basic-theme .competitions-list .cardRight .number > span { display: block !important; color: var(--red-l) !important; font-size: 12px !important; letter-spacing: 0.22em !important; text-transform: uppercase !important; margin: 0 0 4px !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft :is(.seat, .time, .name) :is(h2, h2 *) { color: #fff !important; font-family: var(--head) !important; font-size: 20px !important; font-weight: 400 !important; line-height: 1.2 !important; margin: 0 !important; text-transform: none !important; letter-spacing: 0.02em !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft .message-in-ticket, #basic-theme#basic-theme .competitions-list .cardLeft .message-in-ticket * { color: #d6d6d9 !important; font-size: 14px !important; line-height: 1.6 !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft .message-content-transparent { padding: 0 !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft > app-message:not(:has(*)), #basic-theme#basic-theme .competitions-list .cardLeft > hook:empty { display: none !important; }
+#basic-theme#basic-theme .competitions-list .cardRight { position: relative !important; overflow: hidden; display: flex !important; flex-direction: column; align-items: center !important; justify-content: center !important; gap: 14px; padding: 28px 26px !important; border-left: 0 !important; background: var(--red) !important; text-align: center; }
+#basic-theme#basic-theme .competitions-list .cardRight > * { margin: 0 !important; position: relative; z-index: 1; }
+#basic-theme#basic-theme .competitions-list .cardRight .number { text-align: center !important; padding: 0 !important; }
+#basic-theme#basic-theme .competitions-list .cardRight .number > span { text-align: center !important; color: #fff !important; letter-spacing: 0.2em !important; opacity: 0.9; }
+#basic-theme#basic-theme .competitions-list .cardRight :is(.price-bloc, .price-bloc *) { color: #fff !important; font-family: var(--head) !important; font-size: 56px !important; line-height: 1 !important; font-weight: 400 !important; justify-content: center !important; }
+#basic-theme#basic-theme .competitions-list .cardRight :is(.booking-fee-front-container, .booking-fee-front-container *) { color: #fff !important; font-size: 12px !important; justify-content: center !important; }
+#basic-theme#basic-theme .competitions-list .cardRight .text-center { padding: 0 !important; width: 100%; }
+#basic-theme#basic-theme .competitions-list .cardRight :is(.text-center:empty, div:empty) { display: none !important; }
+/* "registration opens" notice */
+#basic-theme#basic-theme .message-panel.message-panel-error { background: #000 !important; border: 0 !important; border-radius: 0 !important; padding: 12px 14px !important; box-shadow: none !important; }
+#basic-theme#basic-theme .message-panel.message-panel-error, #basic-theme#basic-theme .message-panel.message-panel-error * { color: #fff !important; font-family: var(--head) !important; font-size: 14px !important; letter-spacing: 0.08em !important; text-transform: uppercase !important; line-height: 1.4 !important; }
+#basic-theme .tested { opacity: 0.9; }
+
+/* ---------- buttons: red square CTA, skewed plate, white sweep on hover ---------- */
+#basic-theme .mat-raised-button.mat-accent, #basic-theme .mat-flat-button.mat-accent, #basic-theme .competitions-list .button, #basic-theme .form-page .cardBottom button.mat-raised-button.mat-accent {
+  position: relative; isolation: isolate; overflow: hidden; background: var(--red) !important; color: #fff !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important;
+  text-transform: uppercase !important; font-family: var(--head) !important; font-weight: 400 !important; letter-spacing: 0.14em !important; font-size: 15px !important; padding: 8px 26px !important; transition: transform 160ms ease, box-shadow 200ms ease, color 200ms ease !important;
+}
+#basic-theme .competitions-list .button { display: block !important; width: 100% !important; box-sizing: border-box; padding: 14px 22px !important; text-align: center; }
+#basic-theme :is(.mat-raised-button.mat-accent, .mat-flat-button.mat-accent, .competitions-list .button)::before { content: ''; position: absolute; inset: 0; z-index: -1; background: #000; transform: translateX(-102%) skewX(-18deg); transition: transform 300ms ease; }
+#basic-theme :is(.mat-raised-button.mat-accent, .mat-flat-button.mat-accent, .competitions-list .button):hover { color: #fff !important; box-shadow: none !important; }
+#basic-theme :is(.mat-raised-button.mat-accent, .mat-flat-button.mat-accent, .competitions-list .button):hover::before { transform: translateX(0) skewX(-18deg); }
+#basic-theme :is(.mat-raised-button.mat-accent, .competitions-list .button) .mat-button-wrapper { color: inherit !important; }
+#basic-theme .competitions-list .button .mat-button-wrapper::after { content: '\00A0\00BB'; margin-left: 4px; }
+#basic-theme#basic-theme .competitions-list .cardRight a.button { background: #fff !important; color: #000 !important; }
+#basic-theme#basic-theme .competitions-list .cardRight a.button:hover { color: #fff !important; }
+#basic-theme .mat-raised-button.mat-accent[disabled], #basic-theme .mat-button-disabled { background: #2a2a2d !important; color: #7d7d82 !important; box-shadow: none !important; transform: none !important; }
+#basic-theme .mat-raised-button.mat-accent[disabled]::before { display: none; }
+#basic-theme .mat-raised-button.mat-primary { background: #fff !important; color: #000 !important; border-radius: 0 !important; text-transform: uppercase !important; letter-spacing: 0.12em !important; font-weight: 400 !important; }
+#basic-theme .mat-raised-button.mat-primary:hover { background: var(--red) !important; color: #fff !important; }
+#basic-theme .mat-raised-button.mat-warn { background: #5a0f0e !important; color: #fff !important; border-radius: 0 !important; }
+#basic-theme .mat-stroked-button, #basic-theme button.secondary { border-radius: 0 !important; border: 2px solid rgba(255, 255, 255, 0.6) !important; color: #fff !important; background: transparent !important; text-transform: uppercase !important; letter-spacing: 0.12em !important; font-weight: 400 !important; }
+#basic-theme .mat-stroked-button:hover, #basic-theme button.secondary:hover { background: var(--red) !important; border-color: var(--red) !important; }
+#basic-theme .mat-button { text-transform: uppercase !important; letter-spacing: 0.1em !important; color: #fff !important; border-radius: 0 !important; }
+#basic-theme :is(button, a, input):focus-visible { outline: 3px solid var(--red-l) !important; outline-offset: 2px !important; }
+#basic-theme a { color: var(--red-l) !important; text-decoration: none !important; }
+#basic-theme a:hover { color: #fff !important; text-decoration: underline !important; }
+
+/* ---------- later steps: forms, basket, payment, confirmation (dark race-plates) ---------- */
+#basic-theme :is(h1, h2, h3, h4).competition-title, #basic-theme .competition-title { color: #fff !important; text-transform: uppercase !important; letter-spacing: 0.03em !important; }
+#basic-theme .competition-title::after { content: ''; display: block; width: 72px; height: 5px; margin-top: 12px; background: var(--red); }
+#basic-theme :is(.form-page, .cart-list, .select-payment-method, .custom-step, .confirmation-page) .card, #basic-theme .mat-card, #basic-theme .mat-expansion-panel { background: var(--panel) !important; color: #fff !important; border: 1px solid var(--line) !important; border-top: 4px solid var(--red) !important; border-radius: 0 !important; box-shadow: 0 16px 40px rgba(0, 0, 0, 0.55) !important; }
+#basic-theme :is(.form-page, .cart-list, .select-payment-method, .custom-step, .confirmation-page) :is(p, span, li, label, td, th) { color: #e8e8ea; }
+#basic-theme :is(.form-page, .cart-list, .select-payment-method, .custom-step) :is(h1, h2, h3, h4) { color: #fff !important; text-transform: uppercase !important; letter-spacing: 0.04em !important; font-weight: 400 !important; }
+#basic-theme .mat-form-field-appearance-outline .mat-form-field-outline { color: rgba(255, 255, 255, 0.28) !important; }
+#basic-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick { color: var(--red-l) !important; }
+#basic-theme .mat-form-field-ripple, #basic-theme .mat-form-field.mat-focused .mat-form-field-ripple { background-color: var(--red-l) !important; }
+#basic-theme :is(.mat-form-field-label, .mat-select-placeholder, .mat-input-element::placeholder) { color: #a9a9ae !important; }
+#basic-theme .mat-form-field.mat-focused .mat-form-field-label { color: var(--red-l) !important; }
+#basic-theme :is(.mat-input-element, .mat-select-value-text, .mat-select-value) { color: #fff !important; caret-color: var(--red-l) !important; }
+#basic-theme :is(.mat-select-arrow, .mat-form-field-suffix, .mat-form-field-prefix) { color: #a9a9ae !important; }
+#basic-theme .mat-form-field-appearance-outline .mat-form-field-flex { background: rgba(255, 255, 255, 0.04); }
+#basic-theme .mat-form-field.mat-form-field-invalid .mat-form-field-label, #basic-theme :is(.mat-error, mat-error) { color: #ff8a86 !important; }
+#basic-theme .mat-form-field-appearance-outline.mat-form-field-invalid .mat-form-field-outline-thick { color: #ff8a86 !important; }
+.mat-select-panel, .mat-autocomplete-panel, .mat-menu-panel, .mat-datepicker-content { background: var(--panel-solid) !important; color: #fff !important; border: 1px solid var(--line) !important; border-radius: 0 !important; }
+.mat-option, .mat-menu-item { color: #fff !important; font-family: var(--body) !important; }
+.mat-option:hover:not(.mat-option-disabled), .mat-option.mat-active, .mat-menu-item:hover:not([disabled]) { background: rgba(255, 255, 255, 0.08) !important; }
+.mat-option.mat-selected:not(.mat-option-disabled) { color: var(--red-l) !important; background: rgba(228, 35, 32, 0.16) !important; }
+#basic-theme .mat-checkbox-frame, #basic-theme .mat-radio-outer-circle { border-color: rgba(255, 255, 255, 0.55) !important; }
+#basic-theme :is(.mat-checkbox-label, .mat-radio-label-content, .mat-slide-toggle-content) { color: #fff !important; }
+#basic-theme :is(.mat-checkbox-checked.mat-accent .mat-checkbox-background, .mat-pseudo-checkbox-checked) { background-color: var(--red) !important; }
+#basic-theme .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle { border-color: var(--red-l) !important; }
+#basic-theme .mat-radio-button.mat-accent .mat-radio-inner-circle { background-color: var(--red-l) !important; }
+#basic-theme .mat-radio-button.mat-radio-checked { background: rgba(228, 35, 32, 0.18) !important; }
+#basic-theme .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb { background-color: var(--red) !important; }
+#basic-theme .mat-slide-toggle.mat-checked .mat-slide-toggle-bar { background-color: var(--red-glow) !important; }
+#basic-theme .mat-step-header .mat-step-label { color: #fff !important; }
+#basic-theme .mat-step-header .mat-step-icon { background-color: var(--panel-2) !important; color: #fff !important; }
+#basic-theme .mat-step-header :is(.mat-step-icon-selected, .mat-step-icon-state-done, .mat-step-icon-state-edit) { background-color: var(--red) !important; color: #fff !important; }
+#basic-theme .mat-progress-bar-fill::after { background-color: var(--red) !important; }
+#basic-theme .mat-progress-bar-buffer { background-color: var(--panel-2) !important; }
+#basic-theme :is(.mat-progress-spinner, .mat-spinner) circle { stroke: var(--red-l) !important; }
+#basic-theme .mat-ink-bar { background-color: var(--red) !important; height: 4px !important; }
+#basic-theme .mat-tab-label { color: #b9b9bd !important; opacity: 1 !important; }
+#basic-theme .mat-tab-label-active { color: #fff !important; }
+#basic-theme .mat-badge-accent .mat-badge-content { background: var(--red) !important; color: #fff !important; }
+#basic-theme .mat-chip.mat-standard-chip { background: var(--panel-2) !important; color: #fff !important; border-radius: 0 !important; }
+#basic-theme .mat-divider { border-top-color: var(--line) !important; }
+#basic-theme .quantity button, #basic-theme app-product button.mat-raised-button { min-width: 46px !important; width: 46px !important; height: 46px !important; padding: 0 !important; font-size: 22px !important; }
+#basic-theme :is(.total, .cart-total, .price-total) { color: #fff !important; }
+
+/* ---------- cookie banner ---------- */
+.cookies-consent { background: #000 !important; border: 1px solid var(--line) !important; border-left: 6px solid var(--red) !important; border-radius: 0 !important; color: #fff !important; box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7) !important; }
+.cookies-consent, .cookies-consent * { font-family: var(--body) !important; }
+.mat-dialog-container:has(.cookies-consent) { background: transparent !important; box-shadow: none !important; padding: 0 !important; }
+.cookies-consent-text { padding: 18px 20px 8px !important; }
+.cookies-consent-button { padding: 0 20px 18px !important; }
+.cookies-consent button { border-radius: 0 !important; text-transform: uppercase !important; letter-spacing: 0.1em !important; font-family: var(--head) !important; font-weight: 400 !important; }
+
+/* ---------- footer ---------- */
+#basic-theme footer { position: relative; background: transparent !important; z-index: 1; margin-top: 30px; }
+#basic-theme footer::before { content: ''; display: block; height: 14px; background: repeating-linear-gradient(45deg, var(--red) 0 14px, #000 14px 28px); }
+#basic-theme footer .footer-container { position: relative !important; margin: 0 !important; padding: 44px 20px 46px !important; text-align: center !important; background: #000 !important; border: 0 !important; color: #fff !important; }
+#basic-theme footer .footer-container::before { content: ''; display: block; height: 52px; margin: 0 auto 18px; background: var(--logo) no-repeat center / contain; }
+#basic-theme footer .footer-container::after { content: '23-25 JUL 2027   /   SWALEDALE - REETH - NORTH YORKSHIRE'; display: block; margin-top: 22px; color: rgba(255, 255, 255, 0.55); font-family: var(--head); font-size: 12px; letter-spacing: 0.2em; }
+#basic-theme footer .footer-container .footer-message, #basic-theme footer .footer-container .terms span:last-child { display: none !important; }
+#basic-theme footer .footer-container .terms span:first-child { display: inline-flex !important; flex-wrap: wrap; justify-content: center; gap: 8px 22px; }
+#basic-theme#basic-theme footer .footer-container .terms a.footer-cgus-link { color: #fff !important; font-family: var(--head) !important; font-weight: 400 !important; text-transform: uppercase !important; letter-spacing: 0.12em !important; font-size: 12px !important; text-decoration: none !important; }
+#basic-theme#basic-theme footer .footer-container .terms a.footer-cgus-link:hover { color: var(--red-l) !important; }
+
+/* ---------- scrollbar ---------- */
+#basic-theme ::-webkit-scrollbar { width: 10px; height: 10px; }
+#basic-theme ::-webkit-scrollbar-thumb { background: var(--red); }
+#basic-theme ::-webkit-scrollbar-track { background: #050505; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 900px) {
+  #basic-theme#basic-theme .competitions-list .flip-card-front { grid-template-columns: minmax(0, 1fr) !important; }
+  #basic-theme#basic-theme .competitions-list .cardRight { border-left: 0 !important; border-top: 1px dashed rgba(255, 255, 255, 0.28) !important; }
+  #basic-theme .logo-edition-above::before { opacity: 0.5; width: 200px; }
+}
+@media (max-width: 600px) {
+  :root { --tb-h: 60px; }
+  .mat-toolbar .branding { width: 118px; height: 32px; }
+  #basic-theme#basic-theme .competitions-list { padding: 4px 12px 24px !important; }
+  #basic-theme#basic-theme .competitions-list .cardLeft { padding: 24px 22px 14px !important; }
+  #basic-theme#basic-theme .competitions-list .cardRight { padding: 20px 22px 26px !important; }
+  #basic-theme#basic-theme .competitions-list .cardRight::before { width: 64px; height: 64px; }
+  #basic-theme#basic-theme .competitions-list .cardRight :is(.price-bloc, .price-bloc *) { font-size: 46px !important; }
+  #basic-theme .logo-edition-above::before { display: none; }
+  #basic-theme .logo-edition-above::after { text-align: left; letter-spacing: 0.08em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
