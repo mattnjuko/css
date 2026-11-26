@@ -1,0 +1,308 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,400..900&display=swap');
+@font-face { font-family: 'CastleHead'; font-style: normal; font-weight: 400; font-display: swap; src: url('https://www.castleraceseries.com/wp-content/themes/CASTLE-RACE-SERIES-2021/fonts/soehne-breit-web-extrafett.woff') format('woff'); }
+@font-face { font-family: 'CastleBody'; font-style: normal; font-weight: 400; font-display: swap; src: url('https://www.castleraceseries.com/wp-content/themes/CASTLE-RACE-SERIES-2021/fonts/soehne-breit-web-buch.woff') format('woff'); }
+/* =============================================================================
+   NJUKO CSS - CASTLE RACE SERIES (v2) - full website takeover
+   Brand from castleraceseries.com: royal purple #9900db, deep indigo #1e0050, mint #c6fae8,
+   black header, Soehne Breit (Extrafett headings / Buch body), square uppercase buttons.
+   Ticket: price stub on the LEFT, details in the middle, BOOK button on the RIGHT with the
+   orange Alzheimer's Research UK "Enter for charity" button underneath it.
+   The charity link and the ARUK promo are njuko custom messages (classes aruk-charity-btn,
+   aruk-promo); this file only designs them. Hosted assets: castleraceseries.com + njuko.
+   ============================================================================= */
+:root {
+  --p: #9900db; --p-d: #7a00b0; --p-l: #b400e1; --ind: #1e0050; --ind-d: #12002e; --mint: #c6fae8; --k: #000000;
+  --page: #f4eefb; --ink: #1b1030; --line: #ddd0ee;
+  --aruk: #f36c21; --aruk-d: #d9560e;
+  --head-font: 'CastleHead', 'Archivo', 'Arial Black', Impact, sans-serif;
+  --body-font: 'CastleBody', 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --hero-img: url('https://cdn.jsdelivr.net/gh/mattnjuko/css@main/PMZ_5713.jpg');
+  --tb-logo: url('https://production-njuko-v2-structure-files.s3.amazonaws.com/Castle%20Race%20Series%20%28Matrix%20Events%29/Castle%20Race%20Series%20%28Matrix%20Events%29.png');
+  --hero-h: 470px; --tb-h: 76px; --wall-h: 22px; --wall-w: 70px;
+  --wall: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='70' height='22' viewBox='0 0 70 22'%3E%3Crect x='0' y='0' width='44' height='22' fill='%23f4eefb'/%3E%3C/svg%3E");
+  --accent: #9900db; --accent-soft: rgba(153, 0, 219, 0.3); --focus: #9900db;
+  /* edit these two per edition: hero title and the heading above the races */
+  --hero-title: 'CASTLE RACE SERIES'; --list-title: 'Ch\00E2teau de Chantilly  /  12-13 June 2027';
+  --skyline: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 226.77 56.69'%3E%3Cpolygon fill='%23fff' points='226.77 56.69 204.09 56.69 198.43 51.02 198.43 39.68 164.41 39.68 164.41 51.02 158.74 56.69 136.06 56.69 130.4 51.02 130.4 11.34 96.38 11.34 96.38 51.02 90.71 56.69 68.03 56.69 62.36 51.02 62.36 28.34 28.36 28.34 28.36 51.02 22.69 56.69 0 56.69 0 45.35 17.02 45.35 17.02 22.68 22.69 17.01 68.03 17.01 73.7 22.68 73.7 45.35 85.04 45.35 85.04 5.67 90.71 0 136.06 0 141.73 5.67 141.73 45.35 153.07 45.35 153.07 34.02 158.74 28.35 204.09 28.35 209.76 34.02 209.76 45.35 226.77 45.35 226.77 56.69'/%3E%3C/svg%3E");
+}
+
+body, #basic-theme, #basic-theme *:not(.mat-icon):not(.material-icons):not([class*="material-icons"]):not(.fa):not([class*="fa-"]):not(i) {
+  font-family: var(--body-font) !important; -webkit-font-smoothing: antialiased;
+}
+#basic-theme#basic-theme :is(h1, h2, h3, h4, .section-title, .offer-title, .offer-title *, .offer-price, .offer-price > div) { font-family: var(--head-font) !important; font-stretch: 125%; }
+.mat-toolbar .mat-icon, .mat-toolbar .material-icons { font-family: 'Material Icons' !important; }
+
+html { background: var(--page) !important; }
+body { background: transparent !important; color: var(--ink) !important; }
+.mat-sidenav-container, .mat-drawer-container, #basic-theme .mat-sidenav-container { background: var(--page) !important; background-attachment: fixed !important; color: var(--ink) !important; }
+.wrapper, .content { background: transparent !important; }
+mat-sidenav-content, .mat-sidenav-content { background: var(--page) !important; }
+
+/* ---- header: black bar, castle logo, purple basket ---- */
+.mat-toolbar.mat-primary { background: #000 !important; height: var(--tb-h) !important; min-height: var(--tb-h) !important; padding: 0 clamp(14px, 3vw, 36px) !important; border-bottom: 0 !important; box-shadow: none !important; position: relative; z-index: 3; }
+.mat-toolbar .branding { background: var(--tb-logo) no-repeat left center / contain !important; height: 44px; width: 170px; }
+.mat-toolbar .branding img { opacity: 0 !important; width: 100% !important; height: 100% !important; }
+.mat-toolbar.mat-primary .nav-button { background: transparent !important; color: #fff !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; font-size: 12px !important; font-weight: 700 !important; }
+.mat-toolbar.mat-primary .nav-button:hover { color: var(--mint) !important; background: transparent !important; }
+.mat-toolbar.mat-primary .mat-icon, .mat-toolbar.mat-primary .mat-icon-button { color: #fff !important; }
+.mat-toolbar.mat-primary .sign-in-button { background: var(--p) !important; color: #fff !important; border-radius: 0 !important; padding: 0 20px !important; line-height: 40px !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: 0.1em !important; text-transform: uppercase !important; }
+.mat-toolbar.mat-primary .sign-in-button:hover { background: var(--mint) !important; color: var(--ind) !important; }
+.mat-toolbar.mat-primary .cart-icon button, .mat-toolbar.mat-primary .sign-in-icon-button { background: var(--p) !important; }
+
+/* ---- hero: castle photo + logo, castle-wall battlements into the page ---- */
+mat-sidenav-content .content:has(.competitions-list) { position: relative !important; padding-top: var(--tb-h) !important; }
+mat-sidenav-content .content:has(.competitions-list)::before {
+  content: ''; display: block; box-sizing: border-box; min-height: var(--hero-h); margin-bottom: 0;
+  background: var(--ind-d);
+}
+mat-sidenav-content .content:has(.competitions-list)::after {
+  content: ''; position: absolute; left: 0; right: 0; top: calc(var(--tb-h) + var(--hero-h) - var(--wall-h)); height: var(--wall-h); z-index: 1; pointer-events: none;
+  background: var(--wall) left bottom / var(--wall-w) var(--wall-h) repeat-x;
+}
+#basic-theme .logo-edition-above { display: none !important; }
+#basic-theme .message-content:has(img.fr-dib), #basic-theme .message-content:has(img.fr-fil) { display: none !important; }
+@media (max-width: 760px) { :root { --hero-h: 330px; --tb-h: 64px; --wall-h: 15px; --wall-w: 48px; } }
+
+/* ---- ARUK promo (njuko message) ---- */
+#basic-theme .aruk-promo { display: flex; align-items: stretch; max-width: 1080px; margin: 6px auto 8px; background: linear-gradient(105deg, var(--aruk) 0%, #e5531a 100%); color: #fff; box-shadow: 8px 8px 0 var(--ind); text-align: left; }
+#basic-theme .aruk-promo .aruk-logo { flex: 0 0 230px; width: 230px; box-sizing: border-box; padding: 22px 26px; background: var(--ind); object-fit: contain; }
+#basic-theme .aruk-promo .aruk-copy { flex: 1 1 auto; padding: 24px 32px; }
+#basic-theme .aruk-promo .aruk-kicker { margin: 0 0 6px !important; color: #fff !important; font: 700 12px/1.2 var(--body-font) !important; letter-spacing: 0.22em; text-transform: uppercase; }
+#basic-theme .aruk-promo .aruk-kicker::before { content: '\2665'; margin-right: 8px; letter-spacing: 0; }
+#basic-theme#basic-theme .aruk-promo h3 { margin: 0 0 8px !important; color: #fff !important; font-size: clamp(20px, 2.6vw, 28px) !important; line-height: 1.1 !important; text-transform: uppercase !important; letter-spacing: 0.01em !important; }
+#basic-theme .aruk-promo p { color: #fff !important; font-size: 15px; line-height: 1.5; margin: 0 0 6px; }
+#basic-theme .aruk-promo .aruk-small { font-size: 13px; margin: 8px 0 0 !important; opacity: 0.95; }
+#basic-theme .aruk-promo strong { color: #fff !important; background: rgba(30, 0, 80, 0.85); padding: 2px 8px; font-weight: 700; white-space: nowrap; }
+@media (max-width: 760px) {
+  #basic-theme .aruk-promo { flex-direction: column; margin: 6px 4px 8px; box-shadow: 5px 5px 0 var(--ind); }
+  #basic-theme .aruk-promo .aruk-logo { flex: none; width: 100%; max-height: 110px; padding: 14px 24px; }
+  #basic-theme .aruk-promo .aruk-copy { padding: 20px 20px 22px; }
+}
+
+/* ---- ticket: price stub left, details middle, BOOK right + ARUK button under it ---- */
+#basic-theme#basic-theme .competitions-list { max-width: 1080px !important; width: 100% !important; margin: 0 auto !important; padding: 10px 20px 0 !important; justify-content: center !important; }
+#basic-theme#basic-theme .competitions-list::before { content: 'Choose your race'; flex: 0 0 100%; display: block; margin: 14px 0 26px; padding-bottom: 14px; color: var(--ind); font: 400 clamp(24px, 3.4vw, 38px)/1.05 var(--head-font); font-stretch: 125%; text-transform: uppercase; border-bottom: 5px solid var(--p); }
+#basic-theme#basic-theme .competitions-list > .cardWrap { flex: 0 0 100% !important; max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 0 30px !important; }
+#basic-theme#basic-theme .competitions-list .flip-card-inner { display: block !important; transform: none !important; height: auto !important; min-height: 0 !important; }
+#basic-theme .competitions-list :is(.flip-card-back, .block-cut, .cut, .break, .eye) { display: none !important; }
+#basic-theme#basic-theme .competitions-list .flip-card-front {
+  display: grid !important; grid-template-columns: 210px minmax(0, 1fr) 280px; grid-template-rows: auto auto; align-items: stretch; position: relative !important; transform: none !important; height: auto !important; min-height: 150px !important; padding: 0 !important;
+  background: linear-gradient(90deg, transparent calc(100% - 280px), rgba(0, 0, 0, 0.3) calc(100% - 280px)), linear-gradient(110deg, var(--ind) 0%, var(--ind-d) 100%) !important;
+  border: 0 !important; border-radius: 0 !important; box-shadow: 8px 8px 0 var(--p) !important; overflow: visible !important; transition: transform 160ms ease, box-shadow 160ms ease;
+}
+#basic-theme#basic-theme .competitions-list .flip-card-front:hover { transform: translate(-3px, -3px) !important; box-shadow: 11px 11px 0 var(--p) !important; }
+#basic-theme#basic-theme .competitions-list .card { flex: none !important; width: auto !important; height: auto !important; min-height: 0 !important; background: none !important; box-shadow: none !important; border: 0 !important; border-radius: 0 !important; margin: 0 !important; padding: 0; }
+/* flatten the right card so its pieces become grid cells of the ticket */
+#basic-theme#basic-theme .competitions-list :is(.cardRight, .cardRight .number, .cardRight .number h3) { display: contents !important; }
+#basic-theme#basic-theme .competitions-list .cardRight .number > span, #basic-theme#basic-theme .competitions-list .cardRight hook, #basic-theme#basic-theme .competitions-list .cardRight .text-center > hook, #basic-theme#basic-theme .competitions-list .cardRight .text-center:empty { display: none !important; }
+#basic-theme#basic-theme .competitions-list .cardRight app-message:not(:has(.message-content)) { display: none !important; }
+
+/* price stub (left) */
+#basic-theme#basic-theme .competitions-list .cardRight .price-bloc { grid-column: 1; grid-row: 1; align-self: stretch; display: flex !important; flex-direction: column; align-items: center !important; justify-content: flex-end !important; box-sizing: border-box; padding: 24px 14px 4px; background: linear-gradient(160deg, var(--p-l) 0%, var(--p) 55%, var(--p-d) 100%); text-align: center; }
+#basic-theme#basic-theme .competitions-list .cardRight .price-bloc, #basic-theme#basic-theme .competitions-list .cardRight .price-bloc * { color: #fff !important; font: 400 44px/1 var(--head-font) !important; font-stretch: 125%; }
+#basic-theme#basic-theme .competitions-list .cardRight .price-bloc .mat-icon { font: 400 18px/1 'Material Icons' !important; opacity: 0.8; margin-top: 6px; }
+#basic-theme#basic-theme .competitions-list .cardRight .price-bloc .booking-fee-front-container, #basic-theme#basic-theme .competitions-list .cardRight .price-bloc .booking-fee-front-container * { font: 500 11px/1.4 var(--body-font) !important; color: #f0dcff !important; }
+#basic-theme#basic-theme .competitions-list .cardRight .price-end { grid-column: 1; grid-row: 2; align-self: stretch; box-sizing: border-box; padding: 6px 14px 20px; background: var(--p-d); background: linear-gradient(160deg, var(--p-d) 0%, #5f0090 100%); color: #f0dcff !important; font: 500 11px/1.4 var(--body-font) !important; text-align: center; }
+#basic-theme#basic-theme .competitions-list .cardRight .price-end * { color: #f0dcff !important; font: 500 11px/1.4 var(--body-font) !important; }
+
+/* details (middle) */
+#basic-theme#basic-theme .competitions-list .cardLeft { grid-column: 2; grid-row: 1 / span 2; display: flex !important; flex-wrap: wrap !important; align-items: flex-end; align-content: center; gap: 10px 36px; padding: 26px 30px !important; border-right: 2px dashed rgba(198, 250, 232, 0.35) !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft > * { flex: 0 0 auto; margin: 0 !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft > h1, #basic-theme#basic-theme .competitions-list .cardLeft > app-message { flex: 0 0 100%; }
+#basic-theme#basic-theme .competitions-list .cardLeft > h1 { order: 0; color: #fff !important; font: 400 clamp(20px, 2.3vw, 27px)/1.15 var(--head-font) !important; font-stretch: 125%; text-transform: uppercase !important; letter-spacing: 0 !important; display: block !important; padding: 0 !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft > h1 :is(.mat-icon, hook) { display: none !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft > app-message:first-of-type { order: -1; flex: 0 0 auto; }
+#basic-theme#basic-theme .competitions-list .cardLeft > app-message:first-of-type :is(p, span, strong) { display: inline-block; margin: 0 !important; padding: 4px 10px; background: var(--mint); color: var(--ind) !important; font: 700 11px/1.2 var(--body-font) !important; letter-spacing: 0.14em; text-transform: uppercase; }
+#basic-theme#basic-theme .competitions-list .cardLeft > app-message:first-of-type :is(p) > span, #basic-theme#basic-theme .competitions-list .cardLeft > app-message:first-of-type strong, #basic-theme#basic-theme .competitions-list .cardLeft > app-message:first-of-type strong * { padding: 0; }
+#basic-theme#basic-theme .competitions-list .cardLeft > app-message:not(:first-of-type) { order: 9; font-size: 13px; color: #e8dcf7; font-weight: 600; }
+#basic-theme#basic-theme .competitions-list .cardLeft > app-message:not(:has(.message-content)) { display: none !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft > :is(hook, .break, .block-cut) { display: none !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft :is(.seat, .time, .name) { order: 2; display: block !important; text-align: left !important; padding: 0 !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft :is(.seat, .time, .name) > span { display: block !important; color: var(--mint) !important; font: 700 11px/1.2 var(--body-font) !important; letter-spacing: 0.2em !important; text-transform: uppercase !important; margin: 0 0 4px !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft :is(.seat, .time, .name) h2, #basic-theme#basic-theme .competitions-list .cardLeft :is(.seat, .time, .name) h2 * { color: #fff !important; font: 400 16px/1.25 var(--body-font) !important; font-stretch: 100%; margin: 0 !important; text-transform: none !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft :is(.seat, .time, .name) small { font-size: 12px !important; font-weight: 500 !important; }
+
+/* BOOK (right) + ARUK charity (under it) */
+#basic-theme#basic-theme .competitions-list .cardRight .text-center { grid-column: 3; grid-row: 1; align-self: end; box-sizing: border-box; padding: 24px 28px 0 !important; margin: 0 !important; }
+#basic-theme#basic-theme .competitions-list .cardRight app-message:has(.aruk-charity-btn) { grid-column: 3; grid-row: 2; align-self: start; box-sizing: border-box; padding: 10px 28px 24px !important; margin: 0 !important; }
+#basic-theme#basic-theme .competitions-list .cardRight app-message:has(.aruk-charity-btn) :is(.message-content, div, p) { margin: 0 !important; padding: 0 !important; background: none !important; border: 0 !important; box-shadow: none !important; }
+#basic-theme#basic-theme .competitions-list .flip-card-front:not(:has(.aruk-charity-btn)) .cardRight .text-center { grid-row: 1 / span 2; align-self: center; padding-bottom: 24px !important; }
+#basic-theme#basic-theme .competitions-list .button { display: block !important; width: 100% !important; box-sizing: border-box; text-align: center; white-space: nowrap; background: var(--p) !important; color: #fff !important; border: 2px solid var(--p) !important; border-radius: 0 !important; box-shadow: none !important; font: 400 14px/1.2 var(--head-font) !important; font-stretch: 125%; letter-spacing: 0.08em !important; text-transform: uppercase !important; padding: 15px 14px !important; transition: background 160ms ease, color 160ms ease, border-color 160ms ease !important; }
+#basic-theme .competitions-list .button .mat-button-wrapper { color: #fff !important; }
+#basic-theme .competitions-list .button .mat-button-wrapper::after { content: '\2192'; margin-left: 10px; letter-spacing: 0; }
+#basic-theme#basic-theme .competitions-list .button:hover { background: var(--mint) !important; border-color: var(--mint) !important; color: var(--ind) !important; transform: none !important; box-shadow: none !important; }
+#basic-theme .competitions-list .button:hover .mat-button-wrapper { color: var(--ind) !important; }
+#basic-theme#basic-theme a.aruk-charity-btn { display: block; width: 100%; box-sizing: border-box; text-align: center; white-space: nowrap; background: var(--aruk) !important; color: #fff !important; border: 2px solid var(--aruk); border-radius: 0; font: 700 12px/1.2 var(--body-font) !important; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none !important; padding: 12px 10px; transition: background 160ms ease, color 160ms ease; }
+#basic-theme#basic-theme a.aruk-charity-btn::before { content: '\2665'; margin-right: 8px; letter-spacing: 0; }
+#basic-theme#basic-theme a.aruk-charity-btn:hover { background: #fff !important; color: var(--aruk-d) !important; border-color: #fff; text-decoration: none !important; }
+#basic-theme .mat-raised-button.mat-accent[disabled], #basic-theme .competitions-list .button[disabled] { background: #6b5a85 !important; border-color: #6b5a85 !important; color: #d9cfe8 !important; }
+
+/* tablet: slimmer columns */
+@media (min-width: 761px) and (max-width: 1000px) {
+  #basic-theme#basic-theme .competitions-list .flip-card-front { grid-template-columns: 150px minmax(0, 1fr) 220px; background: linear-gradient(90deg, transparent calc(100% - 220px), rgba(0, 0, 0, 0.3) calc(100% - 220px)), linear-gradient(110deg, var(--ind) 0%, var(--ind-d) 100%) !important; }
+  #basic-theme#basic-theme .competitions-list .cardRight .price-bloc, #basic-theme#basic-theme .competitions-list .cardRight .price-bloc * { font-size: 34px !important; }
+  #basic-theme#basic-theme .competitions-list .cardRight .text-center { padding: 20px 18px 0 !important; }
+  #basic-theme#basic-theme .competitions-list .cardRight app-message:has(.aruk-charity-btn) { padding: 10px 18px 20px !important; }
+  #basic-theme#basic-theme .competitions-list .button { font-size: 12px !important; letter-spacing: 0.04em !important; padding: 14px 8px !important; }
+  #basic-theme#basic-theme a.aruk-charity-btn { font-size: 11px; letter-spacing: 0.08em; }
+}
+/* mobile: details on top; price stub left, BOOK + ARUK stacked right */
+@media (max-width: 760px) {
+  #basic-theme#basic-theme .competitions-list { padding: 10px 14px 0 !important; }
+  #basic-theme#basic-theme .competitions-list > .cardWrap { margin-bottom: 26px !important; }
+  #basic-theme#basic-theme .competitions-list .flip-card-front { grid-template-columns: 38% minmax(0, 1fr); grid-template-rows: auto auto auto; min-height: 0 !important; background: linear-gradient(110deg, var(--ind) 0%, var(--ind-d) 100%) !important; box-shadow: 5px 5px 0 var(--p) !important; }
+  #basic-theme#basic-theme .competitions-list .cardLeft { grid-column: 1 / -1; grid-row: 1; border-right: 0 !important; padding: 22px 20px 18px !important; gap: 8px 26px; }
+  #basic-theme#basic-theme .competitions-list .cardRight .price-bloc { grid-column: 1; grid-row: 2; padding: 16px 8px 2px; }
+  #basic-theme#basic-theme .competitions-list .cardRight .price-end { grid-column: 1; grid-row: 3; padding: 4px 8px 14px; }
+  #basic-theme#basic-theme .competitions-list .cardRight .price-bloc, #basic-theme#basic-theme .competitions-list .cardRight .price-bloc * { font-size: 30px !important; }
+  #basic-theme#basic-theme .competitions-list .cardRight .text-center { grid-column: 2; grid-row: 2; padding: 14px 14px 0 !important; }
+  #basic-theme#basic-theme .competitions-list .cardRight app-message:has(.aruk-charity-btn) { grid-column: 2; grid-row: 3; padding: 8px 14px 14px !important; }
+  #basic-theme#basic-theme .competitions-list .flip-card-front:not(:has(.aruk-charity-btn)) .cardRight .text-center { grid-row: 2 / span 2; padding-bottom: 14px !important; }
+  #basic-theme#basic-theme .competitions-list .button { font-size: 12px !important; letter-spacing: 0.04em !important; padding: 13px 6px !important; }
+  #basic-theme .competitions-list .button .mat-button-wrapper::after { margin-left: 6px; }
+  #basic-theme#basic-theme a.aruk-charity-btn { font-size: 10px; letter-spacing: 0.06em; padding: 11px 4px; }
+  #basic-theme#basic-theme a.aruk-charity-btn::before { margin-right: 5px; }
+}
+
+/* ---- buttons elsewhere ---- */
+#basic-theme .mat-raised-button.mat-accent, #basic-theme .mat-flat-button.mat-accent, #basic-theme .form-page .cardBottom button.mat-raised-button.mat-accent { background: var(--p) !important; color: #fff !important; border: 2px solid var(--p) !important; border-radius: 0 !important; box-shadow: none !important; text-transform: uppercase !important; font-family: var(--head-font) !important; font-stretch: 125%; font-weight: 400 !important; letter-spacing: 0.08em !important; font-size: 13px !important; padding: 6px 22px !important; transition: background 160ms ease, color 160ms ease !important; }
+#basic-theme .mat-raised-button.mat-accent .mat-button-wrapper { color: #fff !important; }
+#basic-theme .mat-raised-button.mat-accent:hover, #basic-theme .form-page .cardBottom button.mat-raised-button.mat-accent:hover { background: var(--ind) !important; border-color: var(--ind) !important; color: var(--mint) !important; transform: none !important; box-shadow: none !important; }
+#basic-theme .mat-raised-button.mat-accent:hover .mat-button-wrapper { color: var(--mint) !important; }
+#basic-theme .mat-raised-button.mat-primary { background: var(--ind) !important; color: #fff !important; border-radius: 0 !important; text-transform: uppercase !important; font-weight: 700 !important; letter-spacing: 0.08em !important; }
+#basic-theme .mat-raised-button.mat-primary:hover { background: var(--p) !important; color: #fff !important; }
+#basic-theme .mat-stroked-button, #basic-theme button.secondary { border-radius: 0 !important; border: 2px solid var(--ind) !important; letter-spacing: 0.08em !important; background: transparent !important; color: var(--ind) !important; text-transform: uppercase !important; font-weight: 700 !important; }
+#basic-theme .mat-stroked-button:hover, #basic-theme button.secondary:hover { background: var(--ind) !important; color: var(--mint) !important; }
+#basic-theme .mat-raised-button.mat-warn { background: #b3261e !important; color: #fff !important; border-radius: 0 !important; font-weight: 700 !important; }
+#basic-theme .mat-raised-button.mat-warn .mat-button-wrapper { color: #fff !important; }
+#basic-theme .quantity button, #basic-theme .product button.mat-raised-button, #basic-theme app-product button.mat-raised-button { min-width: 46px !important; width: 46px !important; height: 46px !important; padding: 0 !important; border-radius: 0 !important; font-size: 22px !important; box-shadow: none !important; }
+@media (max-width: 760px) { #basic-theme .form-page .cardBottom button.mat-raised-button.mat-accent { width: 100% !important; } }
+
+/* ---- later steps: forms, basket, payment, confirmation ---- */
+#basic-theme#basic-theme .competition-title, #basic-theme#basic-theme h2.competition-title { color: var(--ind) !important; }
+#basic-theme a { color: var(--p-d) !important; font-weight: 600 !important; text-decoration: none !important; }
+#basic-theme a:hover { color: var(--ind) !important; text-decoration: underline !important; }
+#basic-theme :is(.form-page, .cart-list, .select-payment-method, .custom-step, .confirmation-page) .card { background: #fff !important; color: var(--ink) !important; border: 0 !important; border-radius: 0 !important; box-shadow: 6px 6px 0 var(--ind) !important; }
+#basic-theme#basic-theme :is(.form-page, .cart-list, .select-payment-method, .custom-step, .confirmation-page) .card.cardTop { border-top: 0 !important; }
+#basic-theme .mat-radio-button .mat-radio-label-content { color: var(--ink) !important; }
+#basic-theme .mat-radio-button.mat-radio-checked { background: rgba(198, 250, 232, 0.6) !important; }
+#basic-theme .mat-radio-button.mat-radio-checked .mat-radio-label-content { color: var(--ind) !important; font-weight: 700 !important; }
+#basic-theme .mat-option.mat-selected:not(.mat-option-multiple), #basic-theme .mat-option.mat-selected .mat-option-text { color: var(--p-d) !important; font-weight: 700 !important; }
+#basic-theme .mat-form-field-appearance-outline .mat-form-field-outline { color: var(--line) !important; }
+#basic-theme .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick { color: var(--focus) !important; }
+#basic-theme .mat-form-field.mat-focused .mat-form-field-label { color: var(--focus) !important; }
+#basic-theme .mat-form-field-ripple, #basic-theme .mat-form-field.mat-focused .mat-form-field-ripple { background-color: var(--focus) !important; }
+#basic-theme .mat-input-element { caret-color: var(--focus) !important; color: var(--ink) !important; }
+#basic-theme .mat-form-field-appearance-outline .mat-form-field-flex { padding: 0 18px !important; }
+#basic-theme .mat-form-field-appearance-outline .mat-form-field-infix { padding: 18px 0 !important; }
+#basic-theme .mat-checkbox-checked.mat-accent .mat-checkbox-background, #basic-theme .mat-pseudo-checkbox-checked { background-color: var(--focus) !important; }
+#basic-theme .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle { border-color: var(--focus) !important; }
+#basic-theme .mat-radio-button.mat-accent .mat-radio-inner-circle { background-color: var(--focus) !important; }
+#basic-theme .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb { background-color: var(--focus) !important; }
+#basic-theme .mat-slide-toggle.mat-checked .mat-slide-toggle-bar { background-color: var(--accent-soft) !important; }
+#basic-theme .mat-step-header .mat-step-icon-selected, #basic-theme .mat-step-header .mat-step-icon-state-done { background-color: var(--focus) !important; color: #fff !important; }
+#basic-theme .mat-progress-bar-fill::after { background-color: var(--accent) !important; }
+#basic-theme .mat-progress-bar-buffer { background-color: var(--accent-soft) !important; }
+#basic-theme .mat-progress-spinner circle, #basic-theme .mat-spinner circle { stroke: var(--focus) !important; }
+#basic-theme .mat-ink-bar { background-color: var(--accent) !important; }
+#basic-theme .mat-badge-accent .mat-badge-content { background: var(--accent) !important; color: #fff !important; font-weight: 700 !important; }
+#basic-theme button:focus-visible, #basic-theme a:focus-visible, #basic-theme input:focus-visible { outline: 3px solid var(--accent) !important; outline-offset: 2px !important; }
+#basic-theme ::-webkit-scrollbar { width: 10px; height: 10px; }
+#basic-theme ::-webkit-scrollbar-thumb { background: var(--ind); border-radius: 0; }
+#basic-theme .mat-form-field-label, #basic-theme .mat-select-placeholder, #basic-theme .mat-form-field-label .mat-placeholder-required, #basic-theme .mat-form-field-label span { color: #4a4060 !important; }
+#basic-theme .mat-input-element::placeholder { color: #5a5070 !important; opacity: 1 !important; }
+#basic-theme .mat-form-field.mat-form-field-invalid .mat-form-field-label, #basic-theme .mat-form-field.mat-form-field-invalid .mat-form-field-label span, #basic-theme .mat-error, #basic-theme mat-error { color: #b3261e !important; }
+#basic-theme .mat-form-field-appearance-outline.mat-form-field-invalid .mat-form-field-outline-thick { color: #b3261e !important; }
+
+/* ---- footer: battlements into black, contact + links ---- */
+#basic-theme footer { background: transparent !important; position: relative; z-index: 1 !important; margin-top: 56px; }
+#basic-theme footer::before { content: ''; display: block; height: var(--wall-h); background: var(--wall) left bottom / var(--wall-w) var(--wall-h) repeat-x; margin-bottom: -1px; filter: brightness(0); }
+#basic-theme footer .footer-container { position: relative !important; margin: 0 !important; padding: 34px 20px 40px !important; text-align: center !important; background: #000 !important; border-top: 0 !important; color: #fff !important; }
+#basic-theme footer .footer-container .terms span:first-child { display: inline-flex !important; flex-wrap: wrap; justify-content: center; gap: 8px 18px; color: rgba(255, 255, 255, 0.5) !important; }
+#basic-theme#basic-theme footer .footer-container .terms a.footer-cgus-link { color: #fff !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0.08em !important; font-size: 12px !important; text-decoration: none !important; }
+#basic-theme#basic-theme footer .footer-container .terms a.footer-cgus-link:hover { color: var(--mint) !important; }
+#basic-theme footer .footer-container .footer-message, #basic-theme footer .footer-container .footer-message * { color: #fff !important; }
+#basic-theme footer .footer-container .footer-message a { color: var(--mint) !important; }
+
+/* ---- hero content: skyline mark + title (CSS only, edit --hero-title / --hero-img above) ---- */
+mat-sidenav-content .content:has(.competitions-list)::before {
+  content: var(--hero-title); display: flex; align-items: center; justify-content: center; box-sizing: border-box; min-height: var(--hero-h); padding: 96px 20px 20px; text-align: center; color: #fff; font: 400 clamp(30px, 6.2vw, 66px)/1.05 var(--head-font); font-stretch: 125%; text-transform: uppercase; text-shadow: 0 3px 26px rgba(0, 0, 0, 0.55);
+  background: var(--skyline) center calc(50% - 62px) / 250px auto no-repeat, linear-gradient(180deg, rgba(30, 0, 80, 0.7) 0%, rgba(18, 0, 46, 0.58) 55%, rgba(18, 0, 46, 0.85) 100%), var(--hero-img) center 35% / cover no-repeat, var(--ind-d);
+}
+@media (max-width: 760px) { mat-sidenav-content .content:has(.competitions-list)::before { padding-top: 70px; background-size: 170px auto, auto, cover, auto; background-position: center calc(50% - 44px), center, center 35%, center; } }
+
+/* ---- heading above the races, collapsible race groups (whole bar is clickable) ---- */
+#basic-theme#basic-theme .competitions-list::before { content: var(--list-title); font-size: clamp(18px, 2.6vw, 28px); }
+#basic-theme#basic-theme .competitions-list .cardWrap.flip-card { flex: 0 0 100% !important; max-width: 100% !important; width: 100% !important; padding: 0 !important; margin: 0 0 30px !important; }
+#basic-theme#basic-theme .competitions-list .flip-card-inner { margin-left: 0 !important; margin-right: 0 !important; }
+#basic-theme#basic-theme .competitions-list .group-competitions-title { position: relative; display: flex !important; align-items: center; justify-content: space-between; gap: 16px; box-sizing: border-box; background: var(--ind) !important; border-left: 8px solid var(--p); box-shadow: 6px 6px 0 var(--p); margin: 0 0 26px !important; padding: 18px 22px !important; cursor: pointer; text-transform: uppercase; }
+#basic-theme#basic-theme .competitions-list .group-competitions-title, #basic-theme#basic-theme .competitions-list .group-competitions-title * { color: #fff !important; font: 400 clamp(14px, 1.8vw, 19px)/1.25 var(--head-font) !important; font-stretch: 125%; }
+#basic-theme#basic-theme .competitions-list .group-competitions-title:hover { background: var(--p-d) !important; }
+#basic-theme#basic-theme .competitions-list .group-competitions-title .mat-icon { position: absolute; left: 0; top: 0; right: 0; bottom: 0; width: 100% !important; height: 100% !important; display: flex !important; align-items: center; justify-content: flex-end; box-sizing: border-box; padding-right: 20px; font-family: 'Material Icons' !important; font-size: 28px !important; color: var(--mint) !important; }
+
+/* ---- messages: ARUK promo aligned with the cards, info messages as clean strips ---- */
+#basic-theme .aruk-promo { margin-left: 15px; margin-right: 15px; max-width: none; margin-bottom: 18px; }
+#basic-theme#basic-theme .competitions-list > app-message .message-content-transparent:not(:has(.aruk-promo)) { background: transparent !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
+#basic-theme#basic-theme .competitions-list > app-message .message-content-transparent:not(:has(.aruk-promo)) > div { background: #fff !important; border-left: 5px solid var(--p); border-radius: 0 !important; box-shadow: none !important; max-width: none !important; width: auto !important; margin: 0 15px !important; padding: 14px 20px !important; text-align: left; }
+
+/* ---- ticket refinements: price stub, titles ---- */
+#basic-theme#basic-theme .competitions-list .cardRight .price-bloc hook { display: block !important; }
+#basic-theme#basic-theme .competitions-list .cardRight .number h3 > hook:not(:has(.booking-fee-front-container)) { display: none !important; }
+#basic-theme#basic-theme .competitions-list .cardRight .price-bloc { position: relative; }
+#basic-theme#basic-theme .competitions-list .cardRight .price-bloc .mat-icon { position: absolute; top: 10px; right: 10px; margin: 0; }
+#basic-theme#basic-theme .competitions-list .cardRight .price-bloc, #basic-theme#basic-theme .competitions-list .cardRight .price-bloc hook, #basic-theme#basic-theme .competitions-list .cardRight .price-bloc .hook, #basic-theme#basic-theme .competitions-list .cardRight .price-bloc .hook > div { text-align: center !important; justify-content: center; }
+#basic-theme#basic-theme .competitions-list .cardRight .price-bloc hook, #basic-theme#basic-theme .competitions-list .cardRight .price-bloc .hook { display: flex !important; width: 100%; }
+#basic-theme#basic-theme .competitions-list .cardRight .price-bloc, #basic-theme#basic-theme .competitions-list .cardRight .price-bloc * { font-size: 36px !important; white-space: nowrap; }
+#basic-theme#basic-theme .competitions-list .cardRight .price-bloc .mat-icon { font-size: 18px !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft { min-width: 0; }
+#basic-theme#basic-theme .competitions-list .cardLeft > * { text-align: left !important; }
+#basic-theme#basic-theme .competitions-list .cardLeft > h1 { overflow-wrap: anywhere; justify-content: flex-start !important; }
+@media (min-width: 761px) and (max-width: 1000px) {
+  #basic-theme#basic-theme .competitions-list .cardRight .price-bloc, #basic-theme#basic-theme .competitions-list .cardRight .price-bloc * { font-size: 28px !important; }
+  #basic-theme#basic-theme .competitions-list .cardLeft > h1 { font-size: 17px !important; }
+  #basic-theme#basic-theme .competitions-list .cardLeft { padding: 22px 20px !important; }
+}
+@media (max-width: 760px) {
+  #basic-theme#basic-theme .competitions-list .cardRight .price-bloc, #basic-theme#basic-theme .competitions-list .cardRight .price-bloc * { font-size: 24px !important; }
+  #basic-theme#basic-theme .competitions-list .cardRight .price-bloc .mat-icon { font-size: 16px !important; }
+}
+
+/* =============================================================================
+   v2: test banner masked, new header photo (PMZ_5713.jpg in the css repo), sponsor strip
+   matching castleraceseries.com, bold "GBP 10 charity" sell point under the price.
+   ============================================================================= */
+:root { --charity-price: 'ONLY \0000A310 TO TAKE PART FOR ALZHEIMER\2019S RESEARCH UK'; }
+
+/* 1. mask the draft-mode test banner */
+test-mode, .test-mode, #basic-theme test-mode, #basic-theme .test-mode { display: none !important; }
+
+/* 2. header photo: brighter overlay so the photo shows, framed on the castle + runners */
+mat-sidenav-content .content:has(.competitions-list)::before { background: var(--skyline) center calc(50% - 62px) / 250px auto no-repeat, linear-gradient(180deg, rgba(30, 0, 80, 0.55) 0%, rgba(18, 0, 46, 0.4) 50%, rgba(18, 0, 46, 0.82) 100%), var(--hero-img) center 30% / cover no-repeat, var(--ind-d); }
+@media (max-width: 760px) { mat-sidenav-content .content:has(.competitions-list)::before { background: var(--skyline) center calc(50% - 44px) / 170px auto no-repeat, linear-gradient(180deg, rgba(30, 0, 80, 0.55) 0%, rgba(18, 0, 46, 0.4) 50%, rgba(18, 0, 46, 0.82) 100%), var(--hero-img) 58% 40% / cover no-repeat, var(--ind-d); } }
+
+/* 3. partners + supporters strip (njuko footer message), black full-width band with battlements */
+mat-sidenav-content, .mat-sidenav-content { overflow-x: hidden !important; }
+#basic-theme app-message.message-bottom { flex: 0 0 100% !important; max-width: 100% !important; width: 100% !important; }
+#basic-theme .cr-sponsors { position: relative; box-sizing: border-box; width: 100vw; margin: 70px 0 0 calc(50% - 50vw); padding: 40px max(20px, calc((100vw - 1100px) / 2)) 14px; background: #000; text-align: left; }
+#basic-theme .cr-sponsors::before { content: ''; position: absolute; left: 0; right: 0; bottom: 100%; height: var(--wall-h); background: var(--wall) left bottom / var(--wall-w) var(--wall-h) repeat-x; filter: brightness(0); }
+#basic-theme .cr-sponsors h4 { margin: 0 0 18px !important; color: #fff !important; font: 400 clamp(16px, 2vw, 22px)/1 var(--head-font) !important; font-stretch: 125%; text-transform: uppercase; letter-spacing: 0.06em; }
+#basic-theme .cr-sponsors .cr-row { display: flex; flex-wrap: wrap; align-items: stretch; margin: 0 0 34px; }
+#basic-theme .cr-sponsors .cr-row a { flex: 1 1 0; min-width: 130px; min-height: 96px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; padding: 14px 20px; border-left: 1px solid #263540; }
+#basic-theme .cr-sponsors .cr-row a:first-child { border-left: 0; }
+#basic-theme .cr-sponsors .cr-row img { display: block; width: auto; height: auto; max-width: 100%; max-height: 66px; object-fit: contain; }
+#basic-theme .cr-sponsors .cr-supporters a { flex: 0 0 16.666%; min-height: 76px; }
+#basic-theme .cr-sponsors .cr-supporters img { max-height: 46px; }
+#basic-theme footer { margin-top: 0; }
+#basic-theme .wrapper:has(.cr-sponsors) footer::before { display: none; }
+@media (max-width: 760px) {
+  #basic-theme .cr-sponsors { padding: 32px 20px 6px; }
+  #basic-theme .cr-sponsors .cr-row a { flex: 0 0 50%; min-width: 0; border-left: 0; min-height: 80px; }
+  #basic-theme .cr-sponsors .cr-supporters a { flex: 0 0 33.333%; min-height: 64px; padding: 10px 12px; }
+  #basic-theme .cr-sponsors .cr-row img { max-height: 54px; }
+  #basic-theme .cr-sponsors .cr-supporters img { max-height: 40px; }
+}
+
+/* 4. bold charity price under the main price (only on tickets that have a charity place) */
+#basic-theme#basic-theme .competitions-list .flip-card-front:has(.aruk-charity-btn) .cardRight .price-bloc::after { content: var(--charity-price); display: block; box-sizing: border-box; max-width: 100%; margin-top: 12px; padding: 8px 10px; background: var(--aruk); color: #fff; font: 400 11px/1.3 var(--head-font); font-stretch: 125%; letter-spacing: 0.04em; text-transform: uppercase; text-align: center; white-space: normal; box-shadow: 3px 3px 0 var(--ind); }
+@media (max-width: 760px) { #basic-theme#basic-theme .competitions-list .flip-card-front:has(.aruk-charity-btn) .cardRight .price-bloc::after { margin-top: 8px; padding: 6px 5px; font-size: 9.5px; letter-spacing: 0.02em; box-shadow: 2px 2px 0 var(--ind); } }
+#basic-theme#basic-theme .competitions-list .cardRight .price-bloc { flex-direction: column !important; flex-wrap: nowrap !important; align-items: center !important; }
